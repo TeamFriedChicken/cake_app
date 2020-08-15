@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       resources :orders, only: [:create, :show, :index]
       get 'orders/:id', to: 'orders#new'
       get 'orders/:id/comfirm', to: 'orders#comfirm'
-      get 'orders/:id/complete', to: 'orders#complete'
 
       resources :cart_items, only: [:index, :update, :destroy, :create]
       delete 'members/cart_items', to: 'cart_items#all_destroy'
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
 
     end
 
+    get 'orders/:id/complete', to: 'orders#complete'
+    
     get 'members/:id/resignation', to: 'members#resignation'
     patch 'members/:id', to: 'members#quit'
     
