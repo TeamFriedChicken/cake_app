@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
 
     get 'orders/:id/complete', to: 'orders#complete'
-    
+
     get 'members/:id/resignation', to: 'members#resignation'
     patch 'members/:id', to: 'members#quit'
     
@@ -34,10 +34,10 @@ Rails.application.routes.draw do
   # --------------------------------admin----------------------------------------------
   #devise_for :admin
   
+  get 'admin/top', to: 'admin/home#top'
+
   namespace :admin do
     
-    get 'admins/top', to: 'home#top'
-
     resources :members, only: [:index, :show, :edit, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
     resources :order_detals, only: [:index, :show, :update]
