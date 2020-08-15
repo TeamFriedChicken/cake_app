@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     
     resources :members, only: [:show, :edit, :update] do
 
-      resources :orders, only: [:new, :create, :show, :index]
+      resources :orders, only: [:create, :show, :index]
+      get 'orders/:id', to: 'orders#new'
       get 'orders/:id/comfirm', to: 'orders#comfirm'
       get 'orders/:id/complete', to: 'orders#complete'
 
