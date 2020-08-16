@@ -1,4 +1,4 @@
-class Member::DeliveryAddressController < ApplicationController
+class Member::DeliveryAddressesController < ApplicationController
   def index
   end
 

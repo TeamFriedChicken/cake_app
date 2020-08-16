@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_044927) do
   create_table "delivery_addresses", force: :cascade do |t|
     t.integer "member_id"
     t.string "address"
-    t.integer "postcode"
+    t.string "postcode"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_044927) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
-    t.boolean "genre_flag", default: false
+    t.boolean "is_active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_044927) do
     t.string "image_id"
     t.integer "price"
     t.text "explanation"
-    t.boolean "status"
+    t.boolean "is_active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_items_on_genre_id"
@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 2020_08_16_044927) do
     t.string "kana_last_name"
     t.string "kana_first_name"
     t.string "phone_number"
-    t.string "postcode"
     t.string "address"
-    t.boolean "member_flag", default: false
+    t.string "postcode"
+    t.boolean "is_delete", default: false
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
