@@ -29,8 +29,7 @@ Rails.application.routes.draw do
 
     end
 
-    resources :orders, only: [:create, :show, :index]
-    get 'orders', to: 'orders#new'
+    resources :orders, only: [:new, :create, :show, :index]
     get 'orders/comfirm', to: 'orders#comfirm'
     get 'orders/complete', to: 'orders#complete'
 
@@ -50,8 +49,8 @@ Rails.application.routes.draw do
   namespace :admin do
     
     resources :members, only: [:index, :show, :edit, :update]
-    resources :items, only: [:index, :create, :show, :edit, :update]
-    get 'items', to: 'items#new'
+    resources :items, only: [:index, :new, :create, :show, :edit, :update]
+    
     resources :order_detals, only: [:update]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :orders, only: [:index, :show, :update]
