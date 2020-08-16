@@ -1,2 +1,0 @@
-module Member::ItemsHelper
-end
