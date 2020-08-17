@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
     end
 
-    resources :orders, only: [:new, :create, :show, :index]　　　
+    resources :orders, only: [:new, :create, :show, :index]
     get 'orders/comfirm', to: 'orders#comfirm'
     get 'orders/complete', to: 'orders#complete'
 
