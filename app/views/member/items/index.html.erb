@@ -1,2 +1,28 @@
-<h1>商品一覧</h1>
-<p>商品</p>
+
+<h1>ヘッダー</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <table class="table">
+        <h4>ジャンル検索</h4>
+      </table>
+    </div>
+
+    <div class="col-xs-10">
+      <h2>商品一覧 (全<%= @items.count %>件)</h2>
+      <table class="table">
+        <% @items.each do |item| %>
+          <%= link_to item_path(item) do %>
+            <%= attachment_image_tag item, :image_id, size:"80", format: 'jpeg', fallback: "no_image.jpg" %><br>
+            <p><%= item.name %><br></p>
+            <p>¥<%= item.price %><br></p>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%= paginate @items %>
+  
