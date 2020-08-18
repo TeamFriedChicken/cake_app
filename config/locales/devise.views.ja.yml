@@ -15,7 +15,6 @@ ja:
         postcode: "郵便番号"
         address: "住所"
         phone_number: "電話番号"
-      admin:
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
