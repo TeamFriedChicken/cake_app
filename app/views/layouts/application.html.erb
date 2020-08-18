@@ -10,6 +10,39 @@
   </head>
 
   <body>
+    <header>
+      <h1>ながのCAKE（ロゴ）</h1>
+
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-3 mb-3">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <% if member_signed_in? %>
+              <li><%= link_to member_path(current_member), class:"my-bt" do %>
+                <i class="glyphicon glyphicon-home"></i>マイページ</li><% end %>
+              <li><%= link_to items_path, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-user"></i>商品一覧</li><% end %>
+              <li><%= link_to members_cart_items, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-book"></i>カート</li><% end %>
+              <li><%= link_to destroy_member_session_path,  method: :delete, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-log-out"></i>ログアウト</li><% end %>
+              <% else %>
+              <li><%= link_to about_path, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-home"></i>　About</li><% end %>
+              <li><%= link_to items_path, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-link"></i>　商品一覧</li><% end %>
+              <li><%= link_to new_member_registration_path, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-user"></i>　新規登録</li><% end %>
+              <li><%= link_to new_member_session_path, class:"my-bt" do %>
+                <i class="glyphicon glyphicon-log-in"></i>　ログイン</li><% end %>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
