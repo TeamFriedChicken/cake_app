@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%= link_to "商品新規登録画面", new_admin_item_path %>
+    <%= link_to "ジャンル一覧・追加", admin_genres_path %>
+    <%= link_to "商品一覧", admin_items_path %>
+
     <%= yield %>
   </body>
 </html>
