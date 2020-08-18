@@ -10,19 +10,16 @@
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
   <%= render "members/shared/links" %>
 
   <div class="actions">
-    <%= f.submit t('.log_in') %>
+    <%= f.submit "ログイン" %>
   </div>
 <% end %>
 
-  <h4 class="glay-label">会員の方はこちらからログイン</h4>
 
+
+  <h4 class="glay-label">登録がお済みでない方</h4>
+  <%= render "members/shared/links" %>
+
+  から新規登録を行ってください
