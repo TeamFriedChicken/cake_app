@@ -4400,3 +4400,524 @@ Processing by Member::CartItemsController#index as HTML
 Completed 200 OK in 166ms (Views: 162.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/members/cart_items" for 10.0.2.2 at 2020-08-18 00:11:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#index as HTML
+  Rendering member/cart_items/index.html.erb within layouts/application
+  Rendered member/cart_items/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    11:         <th></th>
+    12:       </tr>
+    13:       
+    14:       <% @cart_items.each do |cart_item| %>
+    15: 
+    16: 
+    17:       <% end %>
+  
+app/views/member/cart_items/index.html.erb:14:in `_app_views_member_cart_items_index_html_erb___3807887924895001381_46488320'
+Started GET "/members/cart_items" for 10.0.2.2 at 2020-08-18 01:03:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Member::CartItemsController::Cart_items):
+  
+app/controllers/member/cart_items_controller.rb:4:in `index'
+Started GET "/members/" for 10.0.2.2 at 2020-08-18 01:25:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#show as HTML
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1149ms (Views: 1138.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/items" for 10.0.2.2 at 2020-08-18 01:25:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/members/items"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2020-08-18 01:26:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 298ms (Views: 290.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 10.0.2.2 at 2020-08-18 01:26:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#index as HTML
+  Rendering member/items/index.html.erb within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:13
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:15
+  Rendered member/items/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 242ms (Views: 215.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 01:26:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 183ms (Views: 170.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/items/1" for 10.0.2.2 at 2020-08-18 01:26:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [POST] "/items/1"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 01:29:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (622.0ms)
+Completed 200 OK in 1073ms (Views: 1041.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 01:29:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g8FDmPFSDCONY6zCWrt6BVr+OD8WtoQ5J14r1tAHSLejPDrgtDqTKQs2J1Y7yeFqmUKV8tA4zh99Fq8xLRB4wg==", "quantity"=>"2", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /home/vagrant/work/cake_app/app/models/cart_item.rb to define it):
+  
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 01:31:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g8FDmPFSDCONY6zCWrt6BVr+OD8WtoQ5J14r1tAHSLejPDrgtDqTKQs2J1Y7yeFqmUKV8tA4zh99Fq8xLRB4wg==", "quantity"=>"2", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /home/vagrant/work/cake_app/app/models/cart_item.rb to define it):
+  
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 01:32:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g8FDmPFSDCONY6zCWrt6BVr+OD8WtoQ5J14r1tAHSLejPDrgtDqTKQs2J1Y7yeFqmUKV8tA4zh99Fq8xLRB4wg==", "quantity"=>"2", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /home/vagrant/work/cake_app/app/models/cart_item.rb to define it):
+  
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 01:34:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (707.9ms)
+Completed 200 OK in 1199ms (Views: 1161.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 01:34:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nNDAH2Ye1lGzKWfsfQPZH1W6kKCrDICZLZnc6M4sw428LblnI3ZJWzV87HgccUJwlgY9bW2Cyr930VgPMzvz+A==", "quantity"=>"1", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Cart_item, expected /home/vagrant/work/cake_app/app/models/cart_item.rb to define it):
+  
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:02:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (472.3ms)
+Completed 200 OK in 825ms (Views: 797.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:02:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kh7miEf4VsynWYvuDrI3IRufFX6sZderjHQn4I8GGQMK45/wApDJxiEMAHpvwKxO2CO4s2rrnY3WPKMHchEpdg==", "quantity"=>"2", "commit"=>"カートに入れる"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/cart_items_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/member/cart_items_controller.rb:10
+Redirected to http://localhost:3000/items/1
+Completed 302 Found in 182ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:02:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 170ms (Views: 162.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:03:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ye9O6s8piOs3ljfjqe3vnSIS3nbJz6NS1U9Z63SmAVnpEjeSikEX4bHDvHfIn3Ty4a5zuw9B6XSPB90MibExLA==", "quantity"=>"", "commit"=>"カートに入れる"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/cart_items_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/member/cart_items_controller.rb:10
+Redirected to http://localhost:3000/items/1
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:03:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 185ms (Views: 180.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/items" for 10.0.2.2 at 2020-08-18 02:03:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#index as HTML
+  Rendering member/items/index.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:13
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:15
+  Rendered member/items/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 145ms (Views: 140.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:03:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Member::CartItemsController::CartItems):
+  
+app/controllers/member/cart_items_controller.rb:4:in `index'
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:05:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 206ms (Views: 200.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:06:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 188ms (Views: 182.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:14:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (449.5ms)
+Completed 200 OK in 771ms (Views: 748.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:14:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xj0XC0BGPnIsxb6+H6Ta6lX3Y93aiOns6wvRjbuUsB3mwG5zBS6heKqQNSp+1kGFlkvOEBwGo8qxQ1VqRoOAaA==", "quantity"=>"1", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 298ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_cart' for #<Member::CartItemsController:0x00007f44f0dc7878>
+Did you mean?  current_admin):
+  
+app/controllers/member/cart_items_controller.rb:10:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:16:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xj0XC0BGPnIsxb6+H6Ta6lX3Y93aiOns6wvRjbuUsB3mwG5zBS6heKqQNSp+1kGFlkvOEBwGo8qxQ1VqRoOAaA==", "quantity"=>"1", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_cart' for #<Member::CartItemsController:0x00000000034b55c0>
+Did you mean?  current_admin):
+  
+app/controllers/member/cart_items_controller.rb:10:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:20:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xj0XC0BGPnIsxb6+H6Ta6lX3Y93aiOns6wvRjbuUsB3mwG5zBS6heKqQNSp+1kGFlkvOEBwGo8qxQ1VqRoOAaA==", "quantity"=>"1", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_cart' for #<Member::CartItemsController:0x00000000060dc518>
+Did you mean?  current_admin):
+  
+app/controllers/member/cart_items_controller.rb:10:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:21:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xj0XC0BGPnIsxb6+H6Ta6lX3Y93aiOns6wvRjbuUsB3mwG5zBS6heKqQNSp+1kGFlkvOEBwGo8qxQ1VqRoOAaA==", "quantity"=>"1", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `cart_items' for nil:NilClass):
+  
+app/controllers/member/cart_items_controller.rb:10:in `create'
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 02:22:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (495.6ms)
+Completed 200 OK in 828ms (Views: 796.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 02:22:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zzJBIoJWtw4rkFFp5AGMro41l+izrfY8WLY7DXzXMRXvzzhaxz4oBK3F2v2FcxfBTYk6JXUjvBoC/r/qgcABYA==", "quantity"=>"3", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `cart_items' for nil:NilClass):
+  
+app/controllers/member/cart_items_controller.rb:10:in `create'
+Started GET "/items" for 10.0.2.2 at 2020-08-18 05:23:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::ItemsController#index as HTML
+  Rendering member/items/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:13
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:15
+  Rendered member/items/index.html.erb within layouts/application (429.6ms)
+Completed 200 OK in 688ms (Views: 670.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 05:24:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 162ms (Views: 139.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 05:24:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tn3w3Y+2uT1bwAvAC9PCk2slpETxVX3C44vnTBYeo9topcA9voIaRSv+0w0YB7DCIDKbSaeyAJcftRIqoQcnSQ==", "quantity"=>"6", "commit"=>"カートに入れる"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `cart_items' for nil:NilClass):
+  
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 05:26:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tn3w3Y+2uT1bwAvAC9PCk2slpETxVX3C44vnTBYeo9topcA9voIaRSv+0w0YB7DCIDKbSaeyAJcftRIqoQcnSQ==", "quantity"=>"6", "commit"=>"カートに入れる"}
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: cart_item):
+  
+app/controllers/member/cart_items_controller.rb:28:in `cart_item_params'
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started GET "/items/1" for 10.0.2.2 at 2020-08-18 06:18:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/items_controller.rb:8
+  Rendering member/items/show.html.erb within layouts/application
+  Rendered member/items/show.html.erb within layouts/application (358.8ms)
+Completed 200 OK in 624ms (Views: 583.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 06:18:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fnS67N/lfVVIGYdyHA3O1ndmby/3j56W/oxPyrNCA1teicOUmo3iX85MDOZ9f1W5tNrC4jEB1LCkxMstTlUzLg==", "quantity"=>"", "commit"=>"カートに入れる"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: cart_item):
+  
+app/controllers/member/cart_items_controller.rb:28:in `cart_item_params'
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started POST "/members/cart_items" for 10.0.2.2 at 2020-08-18 06:18:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::CartItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fnS67N/lfVVIGYdyHA3O1ndmby/3j56W/oxPyrNCA1teicOUmo3iX85MDOZ9f1W5tNrC4jEB1LCkxMstTlUzLg==", "quantity"=>"6", "commit"=>"カートに入れる"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: cart_item):
+  
+app/controllers/member/cart_items_controller.rb:28:in `cart_item_params'
+app/controllers/member/cart_items_controller.rb:9:in `create'
+Started GET "/items" for 10.0.2.2 at 2020-08-18 08:11:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::ItemsController#index as HTML
+  Rendering member/items/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "items" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:13
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/member/items/index.html.erb:15
+  Rendered member/items/index.html.erb within layouts/application (420.6ms)
+Completed 200 OK in 688ms (Views: 667.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/members/sign_up" for 10.0.2.2 at 2020-08-18 08:12:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::RegistrationsController#new as HTML
+  Rendering members/registrations/new.html.erb within layouts/application
+  Rendered members/shared/_error_messages.html.erb (0.5ms)
+  Rendered members/shared/_links.html.erb (1.2ms)
+  Rendered members/registrations/new.html.erb within layouts/application (176.5ms)
+Completed 200 OK in 354ms (Views: 333.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/members/sign_in" for 10.0.2.2 at 2020-08-18 08:12:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#new as HTML
+  Rendering members/sessions/new.html.erb within layouts/application
+  Rendered members/shared/_links.html.erb (1.0ms)
+  Rendered members/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 153ms (Views: 149.9ms | ActiveRecord: 0.0ms)
+
+
