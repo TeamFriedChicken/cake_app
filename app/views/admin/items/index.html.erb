@@ -1,2 +1,11 @@
 <h1>Admin::Items#index</h1>
-<p>Find me in app/views/admin/items/index.html.erb</p>
+<%= link_to "商品新規登録画面", new_admin_item_path %>
+<%= link_to "商品新規登録画面", admin_item_path(@items) %>
+
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.price %></td>
+  </tr>
+<% end %>
