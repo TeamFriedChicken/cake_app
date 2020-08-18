@@ -66,8 +66,9 @@ gem 'pry-byebug'
 
 gem 'devise'
   # --- deviseの日本語化 ---
-  gem 'devise-i18n'
+  gem 'rails-i18n', '~> 5.1'
   gem 'devise-i18n-views'
+
   # -----------------------
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
