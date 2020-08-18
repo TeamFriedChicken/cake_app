@@ -8,7 +8,7 @@ class Member::CartItemsController < ApplicationController
 
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.save
-    flash[:notice] = "#{@cart_item.item.name}をカートに追加しました"
+    # flash[:notice] = "#{@cart_item.item.name}をカートに追加しました"
     redirect_to items_path
 
   end
@@ -25,7 +25,7 @@ class Member::CartItemsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart_item).permit(:quantity, :item_id)
+    params.permit(:quantity, :item_id)
   end
 
 end
