@@ -1,6 +1,7 @@
 class Member::MembersController < ApplicationController
+  before_action :authenticate_member!
   def show
-    @member = Member.find(params[:id])
+    @member = Member.find(current_member.id)
   end
 
   def edit
@@ -15,5 +16,10 @@ class Member::MembersController < ApplicationController
   end
 
   def quit
+  end
+
+  private
+  def member_params
+    params.require(:member).permit(:email)
   end
 end

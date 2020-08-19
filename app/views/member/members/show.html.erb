@@ -1,14 +1,33 @@
-<h1>マイページMember::Members#show</h1>
+<h1>マイページ</h1>
 <rabel>登録情報</rabel>
 <%= link_to "編集する" %>
 <%= link_to "パスワードを変更する" %>
-<table>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
+<table class="table">
+	<tr>
+		<td>氏名</td>
+		<td><%= current_member.first_name %> <%= current_member.last_name %></td>
+	</tr>
+	<tr>
+		<td>カナ</td>
+		<td><%= current_member.kana_first_name %> <%= current_member.kana_last_name %></td>
+	</tr>
+	<tr>
+		<td>郵便番号</td>
+		<td><%= current_member.postcode %></td>
+	</tr>
+	<tr>
+		<td>住所</td>
+		<td><%= current_member.address %></td>
+	</tr>
+	<tr>
+		<td>電話番号</td>
+		<td><%= current_member.phone_number %></td>
+	</tr>
+	<tr>
+		<td>メールアドレス</td>
+		<td><%= current_member.email %></td>
+	</tr>
+
 </table>
 <rabel>配送先</rabel>
 <%= link_to "一覧を見る" %>
