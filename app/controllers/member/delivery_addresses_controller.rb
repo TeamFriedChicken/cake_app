@@ -1,5 +1,6 @@
 class Member::DeliveryAddressesController < ApplicationController
   def index
+    @delivery_address = current_user
   end
 
   def create

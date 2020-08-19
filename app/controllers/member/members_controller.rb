@@ -4,21 +4,35 @@ class Member::MembersController < ApplicationController
   end
 
   def edit
-    @member = Member.find(params[:id])
+    @member = Member.find(current_member.id)
   end
 
   def update
-
+    @member = Member.find(current_member.id)
+    if @member.update(current_member.id)
+      redirect_to member_path
+      flash[:notice_update] = "会員情報が更新されました"
+    else
+      render "edit"
+    end
   end
 
   def resignation
+    @member = Member.find(current_member.id)
   end
 
   def quit
+    @member = Member.find(current_member.id)
+    #is_deletedカラムにフラグを立てる(defaultはfalse)
+    @member.update(is_deleted: true)
+    #ログアウトさせる
+    reset_session
+    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    redirect_to root_path
   end
 
   private
   def member_params
-    params.require(:member).permit(:email)
+    params.require(:member).permit(:first_name, :last_name, :kana_first_name, :kana_last_name, :postcode, :address, :phone_number, :emai, :is_delete)
   end
 end
