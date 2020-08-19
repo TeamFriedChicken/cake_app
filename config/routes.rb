@@ -14,16 +14,16 @@ Rails.application.routes.draw do
   # --------------------------------devise------------------------------------------------
 
   # --------------------------------members----------------------------------------------
-  
+
   scope module: :member do
 
     root to: 'home#top'
     get 'about', to: 'home#about'
-    
+
     resource :members, only: [:show, :edit, :update] do
 
       resources :cart_items, only: [:index, :update, :destroy, :create]
-      delete 'cart_items', to: 'cart_items#all_destroy'
+      delete 'cart_items', to: 'cart_items#destroy_all'
 
       resources :delivery_address, only: [:index, :create, :edit, :update, :destroy]
 
@@ -35,27 +35,27 @@ Rails.application.routes.draw do
 
     get 'members/:id/resignation', to: 'members#resignation'
     patch 'members/:id', to: 'members#quit'
-    
+
     resources :items, only: [:index, :show]
 
   end
 
   # --------------------------------members----------------------------------------------
-  
+
   # --------------------------------admin----------------------------------------------
-  
+
   get 'admin/top', to: 'admin/home#top'
 
   namespace :admin do
-    
+
     resources :members, only: [:index, :show, :edit, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
-    
+
     resources :order_detals, only: [:update]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :orders, only: [:index, :show, :update]
-    
+
   end
-  # ------------------------------------------------------------------------------------
+  # -----------------------------------admin--------------------------------------------
 
 end
