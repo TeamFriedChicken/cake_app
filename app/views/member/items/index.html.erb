@@ -6,6 +6,9 @@
     <div class="col-xs-2">
       <table class="table">
         <h4>ジャンル検索</h4>
+        <% @genres.each do |genre| %>
+          <%= genre.name %><br>
+        <% end %>
       </table>
     </div>
 
@@ -14,7 +17,7 @@
       <table class="table">
         <% @items.each do |item| %>
           <%= link_to item_path(item) do %>
-            <%= attachment_image_tag item, :image_id, size:"80", format: 'jpeg', fallback: "no_image.jpg" %><br>
+            <%= attachment_image_tag item, :image, size:"80", format: 'jpeg', fallback: "no_image.jpg" %><br>
             <p><%= item.name %><br></p>
             <p>¥<%= item.price %><br></p>
           <% end %>

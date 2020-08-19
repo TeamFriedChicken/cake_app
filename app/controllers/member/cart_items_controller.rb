@@ -1,11 +1,12 @@
 class Member::CartItemsController < ApplicationController
 
   before_action :authenticate_member!
-  before_action :set_cart_item
+  before_action :set_cart_item, only: [:update, :destroy]
   before_action :set_member
 
     # カート内商品一覧
   def index
+    @member = current_member
     @cart_items = @member.cart_items.all
   end
 
@@ -52,14 +53,12 @@ class Member::CartItemsController < ApplicationController
     @member = current_member
   end
 
-
   def set_cart_item
     @cart_item = CartItem.find(params[:id])
   end
 
-  
   def cart_item_params
-    params.permit(:item_id, :member_id, :quantity)
+    params.require(:cart_item).permit(:item_id, :member_id, :quantity)
   end
 
 end
