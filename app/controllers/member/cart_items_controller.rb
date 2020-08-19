@@ -17,6 +17,8 @@ class Member::CartItemsController < ApplicationController
     @current_item = CartItem.find_by(item_id: @cart_item.item_id,member_id: @cart_item.member_id)
     # カートに同じ商品がなければ新規追加、あれば既存のデータと合算
     if @current_item.nil?
+      p '-----------'
+      p @cart_item
       if @cart_item.save
         flash[:success] = 'カートに商品が追加されました！'
         redirect_to members_cart_items_path
