@@ -1,11 +1,20 @@
-<h1>Admin::Items#index</h1>
-<%= link_to "商品新規登録画面", new_admin_item_path %>
-<%= link_to "商品新規登録画面", admin_item_path(@items) %>
+<h1>商品一覧</h1>
 
-
-<% @items.each do |item| %>
+<table>
   <tr>
-    <td><%= item.name %></td>
-    <td><%= item.price %></td>
-  </tr>
-<% end %>
+    <th>商品ID</th>
+    <th>商品名</th>
+    <th>税抜価格</th>
+    <th>ジャンル</th>
+    <th>ステータス</th>
+  <tr>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.id %></td>
+      <td><%= link_to item.name, admin_item_path(item) %></td>
+      <td><%= item.price %></td>
+      <td><%= item.genre.name %></td>
+      <td><%= item.is_active == true ? "売り切れ" : "販売中"  %></td>
+    </tr>
+  <% end %>
+</table>
