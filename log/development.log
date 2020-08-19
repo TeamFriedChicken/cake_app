@@ -44863,3 +44863,285 @@ Migrating to CreateGenres (20200816044927)
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 >>>>>>> 635f4003ab9ee512b203faf85b8ec54171415f2a
   ↳ bin/rails:9
+Started GET "/" for 10.0.2.2 at 2020-08-19 06:54:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (25.8ms)
+Started GET "/" for 10.0.2.2 at 2020-08-19 06:54:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (1.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 6347ms (Views: 6312.2ms | ActiveRecord: 1.7ms)
+
+
+Completed 200 OK in 9950ms (Views: 9921.2ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/members/sign_out" for 10.0.2.2 at 2020-08-19 06:54:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lc/BuvGYu0tvVNUIHhgS/lIpa//cGtPnrlIIsbfvZfPUMR8hugH0lFZxavE4Hn7jHCFb03sVip7hupWmtXWvmA=="}
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 254ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 06:54:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 360ms (Views: 342.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_in" for 10.0.2.2 at 2020-08-19 06:54:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#new as HTML
+  Rendering members/sessions/new.html.erb within layouts/application
+  Rendered members/shared/_links.html.erb (1.3ms)
+  Rendered members/shared/_links.html.erb (0.4ms)
+  Rendered members/sessions/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 428ms (Views: 426.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members/sign_in" for 10.0.2.2 at 2020-08-19 06:54:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bm9eTHgLO28FZ72XyoB8y035rx4lF5m1XNHWfd/wRnmgTHuhLI1o2BE7b7ldrleCbWbzuM19nb4xow1uQHAMKA==", "member"=>{"email"=>"cc@cc", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."email" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["email", "cc@cc"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 245ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 06:54:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 335ms (Views: 318.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/members" for 10.0.2.2 at 2020-08-19 06:55:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  
+app/controllers/member/members_controller.rb:3:in `show'
+Started GET "/members" for 10.0.2.2 at 2020-08-19 06:55:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Member without an ID):
+  
+app/controllers/member/members_controller.rb:3:in `show'
+Started GET "/members" for 10.0.2.2 at 2020-08-19 06:55:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 6.0ms)
+
+
+  
+ArgumentError (You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`.):
+  
+app/controllers/member/members_controller.rb:3:in `show'
+Started GET "/" for 10.0.2.2 at 2020-08-19 06:55:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 1368ms (Views: 1336.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/member" for 10.0.2.2 at 2020-08-19 06:56:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/member"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/members" for 10.0.2.2 at 2020-08-19 06:58:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1391ms (Views: 1335.2ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/members/sign_out" for 10.0.2.2 at 2020-08-19 07:02:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0gEJ0ZlYqgtOnnao4AOftFh/ah+BwCy3VqfY0WM0RB/2RHqM1qPHizPbSy/0LmaeKOdFbYBd9tLOL3QkvaqDoQ=="}
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 240ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 07:02:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 342ms (Views: 325.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_up" for 10.0.2.2 at 2020-08-19 07:02:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::RegistrationsController#new as HTML
+  Rendering members/registrations/new.html.erb within layouts/application
+  Rendered members/shared/_error_messages.html.erb (0.7ms)
+  Rendered members/shared/_links.html.erb (1.2ms)
+  Rendered members/registrations/new.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 388ms (Views: 387.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_in" for 10.0.2.2 at 2020-08-19 07:02:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#new as HTML
+  Rendering members/sessions/new.html.erb within layouts/application
+  Rendered members/shared/_links.html.erb (1.5ms)
+  Rendered members/shared/_links.html.erb (0.3ms)
+  Rendered members/sessions/new.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 391ms (Views: 389.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/password/new" for 10.0.2.2 at 2020-08-19 07:02:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::PasswordsController#new as HTML
+  Rendering members/passwords/new.html.erb within layouts/application
+  Rendered members/shared/_error_messages.html.erb (0.7ms)
+  Rendered members/shared/_links.html.erb (1.1ms)
+  Rendered members/passwords/new.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 414ms (Views: 394.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members/sign_in" for 10.0.2.2 at 2020-08-19 07:05:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wonGNPzz8wmFaz9kbjC/T72Cawj6kmKy+JNVe1crgyDcImTz0tICzOl4QyQ+EW2iKdAQKZU+YTLv1haMje+ZaQ==", "member"=>{"email"=>"cc@cc", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."email" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["email", "cc@cc"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 274ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 07:05:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 318ms (Views: 301.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 07:06:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 322ms (Views: 304.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 07:07:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 1236ms (Views: 1208.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-19 07:07:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/member/home/top.html.erb:7
+  Rendered member/home/top.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 343ms (Views: 325.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/members" for 10.0.2.2 at 2020-08-19 07:07:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 326ms (Views: 306.4ms | ActiveRecord: 1.8ms)
+
+
