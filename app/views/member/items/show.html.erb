@@ -1,2 +1,15 @@
-<h1>Member::Items#show</h1>
-<p>Find me in app/views/member/items/show.html.erb</p>
+<h1>商品詳細</h1>
+
+<h2>ジャンル検索</h2>
+
+<%= attachment_image_tag @item, :image, size:"140", format: 'jpeg', fallback: "no_image.jpg" %>
+<p><%= @item.name %></p>
+<p><%= @item.explanation %></p>
+<p>¥<%= @item.price %>（税込）</p>
+
+<%= form_with(model: @cart_item, url: members_cart_items_path, local: true) do |f| %>
+  <%= f.hidden_field :item_id, :value => @item.id %>
+  <%= f.select :quantity, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], include_blank: "個数選択" %>
+  <%= f.submit "カートに入れる", class: "btn btn-primary" %>
+<% end %>
+ 

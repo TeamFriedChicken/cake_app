@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resource :members, only: [:show, :edit, :update] do
 
       resources :cart_items, only: [:index, :update, :destroy, :create]
-      delete 'cart_items', to: 'cart_items#all_destroy'
+      delete 'cart_items', to: 'cart_items#destroy_all'
 
       resources :delivery_address, only: [:index, :create, :edit, :update, :destroy]
 
@@ -56,6 +56,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show, :update]
 
   end
-  # ------------------------------------------------------------------------------------
+  # -----------------------------------admin--------------------------------------------
 
 end
