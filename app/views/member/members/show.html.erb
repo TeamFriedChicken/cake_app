@@ -28,7 +28,7 @@
 <h4>マイページ</h4>
 <rabel>登録情報</rabel>
 <%= link_to "編集する", edit_members_path, class: "btn-sm btn-success" %>
-<%= link_to "パスワードを変更する", edit_member_registration_path, class: "btn-sm btn-success" %>
+<%= link_to "パスワードを変更する", class: "btn-sm btn-success" %>
 <table class="table">
 	<tr>
 		<td>氏名</td>
@@ -56,6 +56,6 @@
 	</tr>
 
 <rabel>配送先</rabel>
-<%= link_to "一覧を見る", members_delivery_address_index_path, class: "btn-sm btn-success" %>
+<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-success" %>
 <rabel>注文履歴</rabel>
 <%= link_to "一覧を見る", items_path, class: "btn-sm btn-success" %>
