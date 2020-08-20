@@ -17,9 +17,9 @@
       <table class="table">
         <% @items.each do |item| %>
           <%= link_to item_path(item) do %>
-            <%= attachment_image_tag item, :image, size:"80", format: 'jpeg', fallback: "no_image.jpg" %><br>
-            <p><%= item.name %><br></p>
-            <p>¥<%= item.price %><br></p>
+            <%= attachment_image_tag item, :image, :fill, 180, 100, format: 'jpeg', fallback: "no_image.jpg" %><br>
+            <p><%= item.name %></p>
+            <p>¥<%= item.price %></p>
           <% end %>
         <% end %>
       </table>

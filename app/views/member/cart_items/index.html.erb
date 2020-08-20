@@ -1,7 +1,16 @@
-<h3>ショッピングカート</h3>
 
 <div class="container">
   <div class="row">
+<h3>ショッピングカート</h3>
+
+<% if @cart_items.present? %>
+  <p class="text-right">
+    <%= link_to " カートを空にする", cart_items_members_path, method: :delete, data: {confirm: 'カートを空にして本当によろしいですか？'}, class: "glyphicon glyphicon-trash btn btn-danger" %>
+  </p>
+<% else %>
+  <h3>カートは空です！！！</h3>
+<% end %>
+
     <table class="table">
       <tr>
         <th>商品名</th>
@@ -10,16 +19,53 @@
         <th>小計</th>
         <th></th>
       </tr>
-      <tr>
-        <% @cart_items.each do |cart_item| %>
-          <td><%= cart_item.item.name %></td>
-          <td><%= cart_item.item.price %></td>
-          <td><%= cart_item.quantity %></td>
-        <% end %>
-      </tr>
-
+      <% @sum = 0 %>
+      <% @cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= attachment_image_tag cart_item.item, :image, :fill, 80, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+            <%= cart_item.item.name %>
+          </td>
+          <td><%= cart_item.item.price.to_s(:delimited) %></td>
+          <td>
+            <%= form_with model: cart_item, url: members_cart_item_path(cart_item), local: true do |f| %>
+              <%= f.number_field :quantity, min:1, size: 10 %>
+              <%= f.submit "変更", class: "btn btn-primary" %>
+            <% end %>
+          </td>
+          <td><%= (cart_item.total_price).to_s(:delimited) %></td>
+          <td>
+            <% if @cart_items.present? %>
+              <%= link_to "削除する", members_cart_item_path(cart_item), method: :delete, data: {confirm: "#{cart_item.item.name}を削除してよろしいですか？"}, class: "glyphicon glyphicon-trash btn btn-danger" %>
+            <% else %>
+              <h3>カートは空です！！！</h3>
+            <% end %>
+          </td>
+        </tr>
+        <% @sum += cart_item.total_price %>
+      <% end %>
     </table>
   </div>
 </div>
+<div class="container">
+  <tr>
+    <p class="text-center">合計金額 
+      <%= @sum %>
+    </p>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to "買い物を続ける", root_path, class: "glyphicon glyphicon-trash btn btn-primary" %><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p class="text-center">
+        <%= link_to "情報入力に進む", new_order_path, class: "glyphicon glyphicon-trash btn btn-success" %>
+      </p>
+    </td>
+  </tr>
+</div>
+    
 
 
