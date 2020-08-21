@@ -1,20 +1,36 @@
-<h1>注文情報入力</h1>
 
 <%= link_to "情報入力に進む", orders_confirm_path %>
 <h2>支払方法</h2>
+<div class="container">
+  <h1>注文情報入力</h1>
 
-  <%= form_with(model: @order, url: new_order_path, local: true) do |f| %>
+  <h2><strong>支払方法</strong></h2>
+
+  <%= form_with(model: @order, url: orders_confirm_path, method: :get, local: true) do |f| %>
       <p><%= f.radio_button :payment_method, 0 %>クレジットカード</p>
       <p><%= f.radio_button :payment_method, 1 %>銀行振込</p>
       <p><%= f.radio_button :payment_method, 2 %>代引き</p>
+
+      <h2><strong>お届け先</strong></h2>
+
+      <p><%= f.radio_button :add, 0, checked: true %>あなたの住所</p>
+        <%= @member.postcode %>
+        <%= @member.address %>
+        <%= @member.first_name %>
+        <%= @member.last_name %>
+
+      <p><%= f.radio_button :add, 1 %>登録住所から選択</p>
+        <%= f.collection_select :address, DeliveryAddress.all, :id, :address %>
+
+      <p><%= f.radio_button :add, 2 %>新しいお届け先</p>
+        <%= f.fields_for :new_add do |f| %>
+          <p>郵便番号(ハイフンなし) <%= f.text_field :postcode %></p>
+          <p>住所 <%= f.text_field :address %></p>
+          <p>宛名 <%= f.text_field :name %></p>
+        <% end %>
+
+      <p class="text-center">
+        <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>  
+      </p>
   <% end %>
-
-<h2>お届け先</h2>
-
-
-
-<%= form_with(model: @order, url: orders_path,local: true) do |f| %>
-
-       <%= f.submit "確認画面へ進む", class: "btn btn-danger"%>
-
-  <% end %>
+</div>
