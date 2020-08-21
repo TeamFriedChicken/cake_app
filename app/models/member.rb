@@ -5,5 +5,6 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :cart_items, dependent: :destroy
-  has_many :orders, dependent: :destroy
+  has_many :delivery_addresses, dependent: :destroy
+  has_many :oders, dependent: :destroy
 end
