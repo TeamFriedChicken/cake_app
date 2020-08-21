@@ -60392,3 +60392,100 @@ Processing by Member::DeliveryAddressesController#index as HTML
 Completed 200 OK in 317ms (Views: 297.5ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-21 06:15:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:7
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:7
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 368ms (Views: 346.9ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/members" for 10.0.2.2 at 2020-08-21 06:15:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5ShEhmMLQaYMT8ZGLv8z0+lDR6GyWnuG+luJaOn0QsXpD4O6onaGUE3GWB6rdg45vBd4GjbO/hXlQ2nUnsy+g==", "member"=>{"first_name"=>"田中ああああああ", "last_name"=>"三郎aaaa", "kana_first_name"=>"タナカ", "kana_last_name"=>"サブロウ", "email"=>"cc@cc", "postcode"=>"0000000", "address"=>"大阪", "phone_number"=>"00000000000"}, "commit"=>"編集内容を保存する"}
+  [1m[36mMember Load (1.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:11
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:11
+Unpermitted parameter: :email
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/members_controller.rb:12
+  [1m[36mMember Update (3.0ms)[0m  [1m[33mUPDATE "members" SET "first_name" = ?, "updated_at" = ? WHERE "members"."id" = ?[0m  [["first_name", "田中ああああああ"], ["updated_at", "2020-08-21 06:15:57.499779"], ["id", 3]]
+  ↳ app/controllers/member/members_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/members_controller.rb:12
+Redirected to http://localhost:3000/members
+Completed 302 Found in 14ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/members" for 10.0.2.2 at 2020-08-21 06:15:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 361ms (Views: 341.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 06:16:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#index as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:3
+  Rendering member/delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (1.0ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."member_id" = ?[0m  [["member_id", 3]]
+  ↳ app/views/member/delivery_addresses/index.html.erb:29
+  Rendered member/delivery_addresses/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 354ms (Views: 332.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 06:16:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CrvKnIofJLnUizuDXhgCbkIjRnNefYpEfPWaG5QFRjeKR+lIN0fY/MpKg3TQid/sAuOSrquyO79LV2E2aqRDjQ==", "delivery_address"=>{"postcode"=>"1234567", "address"=>"あああ", "name"=>"あああ"}, "commit"=>"登録する"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+  [1m[36mDeliveryAddress Create (2.4ms)[0m  [1m[32mINSERT INTO "delivery_addresses" ("member_id", "address", "postcode", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["member_id", 3], ["address", "あああ"], ["postcode", "1234567"], ["name", "あああ"], ["created_at", "2020-08-21 06:16:22.540100"], ["updated_at", "2020-08-21 06:16:22.540100"]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+Redirected to http://localhost:3000/members/delivery_addresses
+Completed 302 Found in 12ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 06:16:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#index as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:3
+  Rendering member/delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (1.2ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."member_id" = ?[0m  [["member_id", 3]]
+  ↳ app/views/member/delivery_addresses/index.html.erb:29
+  Rendered member/delivery_addresses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 348ms (Views: 325.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/members" for 10.0.2.2 at 2020-08-21 06:16:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:3
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 372ms (Views: 349.4ms | ActiveRecord: 2.3ms)
+
+
