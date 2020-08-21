@@ -10,11 +10,41 @@
   </head>
 
   <body>
-    <%= link_to "商品新規登録画面", new_admin_item_path %>
-    <%= link_to "ジャンル一覧・追加", admin_genres_path %>
-    <%= link_to "商品一覧", admin_items_path %>
-    <%= link_to "会員一覧", admin_members_path %>
-
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <span class="navbar-toggler-icon">
+            <div class="col-xs-3">
+              <h1>ながのCAKE</h1></span>
+            </div>
+            <div class="col-xs-9">
+              <div class="menu">
+                <ul class="nav navbar-nav navbar-right">
+                <% if member_signed_in? %>
+                  <li><%= link_to members_path(current_member), class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>マイページ</li><% end %>
+                  <li><%= link_to items_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>商品一覧</li><% end %>
+                  <li><%= link_to members_cart_items_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>カート</li><% end %>
+                  <li><%= link_to destroy_member_session_path,  method: :delete, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>ログアウト</li><% end %>
+                  <% else %>
+                  <li><%= link_to about_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>About</li><% end %>
+                  <li><%= link_to items_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>商品一覧</li><% end %>
+                  <li><%= link_to new_member_registration_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>新規登録</li><% end %>
+                  <li><%= link_to new_member_session_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>ログイン</li><% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
