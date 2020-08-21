@@ -60291,3 +60291,104 @@ Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms)
 ArgumentError (When assigning attributes, you must pass a hash as an argument.):
   
 app/controllers/member/delivery_addresses_controller.rb:25:in `update'
+Started GET "/members/delivery_addresses/1/edit" for 10.0.2.2 at 2020-08-21 05:25:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::DeliveryAddressesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDeliveryAddress Load (0.7ms)[0m  [1m[34mSELECT  "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:20
+  Rendering member/delivery_addresses/edit.html.erb within layouts/application
+  Rendered member/delivery_addresses/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 1234ms (Views: 1191.4ms | ActiveRecord: 5.1ms)
+
+
+Started PATCH "/members/delivery_addresses/1" for 10.0.2.2 at 2020-08-21 05:25:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A+uAvwUJRIJirsxcLSLgegpfp/+pg1OV4e+jCVRc7y2yUtDBWZUaAD+J10eOJcOf5zqOcVd+cHG0sM3IjJqrBA==", "delivery_address"=>{"postcode"=>"0000000", "address"=>"qqq", "name"=>"qqq"}, "commit"=>"編集する", "id"=>"1"}
+  [1m[36mDeliveryAddress Load (1.0ms)[0m  [1m[34mSELECT  "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:25
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:25
+  [1m[36mDeliveryAddress Update (3.5ms)[0m  [1m[33mUPDATE "delivery_addresses" SET "address" = ?, "name" = ?, "updated_at" = ? WHERE "delivery_addresses"."id" = ?[0m  [["address", "qqq"], ["name", "qqq"], ["updated_at", "2020-08-21 05:25:47.227930"], ["id", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:25
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:25
+Redirected to http://localhost:3000/members/delivery_addresses
+Completed 302 Found in 50ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 05:25:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#index as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:3
+  Rendering member/delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (0.9ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."member_id" = ?[0m  [["member_id", 3]]
+  ↳ app/views/member/delivery_addresses/index.html.erb:29
+  Rendered member/delivery_addresses/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 360ms (Views: 334.2ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/members/delivery_addresses/1" for 10.0.2.2 at 2020-08-21 05:26:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2b5NcplHC31zXn5PsSiS+kMnTB6zyQXtKhm5SR/2XIxoBx0MxdtV/y55ZVQSL7EfrkJlkE00Jgl/RteIxzAYpQ==", "id"=>"1"}
+  [1m[36mDeliveryAddress Load (0.8ms)[0m  [1m[34mSELECT  "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:34
+  [1m[36mDeliveryAddress Destroy (2.9ms)[0m  [1m[31mDELETE FROM "delivery_addresses" WHERE "delivery_addresses"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:34
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:34
+Redirected to http://localhost:3000/members/delivery_addresses
+Completed 302 Found in 9ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 05:26:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#index as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:3
+  Rendering member/delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (0.7ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."member_id" = ?[0m  [["member_id", 3]]
+  ↳ app/views/member/delivery_addresses/index.html.erb:29
+  Rendered member/delivery_addresses/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 318ms (Views: 298.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 05:26:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EsRlzzeKWUHKZjoEorRVYZpey53HhCFsmBj1fdZg+i+jfTWxaxYHw5dBIR8Bs3aEdzviEzl5AojNR5u8Dqa+Bg==", "delivery_address"=>{"postcode"=>"0000000", "address"=>"bbbb", "name"=>"bbb"}, "commit"=>"登録する"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+  [1m[36mDeliveryAddress Create (2.3ms)[0m  [1m[32mINSERT INTO "delivery_addresses" ("member_id", "address", "postcode", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["member_id", 3], ["address", "bbbb"], ["postcode", "0000000"], ["name", "bbb"], ["created_at", "2020-08-21 05:26:14.441353"], ["updated_at", "2020-08-21 05:26:14.441353"]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/delivery_addresses_controller.rb:11
+Redirected to http://localhost:3000/members/delivery_addresses
+Completed 302 Found in 11ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 05:26:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#index as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:3
+  Rendering member/delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (0.7ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."member_id" = ?[0m  [["member_id", 3]]
+  ↳ app/views/member/delivery_addresses/index.html.erb:29
+  Rendered member/delivery_addresses/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 317ms (Views: 297.5ms | ActiveRecord: 1.5ms)
+
+

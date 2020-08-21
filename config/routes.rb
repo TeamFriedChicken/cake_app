@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'members/sign_up' => 'members/registrations#new', as: :new_member_registration
     post 'members' => 'members/registrations#create', as: :member_registration
     get 'member/edit' => 'members/registrations#edit', as: :edit_member_registration
+    #patch'members'=>'member'に変更 (membersコントローラ内のeditアクションと被るため)
     patch 'member' => 'members/registrations#update', as: nil
     put 'members' => 'members/registrations#update', as: :update_member_registration
     delete 'members' => 'members/registrations#destroy', as: :destroy_member_registration
