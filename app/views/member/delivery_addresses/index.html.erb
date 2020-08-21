@@ -1,0 +1,40 @@
+<h4>配送先登録/一覧</h4>
+<%= form_with model: @delivery_address, url: members_delivery_addresses_path, local: true do |f| %>
+	<div class="field">
+		郵便番号(ハイフンなし)
+		<%= f.text_field :postcode %>
+	</div>
+	<div class="field">
+		住所
+		<%= f.text_field :address %>
+	</div>
+	<div class="field">
+		宛名
+		<%= f.text_field :name %>
+	</div>
+	<div class="actions">
+		<%= f.submit "登録する" %>
+	</div>
+<% end %>
+
+<table>
+		<thead>
+			<tr>
+				<th>郵便番号</th>
+				<th>住所</th>
+				<th>宛名</th>
+				<th></th>
+			</tr>
+		</thead>
+	<% @delivery_addresses.each do |delivery_address| %>
+		<tr>
+			<td><%= delivery_address.postcode %></td>
+			<td><%= delivery_address.address %></td>
+			<td><%= delivery_address.name %></td>
+			<td>
+				<%= link_to "編集する", edit_members_delivery_address_path(delivery_address) %>
+				<%= link_to "削除する", members_delivery_address_path(delivery_address), method: :delete %>
+			</td>
+		</tr>
+	<% end %>
+</table>

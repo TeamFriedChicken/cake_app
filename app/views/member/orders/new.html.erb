@@ -4,7 +4,7 @@
 
   <h2><strong>支払方法</strong></h2>
 
-  <%= form_with(model: @order, url: ,local: true) do |f| %>
+  <%= form_with(model: @order, url: orders_confirm_path, method: :get, local: true) do |f| %>
       <p><%= f.radio_button :payment_method, 0 %>クレジットカード</p>
       <p><%= f.radio_button :payment_method, 1 %>銀行振込</p>
       <p><%= f.radio_button :payment_method, 2 %>代引き</p>

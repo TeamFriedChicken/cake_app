@@ -32,7 +32,8 @@ class Member::OrdersController < ApplicationController
   end
 
   def create
-
+    @order = Order.new(order_params)
+    @order.member_id = current_member.id
   end
 
   def index
