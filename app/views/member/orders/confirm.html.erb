@@ -1,2 +1,10 @@
 <h1>Member::Orders#confirm</h1>
-<p>Find me in app/views/member/orders/confirm.html.erb</p>
+
+<%= form_with(model: @order, url: orders_path, local: true) do |f| %>
+  <% @cart_items.each do |cart_item| %>
+    <%= cart_item.item.name %>
+    <%= cart_item.item.price %>
+    <%= cart_item.quantity %>
+  <% end %>
+  <%= f.submit "購入を確定する" %>
+<% end %>
