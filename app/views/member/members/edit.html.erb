@@ -1,6 +1,6 @@
 <h4>登録情報編集</h4>
 
-<%= form_with model: @member, url: members_path do |f| %>
+<%= form_with model: @member, url: members_path, local: true do |f|  %>
 
 	<div class="field">
 		名前

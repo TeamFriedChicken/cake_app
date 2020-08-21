@@ -5,18 +5,12 @@ Rails.application.routes.draw do
     passwords:     'members/passwords'
   }
 
-  # devise_for :members, controllers: {
-  #   registrations: 'members/registrations',
-  #   sessions:      'members/sessions',
-  #   passwords:     'members/passwords'
-  # }
-
   devise_scope :member do
     get 'members/sign_in', to: 'members/registrations#new'
     get 'members/sign_up' => 'members/registrations#new', as: :new_member_registration
     post 'members' => 'members/registrations#create', as: :member_registration
     get 'member/edit' => 'members/registrations#edit', as: :edit_member_registration
-    patch 'members' => 'members/registrations#update', as: nil
+    patch 'member' => 'members/registrations#update', as: nil
     put 'members' => 'members/registrations#update', as: :update_member_registration
     delete 'members' => 'members/registrations#destroy', as: :destroy_member_registration
   end
