@@ -1,4 +1,4 @@
-<h1>Member::Orders#confirm</h1>
+<h1>注文情報確認</h1>
 
 <%= form_with(model: @order, url: orders_path, local: true) do |f| %>
   <% @cart_items.each do |cart_item| %>
@@ -6,5 +6,21 @@
     <%= cart_item.item.price %>
     <%= cart_item.quantity %>
   <% end %>
+  
+  <p>支払方法
+    <%= @order.payment_method %>
+  </p>
+
+  <p>お届け先
+    〒<%= @order.postcode %>
+    <%= @order.address %>
+    <%= @order.name %>
+  </p>
+
+  <%= f.hidden_field :member_id, :value => current_member.id %>
+  <%= f.hidden_field :postcode, :value => "#{@order.postcode}" %>
+  <%= f.hidden_field :address, :value => "#{@order.address}" %>
+  <%= f.hidden_field :name, :value => "#{@order.name}" %>
+  
   <%= f.submit "購入を確定する" %>
 <% end %>
