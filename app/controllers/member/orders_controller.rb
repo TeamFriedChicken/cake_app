@@ -112,6 +112,5 @@ class Member::OrdersController < ApplicationController
       order_details_attributes: [:order_id, :item_id, :quantity, :purchase, :status]
       )
   end
-
-
+  
 end
