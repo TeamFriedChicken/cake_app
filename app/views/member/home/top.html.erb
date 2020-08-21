@@ -1,29 +1,4 @@
 <!-- ヘッダー部分 -->
-<header>
-  <nav class="navbar navbar-expand navbar-light">
-    <%= link_to "NaganoCake", root_path, class: 'navbar-brand' %>
-    <div id="Navber">
-      <ul class="navbar-nav">
-        <% if member_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'アカウント編集', edit_member_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_member_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-      <% else %>
-          <li class="nav-item active">
-            <%= link_to "新規登録", new_member_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "ログイン", new_member_session_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</header>
-
 
 <!-- サイドバー（部分テンプレート） -->
 
