@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
   # ------------------------------devise--------------------------------------------------
-  devise_for :members, controllers: {
+  devise_for :members, skip:[:registrations], controllers: {
     sessions:      'members/sessions',
-    passwords:     'members/passwords',
-    registrations: 'members/registrations'
+    passwords:     'members/passwords'
   }
+
+  devise_scope :member do
+    get 'members/sign_in', to: 'members/registrations#new'
+    get 'members/sign_up' => 'members/registrations#new', as: :new_member_registration
+    post 'members' => 'members/registrations#create', as: :member_registration
+    get 'member/edit' => 'members/registrations#edit', as: :edit_member_registration
+    #patch'members'=>'member'に変更 (membersコントローラ内のeditアクションと被るため)
+    patch 'member' => 'members/registrations#update', as: nil
+    put 'members' => 'members/registrations#update', as: :update_member_registration
+    delete 'members' => 'members/registrations#destroy', as: :destroy_member_registration
+  end
 
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -25,7 +35,7 @@ Rails.application.routes.draw do
       resources :cart_items, only: [:index, :update, :destroy, :create]
       delete 'cart_items', to: 'cart_items#destroy_all'
 
-      resources :delivery_address, only: [:index, :create, :edit, :update, :destroy]
+      resources :delivery_addresses, only: [:index, :create, :edit, :update, :destroy]
 
     end
 
@@ -33,8 +43,8 @@ Rails.application.routes.draw do
     get 'orders/comfirm', to: 'orders#comfirm'
     get 'orders/complete', to: 'orders#complete'
 
-    get 'members/:id/resignation', to: 'members#resignation'
-    patch 'members/:id', to: 'members#quit'
+    get 'members/resignation', to: 'members#resignation'
+    patch 'members/quit', to: 'members#quit'
 
     resources :items, only: [:index, :show]
 

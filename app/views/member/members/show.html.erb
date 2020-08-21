@@ -1,7 +1,4 @@
-<h1>マイページ</h1>
-<rabel>登録情報</rabel>
-<%= link_to "編集する" %>
-<%= link_to "パスワードを変更する" %>
+<h4>マイページ</h4>
 <table class="table">
 	<tr>
 		<td>氏名</td>
@@ -27,9 +24,9 @@
 		<td>メールアドレス</td>
 		<td><%= current_member.email %></td>
 	</tr>
-
 </table>
+
 <rabel>配送先</rabel>
-<%= link_to "一覧を見る" %>
+<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-success" %>
 <rabel>注文履歴</rabel>
-<%= link_to "一覧を見る" %>
+<%= link_to "一覧を見る", items_path, class: "btn-sm btn-success" %>
