@@ -1,10 +1,62 @@
-<h1>Member::Orders#confirm</h1>
 
-<%= form_with(model: @order, url: orders_path, local: true) do |f| %>
-  <% @cart_items.each do |cart_item| %>
-    <%= cart_item.item.name %>
-    <%= cart_item.item.price %>
-    <%= cart_item.quantity %>
-  <% end %>
-  <%= f.submit "購入を確定する" %>
-<% end %>
+<div class="container">
+  <h1>注文情報確認</h1>
+  <div class="row">
+    <div class="col-xs-9">
+      <%= form_with(model: @order, url: orders_path, local: true) do |f| %>
+        <table class="table">
+            
+            <tr>
+              <th>商品名</th>
+              <th>単価(税込)</th>
+              <th>数量</th>
+              <th>小計</th>
+            </tr>
+          <% @sum = 0 %>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td><%= cart_item.item.name %></td>
+              <td><%= cart_item.item.price.to_s(:delimited) %></td>
+              <td><%= cart_item.quantity %></td>
+              <td><%= cart_item.total_price.to_s(:delimited) %></td>
+            </tr> 
+            <% @sum += cart_item.total_price %>
+          <% end %>
+        </table>
+    </div>
+    <div class="col-xs-3">
+      <table class="table">
+        <tr>
+          <th>送料</th>
+          <td><%= @order.postage %></td>
+        </tr>
+        <tr>
+          <th>商品合計</th>
+          <td><%= @sum.to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th>請求金額</th>
+          <td><%= (@sum + @order.postage).to_s(:delimited) %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+      <p>支払方法
+        <%= @order.payment_method %>
+      </p>
+      
+      <p>お届け先
+        〒<%= @order.postcode %>
+        <%= @order.address %>
+        <%= @order.name %>
+      </p>
+
+      <%= f.hidden_field :member_id, :value => current_member.id %>
+      <%= f.hidden_field :postcode, :value => "#{@order.postcode}" %>
+      <%= f.hidden_field :address, :value => "#{@order.address}" %>
+      <%= f.hidden_field :name, :value => "#{@order.name}" %>
+      <%= f.hidden_field :total_price, :value => "#{@sum + @order.postage}" %>
+      
+      <%= f.submit "購入を確定する" %>
+    <% end %>
+</div>

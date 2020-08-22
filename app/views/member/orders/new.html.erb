@@ -1,26 +1,24 @@
 
-<%= link_to "情報入力に進む", orders_confirm_path %>
-<h2>支払方法</h2>
 <div class="container">
   <h1>注文情報入力</h1>
 
   <h2><strong>支払方法</strong></h2>
 
   <%= form_with(model: @order, url: orders_confirm_path, method: :get, local: true) do |f| %>
-      <p><%= f.radio_button :payment_method, 0 %>クレジットカード</p>
-      <p><%= f.radio_button :payment_method, 1 %>銀行振込</p>
-      <p><%= f.radio_button :payment_method, 2 %>代引き</p>
+      <p><%= f.radio_button :payment_method, :"クレジットカード", checked: true %>クレジットカード</p>
+      <p><%= f.radio_button :payment_method, :"銀行振込" %>銀行振込</p>
+      <p><%= f.radio_button :payment_method, :"代引き" %>代引き</p>
 
       <h2><strong>お届け先</strong></h2>
 
       <p><%= f.radio_button :add, 0, checked: true %>あなたの住所</p>
-        <%= @member.postcode %>
+        〒<%= @member.postcode %>
         <%= @member.address %>
         <%= @member.first_name %>
         <%= @member.last_name %>
 
       <p><%= f.radio_button :add, 1 %>登録住所から選択</p>
-        <%= f.collection_select :address, DeliveryAddress.all, :id, :address %>
+        <%= f.collection_select :address, @member.delivery_addresses, :id, :order_address %>
 
       <p><%= f.radio_button :add, 2 %>新しいお届け先</p>
         <%= f.fields_for :new_add do |f| %>

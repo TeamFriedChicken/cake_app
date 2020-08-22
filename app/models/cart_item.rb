@@ -4,6 +4,6 @@ class CartItem < ApplicationRecord
   belongs_to :member
 
   def total_price
-		item.price * quantity
+		item.price*quantity
 	end
 end
