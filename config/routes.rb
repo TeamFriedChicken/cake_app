@@ -39,11 +39,10 @@ Rails.application.routes.draw do
 
     end
 
-    get 'orders/confirm', to: 'orders#confirm'
+    resources :orders, only: [:new, :create, :show, :index]
+    get 'orders/comfirm', to: 'orders#comfirm'
     get 'orders/complete', to: 'orders#complete'
 
-    resources :orders, only: [:new, :create, :show, :index]
-    
     get 'members/resignation', to: 'members#resignation'
     patch 'members/quit', to: 'members#quit'
 

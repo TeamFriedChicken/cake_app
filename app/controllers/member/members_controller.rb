@@ -23,9 +23,10 @@ class Member::MembersController < ApplicationController
   end
 
   def quit
+    #退会する会員の情報を取得
     @member = Member.find(current_member.id)
-    #is_deletedカラムにフラグを立てる(defaultはfalse)
-    @member.update(is_deleted: true)
+    #退会させる　(is_deleteカラムにフラグを立てる[defaultはfalse])
+    @member.update(is_delete: true)
     #ログアウトさせる
     reset_session
     flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"

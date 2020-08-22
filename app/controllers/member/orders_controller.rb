@@ -1,7 +1,4 @@
 class Member::OrdersController < ApplicationController
-  before_action :authenticate_member!
-  before_action :set_member
-
   def new
     @order = Order.new
   end
