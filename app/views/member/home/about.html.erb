@@ -1,42 +1,21 @@
 <!-- ヘッダー部分 -->
-<header>
-  <nav class="navbar navbar-expand navbar-light">
-    <%= link_to "NaganoCake", root_path, class: 'navbar-brand' %>
-    <div id="Navber">
-      <ul class="navbar-nav">
-        <% if member_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'アカウント編集', edit_member_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_member_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-      <% else %>
-          <li class="nav-item active">
-            <%= link_to "新規登録", new_member_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "ログイン", new_member_session_path, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</header>
-<div class="row">
+<div class="low">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-6">
 <!-- サイドバー（部分テンプレート） -->
 
 <!-- メイン部分 -->
 <h1>About</h1>
-	<p>
-		ながのCakeは全国発送可能なケーキ屋さんです。<br>
-		お子様からお年寄りの方までお召し上がりいただけるよう、<br>
-		様々なバリエーションをご用意しております。<br>
-		また、全国へ発送可能ですので「いつ」でも「どこ」でもご注文いただけます。<br>
-		ぜひご注文ください。<br>
-	</p>
+  <p>
+    ながのCakeは全国発送可能なケーキ屋さんです。<br>
+    お子様からお年寄りの方までお召し上がりいただけるよう、<br>
+    様々なバリエーションをご用意しております。<br>
+    また、全国へ発送可能ですので「いつ」でも「どこ」でもご注文いただけます。<br>
+    ぜひご注文ください。<br>
+  </p>
 
 <!-- 写真 -->
 
-<end>
+  </div>
+</div>
 <!-- フッター部分 -->
