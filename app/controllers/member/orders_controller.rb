@@ -34,24 +34,6 @@ class Member::OrdersController < ApplicationController
     if current_member.cart_items.exists?
       @order = Order.new(order_params)
       @order.member_id = current_member.id
-
-      # 住所のラジオボタン選択に応じて引数を調整
-      @add = params[:order][:add].to_i
-      case @add
-        when 1
-          @order.postcode = @member.postcode
-          @order.address = @member.address
-          @order.name = first_name(@member)
-          @order.name = last_name(@member)
-        when 2
-          @order.postcode = params[:order][:postcode]
-          @order.address = params[:order][:address]
-          @order.name = params[:order][:name]
-        when 3
-          @order.postcode = params[:order][:postcode]
-          @order.address = params[:order][:address]
-          @order.name = params[:order][:name]
-      end
       @order.save
 
       # addressで住所モデル検索、該当データなければ新規作成
@@ -70,14 +52,11 @@ class Member::OrdersController < ApplicationController
         order_detail.order_id = @order.id
         order_detail.item_id = cart_item.item_id
         order_detail.quantity = cart_item.quantity
-        order_detail.price = cart_item.item.price
+        order_detail.purchase = cart_item.total_price
         order_detail.save
         cart_item.destroy #order_detailに情報を移したらcart_itemは消去
       end
       render :complete
-    else
-      redirect_to root_path
-      flash[:danger] = 'カートが空です。'
     end
   end
 
