@@ -71,5 +71,4 @@ Rails.application.routes.draw do
 
 end
 
-
 # 最新ver.
