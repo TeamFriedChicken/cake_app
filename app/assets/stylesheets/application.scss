@@ -17,6 +17,10 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
+  header {
+  background-color: #98d98e;
+  }
+
   .navbar {
     padding-top: 20px;
   }
@@ -25,10 +29,6 @@
     margin: 20px;
   }
 
-  table {
-  border-style: dotted;
-  }
-
-  .sub-title {
-  padding: 10px 0;
+  .space {
+  padding: 20px 0;
   }

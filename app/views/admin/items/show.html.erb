@@ -3,10 +3,10 @@
 		<div class="col-xs-6">
 
 
-		<h1>商品詳細</h1>
+		<h3 class="sub-title">商品詳細</h3>
 
 		<%= attachment_image_tag @item, :image, format: 'jpeg', size: "100x100", fallback: "no-image.jpg" %>
-		<table>
+		<table class="table">
 			<tr><th>商品名</th><td><%= @item.name %></td></tr>
 			<tr><th>商品説明</th><td><%= @item.explanation %></td></tr>
 			<tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>

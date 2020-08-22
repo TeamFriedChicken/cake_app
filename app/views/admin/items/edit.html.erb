@@ -1,7 +1,7 @@
 <div class="low">
   <div class="col-xs-2"></div>
     <div class="col-xs-6">
-    <h1>商品編集</h1>
+    <h3 class="sub-title">商品編集</h3>
 
     <%= form_with model: @item, url: admin_item_path, local: true do |item| %>
       <%= item.attachment_field :image %>
