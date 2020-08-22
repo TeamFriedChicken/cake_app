@@ -1,4 +1,7 @@
 class Member::OrdersController < ApplicationController
+  before_action :authenticate_member!
+  before_action :set_member
+
   def new
     @order = Order.new
   end
@@ -77,16 +80,16 @@ class Member::OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(
       :created_at,
-      :address, 
-      :name, 
-      :status, 
-      :payment_method, 
-      :postcode, 
+      :address,
+      :name,
+      :status,
+      :payment_method,
+      :postcode,
       :postage,
       :member_id,
       :total_price,
       order_details_attributes: [:order_id, :item_id, :quantity, :purchase, :status]
       )
   end
-  
+
 end

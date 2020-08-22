@@ -5,7 +5,7 @@
     <div class="col-xs-9">
       <%= form_with(model: @order, url: orders_path, local: true) do |f| %>
         <table class="table">
-            
+
             <tr>
               <th>商品名</th>
               <th>単価(税込)</th>
@@ -44,7 +44,7 @@
       <p>支払方法
         <%= @order.payment_method %>
       </p>
-      
+
       <p>お届け先
         〒<%= @order.postcode %>
         <%= @order.address %>
@@ -56,7 +56,7 @@
       <%= f.hidden_field :address, :value => "#{@order.address}" %>
       <%= f.hidden_field :name, :value => "#{@order.name}" %>
       <%= f.hidden_field :total_price, :value => "#{@sum + @order.postage}" %>
-      
+
       <%= f.submit "購入を確定する" %>
     <% end %>
 </div>
