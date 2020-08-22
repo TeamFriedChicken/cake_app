@@ -26,7 +26,6 @@
     </div>
     <div class="col-xs-3">
       <table class="table">
-      
         <tr>
           <th>送料</th>
           <td><%= @order.postage %></td>
@@ -56,6 +55,7 @@
       <%= f.hidden_field :postcode, :value => "#{@order.postcode}" %>
       <%= f.hidden_field :address, :value => "#{@order.address}" %>
       <%= f.hidden_field :name, :value => "#{@order.name}" %>
+      <%= f.hidden_field :total_price, :value => "#{@sum + @order.postage}" %>
       
       <%= f.submit "購入を確定する" %>
     <% end %>
