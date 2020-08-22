@@ -61987,3 +61987,691 @@ Processing by Member::DeliveryAddressesController#index as HTML
 Completed 200 OK in 360ms (Views: 339.2ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-21 08:20:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1455ms (Views: 1393.6ms | ActiveRecord: 7.0ms)
+
+
+Started PUT "/members/quit.4" for 10.0.2.2 at 2020-08-21 08:20:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [PUT] "/members/quit.4"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2020-08-21 08:38:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (1.4ms)
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 1263ms (Views: 1234.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/members.4" for 10.0.2.2 at 2020-08-21 08:38:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as 
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:4
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 768ms (Views: 539.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/members/delivery_addresses" for 10.0.2.2 at 2020-08-21 08:38:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::DeliveryAddressesController#index as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/delivery_addresses_controller.rb:3
+  Rendering member/delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (1.3ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."member_id" = ?[0m  [["member_id", 4]]
+  ↳ app/views/member/delivery_addresses/index.html.erb:29
+  Rendered member/delivery_addresses/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 344ms (Views: 305.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/members.4" for 10.0.2.2 at 2020-08-21 08:38:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as 
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:4
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 746ms (Views: 509.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-21 08:38:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:8
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 333ms (Views: 312.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-21 08:38:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 329ms (Views: 305.8ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-21 08:38:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"iO+vSwZJmZMDjmcOBRpZ+7lE20Cn4ADaYG+QKK3sBtnpDwAvbLe/l/vjyDe/J9u8lbxgX6D2x8U7SdKDeP4i2Q=="}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/member/members_controller.rb:27:in `quit'
+Started GET "/" for 10.0.2.2 at 2020-08-22 02:05:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1433ms (Views: 1405.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_in" for 10.0.2.2 at 2020-08-22 02:05:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#new as HTML
+  Rendering members/sessions/new.html.erb within layouts/application
+  Rendered members/sessions/new.html.erb within layouts/application (324.6ms)
+Completed 200 OK in 740ms (Views: 715.9ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/members/sign_in" for 10.0.2.2 at 2020-08-22 02:05:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ba+AyJQpv7KCxho+700SRtujOGvCJqnGUExDkPQL8KEIj4jkMhYJRQRRJ2r59EqkK1tBYiogrwctYL4gpTZIKw==", "member"=>{"email"=>"qq@qq", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."email" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["email", "qq@qq"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/members
+Completed 302 Found in 282ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/members" for 10.0.2.2 at 2020-08-22 02:05:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:4
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 327ms (Views: 306.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-22 02:06:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:8
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 369ms (Views: 348.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 02:06:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 348ms (Views: 325.2ms | ActiveRecord: 2.1ms)
+
+
+Started PUT "/members/quit.4" for 10.0.2.2 at 2020-08-22 02:06:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [PUT] "/members/quit.4"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 02:06:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 371ms (Views: 348.0ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 02:06:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"zGbQO9h8o44vXYiTICE/m5g1jVzmxr9/7q9fNP2PFKRLGMS7c2dzyhg+aWHHzUkNP1vPR/AjGi1Tm5ubQgXblw=="}
+  [1m[36mMember Load (1.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 5ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:37:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 02:07:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1362ms (Views: 1304.8ms | ActiveRecord: 10.0ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 02:07:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"BMV5zbs+T4vEjzOwEQg2xUC10t05xSMlIYDsGeqpkw2Du21NECWfz/Ps0kL25EBT59uQxi8ghnectCi2VSNcPg=="}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:37:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/" for 10.0.2.2 at 2020-08-22 03:50:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (1.7ms)
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 1393ms (Views: 1362.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/members.4" for 10.0.2.2 at 2020-08-22 03:50:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as 
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:4
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 823ms (Views: 558.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-22 03:50:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:8
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 341ms (Views: 319.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 03:50:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 344ms (Views: 322.8ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 03:50:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"TOvDlJQBVXVzJ4POkcDMW/Lq5AxxpGsq+qBPtgIGOO7LldcUPxqFMUREYjx2LLrNVYSmF2dBznhHlIsZvYz33Q=="}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:37:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 03:57:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1354ms (Views: 1301.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-22 03:57:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:8
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 413ms (Views: 391.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-22 03:57:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:8
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 356ms (Views: 334.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 03:57:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 352ms (Views: 327.3ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 03:57:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"tmZFd1RSgGrtYlnPNXYoLVrlY8VK/7kEDYB3xfOigboxGFH3/0lQLtoBuD3Sml67/Ysh3lwaHFawtLNqTChOiQ=="}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `is_deleted' for #<Member:0x00007fb574070180>
+Did you mean?  is_delete
+               is_delete?
+               is_delete=):
+  
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 03:58:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1309ms (Views: 1256.3ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 03:58:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"ktra/AWXIjZTXs4URqznQK42Txb78UFJ0lOxGGTyj/sVpM58rozycmQ9L+ahQJHWCVgNDe0U5BtvZ3W323hAyA=="}
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 369ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (undefined local variable or method `is_deleted' for #<Member::MembersController:0x00000000047bda00>):
+  
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:00:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1446ms (Views: 1393.7ms | ActiveRecord: 6.2ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 04:00:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"Xa2XOoWQvB7GBf75CL9nq60JxoYqk9JhgUK1wyR/rt7a04O6LotsWvFmHwvvUxE9CmeEnTx2dzM8dnFsm/Vh7Q=="}
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 5ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:37:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:25:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 347ms (Views: 327.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:25:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 342ms (Views: 321.9ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 04:27:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"X8fFQMcBaxfjVWeYyJQ9qtV67tf+JTKjC2QNZ0+HF9zYudHAbBq7U9Q2hmoveEs8chSszOjAl/G2UMnI8A3Y7w=="}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:37:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:29:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1365ms (Views: 1311.6ms | ActiveRecord: 7.2ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 04:29:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"a8SPd3LZZCnC0QybHUvLq4PtJcAdOWLgdXueJ31SPqPsupv32cK0bfWy7Wn6p709JINn2wvcx7LIT1qIwtjxkA=="}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:37:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:46:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1389ms (Views: 1335.1ms | ActiveRecord: 7.5ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 04:46:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"6OhX8f3bOQaQ8Z8xuI7hRx5vQzHUOnfA63IULnK9HlNvlkNxVsDpQqeSfsNfYpfRuQEBKsLf0pJWRtCBzTfRYA=="}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: member):
+  
+app/controllers/member/members_controller.rb:36:in `member_params'
+app/controllers/member/members_controller.rb:26:in `quit'
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:47:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1364ms (Views: 1311.1ms | ActiveRecord: 6.4ms)
+
+
+Started PATCH "/members/quit.4" for 10.0.2.2 at 2020-08-22 04:47:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"UBERBV5vMoMRRxBSYxEp240uTT7qRZaZiqV2PCtPayrXbwWF9XTixyYk8aCE/V9NKkAPJfygM8s3kbKTlMWkGQ=="}
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/members_controller.rb:28
+  [1m[36mMember Update (4.3ms)[0m  [1m[33mUPDATE "members" SET "is_delete" = ?, "updated_at" = ? WHERE "members"."id" = ?[0m  [["is_delete", 1], ["updated_at", "2020-08-22 04:47:46.528011"], ["id", 4]]
+  ↳ app/controllers/member/members_controller.rb:28
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/members_controller.rb:28
+No template found for Member::MembersController#quit, rendering head :no_content
+Completed 204 No Content in 1493ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-22 04:48:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1313ms (Views: 1287.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_up" for 10.0.2.2 at 2020-08-22 04:48:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::RegistrationsController#new as HTML
+  Rendering members/registrations/new.html.erb within layouts/application
+  Rendered members/shared/_error_messages.html.erb (0.8ms)
+  Rendered members/shared/_links.html.erb (1.1ms)
+  Rendered members/registrations/new.html.erb within layouts/application (320.9ms)
+Completed 200 OK in 756ms (Views: 731.9ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/members" for 10.0.2.2 at 2020-08-22 04:48:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Members::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s1SK6NJ2nvKySp++C43ZAZ+/WmjQLbEN11+jcyrjnB6rEyyWOjt6oNvezwzzeqOwW2FlIfGgu+FX/NhnCKDwuw==", "member"=>{"first_name"=>"aaa", "last_name"=>"aaa", "kana_first_name"=>"aaa", "kana_last_name"=>"aaa", "email"=>"oo@oo", "postcode"=>"0000000", "address"=>"aaaa", "phone_number"=>"00000000", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規会員登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "members" WHERE "members"."email" = ? LIMIT ?[0m  [["email", "oo@oo"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Create (2.9ms)[0m  [1m[32mINSERT INTO "members" ("email", "encrypted_password", "created_at", "updated_at", "last_name", "first_name", "kana_last_name", "kana_first_name", "phone_number", "address", "postcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "oo@oo"], ["encrypted_password", "$2a$12$g7n15S9R8noHVwimrEy/.OMrc4ZogKygHYTvmf3Er7XWs8Nf96Soe"], ["created_at", "2020-08-22 04:48:58.559694"], ["updated_at", "2020-08-22 04:48:58.559694"], ["last_name", "aaa"], ["first_name", "aaa"], ["kana_last_name", "aaa"], ["kana_first_name", "aaa"], ["phone_number", "00000000"], ["address", "aaaa"], ["postcode", "0000000"]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/members
+Completed 302 Found in 256ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/members" for 10.0.2.2 at 2020-08-22 04:48:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#show as HTML
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:4
+  Rendering member/members/show.html.erb within layouts/application
+  Rendered member/members/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 340ms (Views: 318.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/members/edit" for 10.0.2.2 at 2020-08-22 04:49:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#edit as HTML
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:8
+  Rendering member/members/edit.html.erb within layouts/application
+  Rendered member/members/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 363ms (Views: 340.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/members/resignation" for 10.0.2.2 at 2020-08-22 04:49:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#resignation as HTML
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:22
+  Rendering member/members/resignation.html.erb within layouts/application
+  Rendered member/members/resignation.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 365ms (Views: 343.3ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/members/quit.5" for 10.0.2.2 at 2020-08-22 04:49:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::MembersController#quit as 
+  Parameters: {"authenticity_token"=>"lNBKlW1eZ3EaV8jy7Mt4O3oke19U7k8hqi6v+bTDKAWVZlPOwvYayHhUdcSvuuf5e9vb7p3JSrn+DL+eW5KGYg=="}
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/member/members_controller.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/member/members_controller.rb:28
+  [1m[36mMember Update (3.8ms)[0m  [1m[33mUPDATE "members" SET "is_delete" = ?, "updated_at" = ? WHERE "members"."id" = ?[0m  [["is_delete", 1], ["updated_at", "2020-08-22 04:49:05.440460"], ["id", 5]]
+  ↳ app/controllers/member/members_controller.rb:28
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/member/members_controller.rb:28
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-08-22 04:49:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Member::HomeController#top as HTML
+  Rendering member/home/top.html.erb within layouts/application
+  Rendered member/home/top.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 347ms (Views: 325.8ms | ActiveRecord: 0.0ms)
+
+
