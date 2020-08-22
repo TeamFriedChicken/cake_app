@@ -1,20 +1,33 @@
-<h1>商品一覧</h1>
+<div class="low">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-6">
 
-<table>
-  <tr>
-    <th>商品ID</th>
-    <th>商品名</th>
-    <th>税抜価格</th>
-    <th>ジャンル</th>
-    <th>ステータス</th>
-  <tr>
-  <% @items.each do |item| %>
-    <tr>
-      <td><%= item.id %></td>
-      <td><%= link_to item.name, admin_item_path(item) %></td>
-      <td><%= item.price %></td>
-      <td><%= item.genre.name %></td>
-      <td><%= item.is_active == true ? "売り切れ" : "販売中"  %></td>
-    </tr>
-  <% end %>
-</table>
+    <h2>商品一覧</h2>
+
+<!--item一覧-->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>商品ID</th>
+          <th>商品名</th>
+          <th>税抜価格</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= link_to item.name, admin_item_path(item) %></td>
+            <td><%= item.price %></td>
+            <td><%= item.genre.name %></td>
+            <td><%= item.is_active == true ? "売り切れ" : "販売中"  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<!--item一覧ここまで-->
+  </div>
+</div>

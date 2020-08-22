@@ -1,23 +1,34 @@
-<h1>会員一覧</h1>
+<div class="low">
+  <div class="col-xs-2"></div>
+    <div class="col-xs-6">
 
-<table>
-  <tr>
-    <th>会員ID</th>
-    <th>氏名</th>
-    <th>メールアドレス</th>
-    <th>ステータス</th>
-  <tr>
-  <% @members.each do |member| %>
-    <tr>
-      <td><%= member.id %></td>
-      <td>
-        <%= link_to admin_member_path(member) do %>
-          <%= member.first_name %>
-          <%= member.last_name %>
+      <h1>会員一覧</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @members.each do |member| %>
+          <tr>
+            <td><%= member.id %></td>
+            <td>
+              <%= link_to admin_member_path(member) do %>
+                <%= member.first_name %>
+                <%= member.last_name %>
+              <% end %>
+            </td>
+            <td><%= member.email %></td>
+            <td><%= member.is_delete %></td>
+          </tr>
         <% end %>
-      </td>
-      <td><%= member.email %></td>
-      <td><%= member.is_delete %></td>
-    </tr>
-  <% end %>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>

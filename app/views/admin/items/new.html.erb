@@ -1,14 +1,20 @@
-<h1>商品新規登録</h1>
+<div class="low">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-6">
 
-<%= form_with model: @item, url: admin_items_path, local: true do |item| %>
-  <%= item.attachment_field :image %>
-  <%= item.label :商品名 %>
-  <%= item.text_field :name %><br>
-  <%= item.label :商品説明 %>
-  <%= item.text_area :explanation %><br>
-  <%= item.collection_select :genre_id, Genre.where(is_active: "true"), :id, :name %>
-  <%= item.label :税抜価格 %>
-  <%= item.text_field :price %><p>円</p>
-  <%= item.select :is_active, [["販売中", "0"], ["売り切れ中", "1"]], include_blank: "選択して下さい" %>
-  <%= item.submit '新規登録' %>
-<% end %>
+    <h1>商品新規登録</h1>
+
+    <%= form_with model: @item, url: admin_items_path, local: true do |item| %>
+      <%= item.attachment_field :image %>
+      <%= item.label :商品名 %>
+      <%= item.text_field :name %><br>
+      <%= item.label :商品説明 %>
+      <%= item.text_area :explanation %><br>
+      <%= item.collection_select :genre_id, Genre.where(is_active: "true"), :id, :name %>
+      <%= item.label :税抜価格 %>
+      <%= item.text_field :price %><p>円</p>
+      <%= item.select :is_active, [["販売中", "0"], ["売り切れ中", "1"]], include_blank: "選択して下さい" %>
+      <%= item.submit '新規登録' %>
+    <% end %>
+  </div>
+</div>
