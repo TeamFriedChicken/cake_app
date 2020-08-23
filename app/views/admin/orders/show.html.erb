@@ -1,2 +1,26 @@
+<<<<<<< HEAD
 <h1>Admin::OrderDetals#show</h1>
 <p>Find me in app/views/admin/order_detals/show.html.erb</p>
+=======
+<h1>注文履歴詳細</h1>
+
+<table>
+  <tr><td>購入者</td><th><%= @order.name %></th></tr>
+  <tr><td>配送先</td><th><%= @order.postcode %><%= @order.address %></th></tr>
+  <tr><td>支払方法</td><th><%= @order.payment_method %></th></tr>
+  <tr><td>ステータス</td><th><%= @order.status %></th></tr>
+  <tr><td><p>送料</p></td><th><%= @order.postage %>円</th></tr>
+  <tr><td>請求金額合計</td><th><%= @order.total_price %></th></tr>
+</table>
+
+<% @order_details.each do |order_details| %>
+  <tr>
+    <th><%= order_details.item.name %></th>
+  </tr>
+<% end %>
+
+<%= form_with model: @order, url: admin_order_path, local: true do |order| %>
+  <%= order.select :status, [["入金待ち", 0], ["入金確認", 1], ["制作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
+  <%= order.submit '更新' %>
+<% end %>
+>>>>>>> member_orderdetails

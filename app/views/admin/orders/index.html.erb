@@ -1,1 +1,27 @@
+<<<<<<< HEAD
 <h3 class="sub-title">注文履歴一覧</h3>
+=======
+<h1>注文履歴一覧</h1>
+<table border="3">
+  <tr>
+    <td>購入日時</td>
+    <td>購入者</td>
+    <td>注文個数</td>
+    <td>注文ステータス</td>
+  </tr>
+
+  <% @orders.each do |order| %>
+    <tr>
+      <th><%= link_to order.created_at.to_s(:datetime_jp), admin_order_path(order) %></th>
+      <th><%= order.name %></th>
+      <th><%= order.status %></th>
+      </tr>
+
+  <% end %>
+    <% @orderdetails.each do |orderdetails| %>
+        <th><%= orderdetails.quantity %></th>
+      <% end %>
+
+  </tr>
+</table>
+>>>>>>> member_orderdetails

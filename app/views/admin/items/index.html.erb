@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="low">
   <div class="col-xs-2"></div>
   <div class="col-xs-6">
@@ -31,3 +32,28 @@
 <!--item一覧ここまで-->
   </div>
 </div>
+=======
+<h1>商品一覧</h1>
+<%= link_to new_admin_item_path, class:"btn btn-default" do %>
+  <i class="nav-link active"></i>+</li>
+<% end %>
+
+<table>
+  <tr>
+    <th>商品ID</th>
+    <th>商品名</th>
+    <th>税抜価格</th>
+    <th>ジャンル</th>
+    <th>ステータス</th>
+  <tr>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.id %></td>
+      <td><%= link_to item.name, admin_item_path(item) %></td>
+      <td><%= item.price %></td>
+      <td><%= item.genre.name %></td>
+      <td><%= item.is_active == true ? "売り切れ" : "販売中"  %></td>
+    </tr>
+  <% end %>
+</table>
+>>>>>>> member_orderdetails

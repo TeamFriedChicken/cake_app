@@ -1,27 +1,31 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h4 class="glay-label">会員の方はこちらからログイン</h4>
+<div class= "col-xs-4"></div>
+<div class="col-xs-6">
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h4 class="glay-label">会員の方はこちらからログイン</h4>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <%= link_to "=>パスワードを忘れた方はこちら", new_password_path(resource_name) %><br />
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン", class: "btn btn-info" %>
-  </div>
-<% end %>
+    <%= link_to "=>パスワードを忘れた方はこちら", new_password_path(resource_name) %><br />
+
+    <div class="actions">
+      <%= f.submit "ログイン", class: "btn btn-info" %>
+    </div>
+  <% end %>
 
 
 
-  <h4 class="glay-label">登録がお済みでない方</h4>
+    <h4 class="glay-label">登録がお済みでない方</h4>
 
-  <%= link_to "こちら", new_registration_path(resource_name) %><br />
+    <%= link_to "こちら", new_registration_path(resource_name) %><br />
 
-  から新規登録を行ってください
+    から新規登録を行ってください
+</div>
