@@ -29,7 +29,18 @@
                     <i class="nav-link active"></i>カート</li><% end %>
                   <li><%= link_to destroy_member_session_path,  method: :delete, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>ログアウト</li><% end %>
-                  <% else %>
+                <% elsif admin_signed_in? %>
+                  <%= link_to admin_items_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>商品一覧</li><% end %>
+                  <%= link_to admin_members_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>会員一覧</li><% end %>
+                  <%= link_to admin_orders_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>注文履歴一覧</li><% end %>
+                  <%= link_to admin_genres_path, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>ジャンル一覧</li><% end %>
+                  <%= link_to destroy_admin_session_path, method: :delete, class:"btn btn-default" do %>
+                    <i class="nav-link active"></i>ログアウト</li><% end %>
+                <% elsif %>
                   <li><%= link_to about_path, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>About</li><% end %>
                   <li><%= link_to items_path, class:"btn btn-default" do %>
