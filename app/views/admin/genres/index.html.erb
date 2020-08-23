@@ -1,44 +1,46 @@
-<div class="col-xs-4">
+<div class="row">
+  <div class="col-xs-4">
 
-<!--genre追加-->
+  <!--genre追加-->
 
-  <h3 class="sub-title">ジャンル一覧・追加</h3>
-
-<div class="space"></div>
-
-  <%= form_with model: @genre,url: admin_genres_path, local: true do |genre| %>
-    <%= genre.label :ジャンル %>
-    <%= genre.text_field :name %>
-    <%= genre.radio_button :is_active, :true,checked: true %>
-    <%= genre.label :is_active, "有効", {value: :true} %>
-    <%= genre.radio_button :is_active, :false,checked: false %>
-    <%= genre.label :is_active, "無効", {value: :false} %>
-    <%= genre.submit '追加',class: "btn btn-info btn-sm" %>
-  <% end %>
+    <h3 class="sub-title">ジャンル一覧・追加</h3>
 
   <div class="space"></div>
 
-<!--genre追加ここまで-->
+    <%= form_with model: @genre,url: admin_genres_path, local: true do |genre| %>
+      <%= genre.label :ジャンル %>
+      <%= genre.text_field :name %>
+      <%= genre.radio_button :is_active, :true,checked: true %>
+      <%= genre.label :is_active, "有効", {value: :true} %>
+      <%= genre.radio_button :is_active, :false,checked: false %>
+      <%= genre.label :is_active, "無効", {value: :false} %>
+      <%= genre.submit '追加',class: "btn btn-info btn-sm" %>
+    <% end %>
 
-<!--ここからgenre一覧-->
+    <div class="space"></div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>ジャンル</th>
-        <th>状態</th>
-        <th>   </th>
-      </tr>
-    </thead>
+  <!--genre追加ここまで-->
 
-    <tbody>
-      <% @genres.each do |genre| %>
+  <!--ここからgenre一覧-->
+
+    <table class="table table-hover">
+      <thead>
         <tr>
-          <td><%= link_to genre.name, edit_admin_genre_path(genre) %></td>
-          <td><%= genre.is_active %></td>
-          <td><%= link_to edit_admin_genre_path(genre) ,class: "btn btn-primary"  do %>編集</td><% end %>
+          <th>ジャンル</th>
+          <th>状態</th>
+          <th>   </th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @genres.each do |genre| %>
+          <tr>
+            <td><%= link_to genre.name, edit_admin_genre_path(genre) %></td>
+            <td><%= genre.is_active %></td>
+            <td><%= link_to edit_admin_genre_path(genre) ,class: "btn btn-primary"  do %>編集</td><% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
