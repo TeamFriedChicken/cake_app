@@ -4,18 +4,51 @@
   <tr><td>購入者</td><th><%= @order.name %></th></tr>
   <tr><td>配送先</td><th><%= @order.postcode %><%= @order.address %></th></tr>
   <tr><td>支払方法</td><th><%= @order.payment_method %></th></tr>
-  <tr><td>ステータス</td><th><%= @order.status %></th></tr>
-  <tr><td><p>送料</p></td><th><%= @order.postage %>円</th></tr>
-  <tr><td>請求金額合計</td><th><%= @order.total_price %></th></tr>
+  <tr><td>ステータス</td>
+    <% if @order.status == 0 %>
+      <th><%= "入金待ち" %></th>
+    <% elsif @order.status == 1 %>
+      <th><%= "入金確認" %></th>
+    <% elsif @order.status == 2 %>
+      <th><%= "製作中" %></th>
+    <% elsif @order.status == 3 %>
+      <th><%= "発送準備中" %></th>
+    <% else @order.status == 4 %>
+      <th><%= "発送済み" %></th>
+    <% end %>
+  </tr>
 </table>
 
-<% @order_details.each do |order_details| %>
-  <tr>
-    <th><%= order_details.item.name %></th>
-  </tr>
-<% end %>
-
 <%= form_with model: @order, url: admin_order_path, local: true do |order| %>
-  <%= order.select :status, [["入金待ち", 0], ["入金確認", 1], ["制作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
+  <%= order.select :status, [["入金待ち", 0], ["入金確認", 1], ["製作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
   <%= order.submit '更新' %>
 <% end %>
+
+<table>
+  <tr>
+    <td>商品名</td>
+    <td>単価(税込)</td>
+    <td>数量</td>
+    <td>小計</td>
+    <td>製作ステータス</td>
+  </tr>
+  <% @order_details.each do |order_details| %>
+    <tr>
+      <th><%= order_details.item.name %></th>
+      <th><%= order_details.item.price %></th>
+      <th><%= order_details.quantity %></th>
+      <th><%= order_details.item.price * order_details.quantity %></th>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_with model: @order_details, url: admin_order_detal_path, local: true do |order| %>
+  <%= order.select :status, [["入金待ち", 0], ["入金確認", 1], ["製作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
+  <%= order.submit '更新' %>
+<% end %>
+
+<table>
+  <tr><td><p>商品合計</p></td><th><%= @order.total_price - @order.postage %>円</th></tr>
+  <tr><td><p>送料</p></td><th><%= @order.postage %>円</th></tr>
+  <tr><td>請求金額合計</td><th><%= @order.total_price %>円</th></tr>
+</table>
