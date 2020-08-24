@@ -13,6 +13,6 @@ class Member < ApplicationRecord
   validates :kana_last_name, format: {with: /\A[ァ-ヶー－]+\z/}
   validates :phone_number, format: {with: /\A\d{10}\z|\A\d{11}\z/}
   validates :address, presence: true
-  validates :postcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
-  
+  validates :postcode, length: { is: 7 } , numericality: true
+
 end
