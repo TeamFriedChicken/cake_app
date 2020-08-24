@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     get 'orders/complete', to: 'orders#complete'
 
     resources :orders, only: [:new, :create, :show, :index]
-    
+
     get 'members/resignation', to: 'members#resignation'
     patch 'members/quit', to: 'members#quit'
 
@@ -62,7 +62,7 @@ Rails.application.routes.draw do
     resources :members, only: [:index, :show, :edit, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
 
-    resources :order_detals, only: [:update]
+    resources :order_details, only: [:update]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :orders, only: [:index, :show, :update]
 

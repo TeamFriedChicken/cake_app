@@ -4,18 +4,61 @@
   <tr><td>購入者</td><th><%= @order.name %></th></tr>
   <tr><td>配送先</td><th><%= @order.postcode %><%= @order.address %></th></tr>
   <tr><td>支払方法</td><th><%= @order.payment_method %></th></tr>
-  <tr><td>ステータス</td><th><%= @order.status %></th></tr>
-  <tr><td><p>送料</p></td><th><%= @order.postage %>円</th></tr>
-  <tr><td>請求金額合計</td><th><%= @order.total_price %></th></tr>
+  <tr><td>ステータス</td>
+    <% if @order.status == 0 %>
+      <th><%= "入金待ち" %></th>
+    <% elsif @order.status == 1 %>
+      <th><%= "入金確認" %></th>
+    <% elsif @order.status == 2 %>
+      <th><%= "製作中" %></th>
+    <% elsif @order.status == 3 %>
+      <th><%= "発送準備中" %></th>
+    <% else @order.status == 4 %>
+      <th><%= "発送済み" %></th>
+    <% end %>
+  </tr>
 </table>
 
-<% @order_details.each do |order_details| %>
-  <tr>
-    <th><%= order_details.item.name %></th>
-  </tr>
+<%= form_with model: @order, url: admin_order_path, local: true do |f| %>
+  <%= f.select :status, [["入金待ち", 0], ["入金確認", 1], ["製作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
+  <%= f.submit '更新' %>
 <% end %>
 
-<%= form_with model: @order, url: admin_order_path, local: true do |order| %>
-  <%= order.select :status, [["入金待ち", 0], ["入金確認", 1], ["制作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
-  <%= order.submit '更新' %>
-<% end %>
+<table>
+  <tr>
+    <td>商品名</td>
+    <td>単価(税込)</td>
+    <td>数量</td>
+    <td>小計</td>
+    <td>製作ステータス</td>
+  </tr>
+  <% @order_details.each do |order_detail| %>
+    <tr>
+      <th><%= order_detail.item.name %></th>
+      <th><%= order_detail.item.price %></th>
+      <th><%= order_detail.quantity %></th>
+      <th><%= order_detail.item.price * order_detail.quantity %></th>
+
+      <% if order_detail.status == 0 %>
+        <th><%= "着手不可" %></th>
+      <% elsif order_detail.status == 1 %>
+        <th><%= "製作待ち" %></th>
+      <% elsif order_detail.status == 2 %>
+        <th><%= "製作中" %></th>
+      <% else order_detail.status == 3 %>
+        <th><%= "製作完了" %>
+      <% end %>
+
+      <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), local: true do |f| %>
+        <th><%= f.select :status, [["着手不可", 0], ["製作待ち", 1], ["製作中", 2], ["製作完了", 3]] %></th>
+        <th><%= f.submit '更新' %></th>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr><td><p>商品合計</p></td><th><%= @order.total_price - @order.postage %>円</th></tr>
+  <tr><td><p>送料</p></td><th><%= @order.postage %>円</th></tr>
+  <tr><td>請求金額合計</td><th><%= @order.total_price %>円</th></tr>
+</table>

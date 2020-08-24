@@ -11,13 +11,19 @@
     <tr>
       <th><%= link_to order.created_at.to_s(:datetime_jp), admin_order_path(order) %></th>
       <th><%= order.name %></th>
-      <th><%= order.status %></th>
-      </tr>
-
-  <% end %>
-    <% @orderdetails.each do |orderdetails| %>
-        <th><%= orderdetails.quantity %></th>
+      <% if order.status == 0 %>
+        <th><%= "入金待ち" %></th>
+      <% elsif order.status == 1 %>
+        <th><%= "入金確認" %></th>
+      <% elsif order.status == 2 %>
+        <th><%= "製作中" %></th>
+      <% elsif order.status == 3 %>
+        <th><%= "発送準備中" %></th>
+      <% else order.status == 4 %>
+        <th><%= "発送済み" %></th>
       <% end %>
-
+    </tr>
+      <th><%= order.order_details.sum(:quantity) %></th>
+  <% end %>
   </tr>
 </table>

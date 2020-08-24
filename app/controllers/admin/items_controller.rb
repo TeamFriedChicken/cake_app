@@ -16,7 +16,6 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @price = Item.all.sum(:price)
   end
 
   def edit
