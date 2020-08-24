@@ -15,7 +15,6 @@ class Admin::OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-    @orderdetails = OrderDetail.all
   end
 
   def show
@@ -31,7 +30,18 @@ class Admin::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:name, :status)
+    params.require(:order).permit(
+      :created_at,
+      :address,
+      :name,
+      :status,
+      :payment_method,
+      :postcode,
+      :postage,
+      :member_id,
+      :total_price,
+      order_details_attributes: [:order_id, :item_id, :quantity, :purchase, :status]
+    )
   end
 end
 >>>>>>> member_orderdetails

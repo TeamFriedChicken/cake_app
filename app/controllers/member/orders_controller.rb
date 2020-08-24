@@ -174,11 +174,11 @@ class Member::OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(
       :created_at,
-      :address, 
-      :name, 
-      :status, 
-      :payment_method, 
-      :postcode, 
+      :address,
+      :name,
+      :status,
+      :payment_method,
+      :postcode,
       :postage,
       :member_id,
       :total_price,
