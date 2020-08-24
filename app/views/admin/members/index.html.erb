@@ -1,12 +1,12 @@
 <h1>会員一覧</h1>
 
 <table>
-  <tr>
-    <th>会員ID</th>
-    <th>氏名</th>
-    <th>メールアドレス</th>
-    <th>ステータス</th>
-  <tr>
+    <tr>
+      <th>会員ID</th>
+      <th>氏名</th>
+      <th>メールアドレス</th>
+      <th>ステータス</th>
+    <tr>
   <% @members.each do |member| %>
     <tr>
       <td><%= member.id %></td>
@@ -17,7 +17,11 @@
         <% end %>
       </td>
       <td><%= member.email %></td>
-      <td><%= member.is_delete %></td>
+      <% if member.is_delete == true %>
+        <td><%= "退会済" %></td>
+      <% else member.is_delete == false %>
+        <td><%= "有効会員" %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
