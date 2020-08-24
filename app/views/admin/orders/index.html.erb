@@ -1,29 +1,32 @@
-<h1>注文履歴一覧</h1>
-<table border="3">
-  <tr>
-    <td>購入日時</td>
-    <td>購入者</td>
-    <td>注文個数</td>
-    <td>注文ステータス</td>
-  </tr>
+<div class="container">
+  <div class="row">
+    <h1>注文履歴一覧</h1>
+    <table border="1">
+      <tr>
+        <td>購入日時</td>
+        <td>購入者</td>
+        <td>注文個数</td>
+        <td>注文ステータス</td>
+      </tr>
 
-  <% @orders.each do |order| %>
-    <tr>
-      <th><%= link_to order.created_at.to_s(:datetime_jp), admin_order_path(order) %></th>
-      <th><%= order.name %></th>
-      <% if order.status == 0 %>
-        <th><%= "入金待ち" %></th>
-      <% elsif order.status == 1 %>
-        <th><%= "入金確認" %></th>
-      <% elsif order.status == 2 %>
-        <th><%= "製作中" %></th>
-      <% elsif order.status == 3 %>
-        <th><%= "発送準備中" %></th>
-      <% else order.status == 4 %>
-        <th><%= "発送済み" %></th>
+      <% @orders.each do |order| %>
+        <tr>
+          <th><%= link_to order.created_at.to_s(:datetime_jp), admin_order_path(order) %></th>
+          <th><%= order.name %></th>
+          <th><%= order.order_details.sum(:quantity) %></th>
+          <% if order.status == 0 %>
+            <th><%= "入金待ち" %></th>
+          <% elsif order.status == 1 %>
+            <th><%= "入金確認" %></th>
+          <% elsif order.status == 2 %>
+            <th><%= "製作中" %></th>
+          <% elsif order.status == 3 %>
+            <th><%= "発送準備中" %></th>
+          <% else order.status == 4 %>
+            <th><%= "発送済み" %></th>
+          <% end %>
+        </tr>
       <% end %>
-    </tr>
-      <th><%= order.order_details.sum(:quantity) %></th>
-  <% end %>
-  </tr>
-</table>
+    </table>
+  </div>
+</div>

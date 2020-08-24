@@ -1,7 +1,13 @@
 <table><tr><th></th><td><%= @member.first_name %><%= @member.last_name %>さんの会員詳細</td></tr></table>
 
 <table>
-  <tr><th>顧客ID</th><td><%= @member.id %><%= @member.is_delete %></td></tr>
+  <tr><th>顧客ID</th><td><%= @member.id %>
+    <% if @member.is_delete == true %>
+      <td><%= "有効会員" %></td>
+    <% else @member.is_delete == false %>
+      <td><%= "退会済" %></td>
+    <% end %>
+  </td></tr>
   <tr><th>氏名</th><td><%= @member.first_name %></td><td><%= @member.last_name %></td></tr>
   <tr><th>フリガナ</th><td><%= @member.kana_first_name %></td><td><%= @member.kana_last_name %></td></tr>
   <tr><th>郵便番号</th><td><%= @member.postcode %></td></tr>
