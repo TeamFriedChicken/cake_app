@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<h1>Admin::OrderDetals#show</h1>
-<p>Find me in app/views/admin/order_detals/show.html.erb</p>
-=======
 <h1>注文履歴詳細</h1>
 
 <table>
@@ -39,24 +35,17 @@
   <% @order_details.each do |order_detail| %>
     <tr>
       <td><%= order_detail.item.name %></td>
-      <td><%= order_detail.item.price %></td>
+      <td><%= tax_price(order_detail.item.price) %></td>
       <td><%= order_detail.quantity %></td>
-      <td><%= order_detail.item.price * order_detail.quantity %></td>
+      <td><%= tax_price(order_detail.item.price) * order_detail.quantity %></td>
 
-<<<<<<< HEAD
-<%= form_with model: @order, url: admin_order_path, local: true do |order| %>
-  <%= order.select :status, [["入金待ち", 0], ["入金確認", 1], ["制作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
-  <%= order.submit '更新' %>
-<% end %>
->>>>>>> member_orderdetails
-=======
       <% if order_detail.status == 0 %>
         <td><%= "着手不可" %></td>
       <% elsif order_detail.status == 1 %>
         <td><%= "製作待ち" %></td>
       <% elsif order_detail.status == 2 %>
         <td><%= "製作中" %></td>
-      <% else order_detail.status == 3 %>
+      <% elsif order_detail.status == 3 %>
         <td><%= "製作完了" %>
       <% end %>
 
@@ -74,4 +63,3 @@
   <tr><th><p>送料</p></th><td><%= @order.postage %>円</td></tr>
   <tr><th>請求金額合計</th><td><%= @order.total_price %>円</td></tr>
 </table>
->>>>>>> admin_order

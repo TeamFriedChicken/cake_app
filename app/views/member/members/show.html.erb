@@ -1,42 +1,6 @@
 <<<<<<< HEAD
 <h4>マイページ</h4>
 
-<%= link_to "編集する", edit_members_path, class: "btn-sm btn-success" %>
-<%= link_to "パスワードを変更する", class: "btn-sm btn-success" %>
-<table class="table">
-	<tr>
-		<td>氏名</td>
-		<td><%= current_member.first_name %> <%= current_member.last_name %></td>
-	</tr>
-	<tr>
-		<td>カナ</td>
-		<td><%= current_member.kana_first_name %> <%= current_member.kana_last_name %></td>
-	</tr>
-	<tr>
-		<td>郵便番号</td>
-		<td><%= current_member.postcode %></td>
-	</tr>
-	<tr>
-		<td>住所</td>
-		<td><%= current_member.address %></td>
-	</tr>
-	<tr>
-		<td>電話番号</td>
-		<td><%= current_member.phone_number %></td>
-	</tr>
-	<tr>
-		<td>メールアドレス</td>
-		<td><%= current_member.email %></td>
-	</tr>
-</table>
-
-<rabel>配送先</rabel>
-<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-success" %>
-<rabel>注文履歴</rabel>
-<%= link_to "一覧を見る", items_path, class: "btn-sm btn-success" %>
-=======
-<h4>マイページ</h4>
-
 <label>登録情報</label>
 <%= link_to "編集する", edit_members_path, class: "btn-sm btn-primary" %>
 <%= link_to "パスワードを変更する", class: "btn-sm btn-primary" %>
@@ -71,4 +35,3 @@
 <%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-primary" %>
 <label>注文履歴</label>
 <%= link_to "一覧を見る", orders_path, class: "btn-sm btn-primary" %>
->>>>>>> member_orderdetails
