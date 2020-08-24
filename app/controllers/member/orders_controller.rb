@@ -35,6 +35,7 @@ class Member::OrdersController < ApplicationController
       @order = Order.new(order_params)
       @order.member_id = current_member.id
       @order.save
+      flash[:notice] = "ご注文が確定しました。"
 
       # addressで住所モデル検索、該当データなければ新規作成
       if DeliveryAddress.find_by(address: @order.address).nil?

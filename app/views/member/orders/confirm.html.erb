@@ -1,4 +1,6 @@
 
+<%= flash[:danger] %>
+
 <div class="container">
   <h1>注文情報確認</h1>
   <div class="row">
@@ -16,9 +18,9 @@
           <% @cart_items.each do |cart_item| %>
             <tr>
               <td><%= cart_item.item.name %></td>
-              <td><%= cart_item.item.price.to_s(:delimited) %></td>
+              <td><%= tax_price(cart_item.item.price).to_s(:delimited) %></td>
               <td><%= cart_item.quantity %></td>
-              <td><%= cart_item.total_price.to_s(:delimited) %></td>
+              <td><%= tax_price(cart_item.total_price).to_s(:delimited) %></td>
             </tr> 
             <% @sum += cart_item.total_price %>
           <% end %>
@@ -32,11 +34,11 @@
         </tr>
         <tr>
           <th>商品合計</th>
-          <td><%= @sum.to_s(:delimited) %></td>
+          <td><%= tax_price(@sum).to_s(:delimited) %></td>
         </tr>
         <tr>
           <th>請求金額</th>
-          <td><%= (@sum + @order.postage).to_s(:delimited) %></td>
+          <td><%= (tax_price(@sum) + @order.postage).to_s(:delimited) %></td>
         </tr>
       </table>
     </div>

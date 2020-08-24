@@ -46,12 +46,14 @@ class Member::CartItemsController < ApplicationController
 
   def destroy
     @cart_item.destroy
+    flash.now[:alert] = "#{@cart_item.item.name}を削除しました"
     redirect_to members_cart_items_path
   end
 
   def destroy_all
     @cart_items = current_member.cart_items
     @cart_items.destroy_all
+    flash[:alert] = "カートの商品を全て削除しました"
     redirect_to members_cart_items_path
   end
 
