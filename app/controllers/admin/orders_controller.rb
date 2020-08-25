@@ -25,6 +25,13 @@ class Admin::OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
     order.update(order_params)
+    # もし注文ステータスが1なら
+    if order.status == 1
+      order.order_details.each do |order_detail|
+        # 製作ステータスを1に変更する。
+        order_detail.update(status: 1)
+      end
+    end
     redirect_to admin_order_path(order)
   end
 

@@ -18,8 +18,12 @@ class Item < ApplicationRecord
   attachment :image
   validates :genre_id, :name, presence: true
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 >>>>>>> member_orderdetails
 =======
 >>>>>>> admin_order
+=======
+
+>>>>>>> developper
 end

@@ -15,20 +15,21 @@
         </thead>
       <% @orders.each do |order| %>
           <tr>
-            <td><%= order.created_at %></td>
+            <td><%= order.created_at.strftime("%Y-%m-%d") %></td>
             <td>
               <%= order.postcode %><br>
               <%= order.address %><br>
               <%= order.name %><br>
             </td>
-        <% order.order_details.each do |order_detail| %>
-          <td>
-            <%= order_detail.item.name %>
+            <td>
+            <% order.order_details.each do |order_detail| %>
+              <%= order_detail.item.name %><br>
+            <% end %>
           </td>
-        <% end %>
-            <td><%= order.total_price %></td>
+        
+          <td><%= order.total_price %></td>
         <% if order.status == 0 %>
-            <td><%= "入金待ち" %></td>
+          <td><%= "入金待ち" %></td>
         <% elsif order.status == 1 %>
           <td><%= "入金確認" %></td>
         <% elsif order.status == 2 %>

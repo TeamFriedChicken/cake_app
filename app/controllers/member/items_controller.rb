@@ -1,8 +1,13 @@
 class Member::ItemsController < ApplicationController
   def index
     @genres = Genre.all
-    @items = Item.all
-    @items = Item.page(params[:page]).per(8)
+
+    if params[:genre].nil?
+      @items = Item.all.page(params[:page]).per(8)
+    else
+      @items = Item.where(genre_id: params[:genre]).page(params[:page]).per(8)
+    end
+
   end
 
   def show
@@ -10,4 +15,6 @@ class Member::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
   end
+
+  
 end
