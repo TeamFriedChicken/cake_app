@@ -22,6 +22,7 @@
               <div class="menu">
                 <ul class="nav navbar-nav navbar-right">
                 <% if member_signed_in? %>
+
                   <li><%= link_to members_path(current_member), class:"btn btn-default" do %>
                     <i class="nav-link active"></i>マイページ</li><% end %>
                   <li><%= link_to items_path, class:"btn btn-default" do %>

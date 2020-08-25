@@ -20,6 +20,12 @@ class Admin::GenresController < ApplicationController
     redirect_to admin_genres_path(genre)
   end
 
+  # def show
+  #   @genre = Genre.find(params[:id])
+  #   @genres = Genre.where(validity: true)
+  #   @items = @genre.items.page(params[:page]).per(9)
+  # end
+
   private
   def genre_params
     params.require(:genre).permit(:name, :is_active)

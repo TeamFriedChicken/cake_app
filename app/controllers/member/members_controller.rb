@@ -25,7 +25,7 @@ class Member::MembersController < ApplicationController
   def quit
     @member = Member.find(current_member.id)
     #is_deletedカラムにフラグを立てる(defaultはfalse)
-    @member.update(is_deleted: true)
+    @member.update(is_delete: true)
     #ログアウトさせる
     reset_session
     flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
