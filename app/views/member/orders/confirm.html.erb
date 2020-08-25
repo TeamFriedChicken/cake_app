@@ -20,11 +20,12 @@
               <td><%= cart_item.item.name %></td>
               <td><%= tax_price(cart_item.item.price).to_s(:delimited) %></td>
               <td><%= cart_item.quantity %></td>
-              <td><%= tax_price(cart_item.total_price).to_s(:delimited) %></td>
+              <td><%= (tax_price(cart_item.item.price) * cart_item.quantity).to_s(:delimited) %></td>
             </tr> 
-            <% @sum += cart_item.total_price %>
+            <% @sum += tax_price(cart_item.item.price) * cart_item.quantity %>
           <% end %>
         </table>
+      
     </div>
     <div class="col-xs-3">
       <table class="table">
@@ -34,11 +35,11 @@
         </tr>
         <tr>
           <th>商品合計</th>
-          <td><%= tax_price(@sum).to_s(:delimited) %></td>
+          <td><%= @sum.to_s(:delimited) %></td>
         </tr>
         <tr>
           <th>請求金額</th>
-          <td><%= (tax_price(@sum) + @order.postage).to_s(:delimited) %></td>
+          <td><%= (@sum + @order.postage).to_s(:delimited) %></td>
         </tr>
       </table>
     </div>
@@ -58,7 +59,9 @@
       <%= f.hidden_field :address, :value => "#{@order.address}" %>
       <%= f.hidden_field :name, :value => "#{@order.name}" %>
       <%= f.hidden_field :total_price, :value => "#{@sum + @order.postage}" %>
+      <%= f.hidden_field :payment_method, :value => "#{@order.payment_method}" %>
       
       <%= f.submit "購入を確定する" %>
     <% end %>
 </div>
+

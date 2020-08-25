@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Members::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
   before_action :reject_member, only: [:create]
+
   # GET /resource/sign_in
   # def new
   #   super
@@ -17,6 +17,7 @@ class Members::SessionsController < Devise::SessionsController
   # def destroy
   #   super
   # end
+
 
    protected
 

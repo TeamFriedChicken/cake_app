@@ -2,9 +2,9 @@ class Member::ItemsController < ApplicationController
   def index
     @genres = Genre.all
     if params[:genre].nil?
-      @items = Item.all
+      @items = Item.all.page(params[:page]).per(8)
     else
-      @items = Item.where(genre_id: params[genre])
+      @items = Item.where(genre_id: params[:genre]).page(params[:page]).per(8)
     end
   end
 
@@ -14,7 +14,4 @@ class Member::ItemsController < ApplicationController
     @cart_item = CartItem.new
   end
 
-  def genre_params
-    params.require(:genre).permit(:name,:id)
-  end
 end

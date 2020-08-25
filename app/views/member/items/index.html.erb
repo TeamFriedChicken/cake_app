@@ -2,25 +2,28 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-2">
-      <div id="sidebar" class="col-lg-2">
-        <table class='table'>
-          <thead>
-            <tr>
-              <th>ジャンル検索</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @genres.each do |genre| %>
-              <tr>
-                <td><%= link_to  genre.name, items_path(genre:genre.id) %></td>
-              </tr>
-            <% end %>
-            <tr>
-              <td><%= link_to "⇒ すべての商品を見る", items_path, class: 'dark-blue-letter' %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
+      <table class="table">
+        <h4>ジャンル検索</h4>
+        <% @genres.each do |genre| %>
+
+          <%= link_to genre.name, items_path(genre:genre.id) %><br>
+        
+        <% end %>
+      </table>
+    </div>
+
+    <div class="col-xs-10">
+      <h2>商品一覧 (全<%= @items.count %>件)</h2>
+      <table class="table">
+        <% @items.each do |item| %>
+          <%= link_to item_path(item) do %>
+            <%= attachment_image_tag item, :image, :fill, 180, 100, format: 'jpeg', fallback: "no_image.jpg" %><br>
+            <p><%= item.name %></p>
+            <p>¥<%= item.price.to_s(:delimited) %></p>
+          <% end %>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>
