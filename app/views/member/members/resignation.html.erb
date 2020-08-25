@@ -7,5 +7,5 @@
 </p>
 
 
-<%= link_to "退会する", members_quit_path(current_member), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger", class: "btn-sm btn-danger" %>
+<%= link_to "退会する", members_quit_path(current_member), method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger", class: "btn-sm btn-danger" %>
 <%= link_to "退会しない", members_path(current_member), class: "btn-sm btn-success" %>

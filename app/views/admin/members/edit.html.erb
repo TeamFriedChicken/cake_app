@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row">
   <div class="col-xs-2"></div>
     <div class="col-xs-6">
@@ -35,3 +36,36 @@
     <% end %>
   </div>
 </div>
+=======
+<table>
+  <tr><th></th><td><%= @member.first_name %><%= @member.last_name %>さんの会員情報編集</td></tr>
+  <tr><th>会員ID</th><td><%= @member.id %></td></tr>
+</table>
+
+<%= form_with model: @member, url: admin_member_path, local: true do |member| %>
+  <table>
+    <tr>
+      <th><%= member.label :氏名 %></th>
+      <td><%= member.text_field :first_name %><%= member.text_field :last_name %></td>
+    </tr>
+    <tr>
+      <th><%= member.label :フリガナ %></th>
+      <td><%= member.text_field :kana_first_name %><%= member.text_field :kana_last_name %></td>
+    </tr>
+    <tr><th><%= member.label :郵便番号 %></th><td><%= member.text_field :postcode %></td></tr>
+    <tr><th><%= member.label :住所 %></th><td><%= member.text_field :address %></td></tr>
+    <tr><th><%= member.label :電話番号 %></th><td><%= member.text_field :phone_number %></td></tr>
+    <tr><th><%= member.label :メールアドレス %></th><td><%= member.text_field :email %></td></tr>
+    <tr>
+      <th>会員ステータス</th>
+      <td>
+        <%= member.radio_button :is_delete, :false,checked: true %>
+        <%= member.label :is_delete, "有効", {value: :false} %>
+        <%= member.radio_button :is_delete, :true,checked: false %>
+        <%= member.label :is_delete, "退会済み", {value: :true} %>
+      </td>
+    </tr>
+  </table>
+  <%= member.submit "変更を保存する"%>
+<% end %>
+>>>>>>> developper
