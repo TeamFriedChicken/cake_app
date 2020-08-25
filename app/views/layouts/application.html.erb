@@ -23,11 +23,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                 <% if member_signed_in? %>
-<<<<<<< HEAD
-                <p>ようこそ、<%= current_member.first_name %><%= current_member.last_name %>さん！</p>
-=======
-                  <p>ようこそ、<%= current_member.first_name %> <%= current_member.last_name %>さん！</p>
->>>>>>> developper
+                <p>ようこそ、<%= current_member.first_name %> <%= current_member.last_name %>さん！</p>
                   <li><%= link_to members_path(current_member), class:"btn btn-default" do %>
                     <i class="nav-link active"></i>マイページ</li><% end %>
                   <li><%= link_to items_path, class:"btn btn-default" do %>

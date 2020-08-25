@@ -9,22 +9,6 @@
 
   <% @orders.each do |order| %>
     <tr>
-<<<<<<< HEAD
-    <td><%= link_to order.created_at.to_s(:datetime_jp), admin_order_path(order) %></td>
-    <td><%= order.name %></td>
-    <td><%= order.order_details.sum(:quantity) %></td>
-    <% if order.status == 0 %>
-      <td><%= "入金待ち" %></td>
-    <% elsif order.status == 1 %>
-      <td><%= "入金確認" %></td>
-    <% elsif order.status == 2 %>
-      <td><%= "製作中" %></td>
-    <% elsif order.status == 3 %>
-      <td><%= "発送準備中" %></td>
-    <% else order.status == 4 %>
-      <td><%= "発送済み" %></td>
-    <% end %>
-=======
       <td><%= link_to order.created_at.strftime("%Y-%m-%d"), admin_order_path(order) %></td>
       <td><%= order.name %></td>
       <td><%= order.order_details.sum(:quantity) %></td>
@@ -40,8 +24,6 @@
         <td><%= "発送済み" %></td>
       <% end %>
     </tr>
-      
   <% end %>
->>>>>>> developper
   </tr>
 </table>

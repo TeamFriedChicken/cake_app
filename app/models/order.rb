@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-class Order < ApplicationRecord
-
-  belongs_to :member
-
-  has_many :order_details, dependent: :destroy
-end
-=======
 class Order < ApplicationRecord
   belongs_to :member
   has_many :order_details, dependent: :destroy
@@ -15,4 +7,3 @@ class Order < ApplicationRecord
   validates :name, :address, :postcode, presence: true
   validates :postcode, length: { is: 7 } , numericality: true
 end
->>>>>>> member_orderdetails

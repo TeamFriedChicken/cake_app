@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-class Admin::OrdersController < ApplicationController
-
-  def index
-  end
-
-  def show
-  end
-  
-  def update 
-  end
-end
-=======
 class Admin::OrdersController < ApplicationController
 
   def index
@@ -51,4 +38,3 @@ class Admin::OrdersController < ApplicationController
     )
   end
 end
->>>>>>> member_orderdetails

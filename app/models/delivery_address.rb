@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-class DeliveryAddress < ApplicationRecord
-	belongs_to :member
-end
-=======
 class DeliveryAddress < ApplicationRecord
 	belongs_to :member
 
@@ -15,4 +10,3 @@ class DeliveryAddress < ApplicationRecord
 	end
 
 end
->>>>>>> member_orderdetails
