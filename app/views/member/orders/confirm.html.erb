@@ -1,37 +1,33 @@
-<%= form_with(model: @order, url: orders_path, local: true) do |f| %>
-  <% @cart_items.each do |cart_item| %>
-    <%= cart_item.item.name %>
-    <%= cart_item.item.price %>
-    <%= cart_item.quantity %>
-  <% end %>
-  <%= f.submit "購入を確定する" %>
-<% end %>
-
 <%= flash[:danger] %>
 
 <div class="container">
-  <h1>注文情報確認</h1>
   <div class="row">
     <div class="col-xs-9">
+      <h3 class="sub_title">注文情報確認</h3>
       <%= form_with(model: @order, url: orders_path, local: true) do |f| %>
-        <table class="table">
-            
+
+        <table class="">
+          <thead>
             <tr>
               <th>商品名</th>
               <th>単価(税込)</th>
               <th>数量</th>
               <th>小計</th>
             </tr>
-          <% @sum = 0 %>
-          <% @cart_items.each do |cart_item| %>
-            <tr>
-              <td><%= cart_item.item.name %></td>
-              <td><%= tax_price(cart_item.item.price).to_s(:delimited) %></td>
-              <td><%= cart_item.quantity %></td>
-              <td><%= (tax_price(cart_item.item.price) * cart_item.quantity).to_s(:delimited) %></td>
-            </tr> 
-            <% @sum += tax_price(cart_item.item.price) * cart_item.quantity %>
-          <% end %>
+          </thead>
+
+          <tbody>
+            <% @sum = 0 %>
+            <% @cart_items.each do |cart_item| %>
+              <tr>
+                <td><%= cart_item.item.name %></td>
+                <td><%= tax_price(cart_item.item.price).to_s(:delimited) %></td>
+                <td><%= cart_item.quantity %></td>
+                <td><%= (tax_price(cart_item.item.price) * cart_item.quantity).to_s(:delimited) %></td>
+              </tr> 
+              <% @sum += tax_price(cart_item.item.price) * cart_item.quantity %>
+            <% end %>
+          </tbody>
         </table>
       
     </div>

@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-6">
 
-    <label>注文履歴一覧</label>
-    <table>
+    <h3 class="sub_title">注文履歴一覧</h3>
+
+    <table class="table table-hover">
         <thead>
           <tr>
             <th>注文日</th>
@@ -13,35 +16,40 @@
             <th>注文詳細</th>
           </tr>
         </thead>
-      <% @orders.each do |order| %>
-          <tr>
-            <td><%= order.created_at.strftime("%Y-%m-%d") %></td>
-            <td>
-              <%= order.postcode %><br>
-              <%= order.address %><br>
-              <%= order.name %><br>
-            </td>
-            <td>
-            <% order.order_details.each do |order_detail| %>
-              <%= order_detail.item.name %><br>
-            <% end %>
-          </td>
-        
-          <td><%= order.total_price %></td>
-        <% if order.status == 0 %>
-          <td><%= "入金待ち" %></td>
-        <% elsif order.status == 1 %>
-          <td><%= "入金確認" %></td>
-        <% elsif order.status == 2 %>
-          <td><%= "製作中" %></td>
-        <% elsif order.status == 3 %>
-          <td><%= "発送準備中" %></td>
-        <% else order.status == 4 %>
-          <td><%= "発送済み" %></td>
-        <% end %>
-        <td><%= link_to "表示する", order_path(order) %>
-        </tr>
-      <% end %>
 
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td><%= order.created_at.strftime("%Y-%m-%d") %></td>
+              <td>
+                <%= order.postcode %><br>
+                <%= order.address %><br>
+                <%= order.name %><br>
+              </td>
+              <td>
+              <% order.order_details.each do |order_detail| %>
+                <%= order_detail.item.name %><br>
+              <% end %>
+              </td>
+            </tr>
+          
+              <td><%= order.total_price %></td>
+            <% if order.status == 0 %>
+              <td><%= "入金待ち" %></td>
+            <% elsif order.status == 1 %>
+              <td><%= "入金確認" %></td>
+            <% elsif order.status == 2 %>
+              <td><%= "製作中" %></td>
+            <% elsif order.status == 3 %>
+              <td><%= "発送準備中" %></td>
+            <% else order.status == 4 %>
+              <td><%= "発送済み" %></td>
+            <% end %>
+            <td><%= link_to "表示する", order_path(order), class: "btn btn-default" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
