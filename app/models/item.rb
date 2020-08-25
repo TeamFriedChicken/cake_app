@@ -5,4 +5,5 @@ class Item < ApplicationRecord
 
   attachment :image
   validates :genre_id, :name, presence: true
+
 end
