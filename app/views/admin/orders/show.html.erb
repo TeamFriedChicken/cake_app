@@ -35,9 +35,9 @@
   <% @order_details.each do |order_detail| %>
     <tr>
       <td><%= order_detail.item.name %></td>
-      <td><%= order_detail.item.price %></td>
+      <td><%= tax_price(order_detail.item.price) %></td>
       <td><%= order_detail.quantity %></td>
-      <td><%= order_detail.item.price * order_detail.quantity %></td>
+      <td><%= tax_price(order_detail.item.price) * order_detail.quantity %></td>
 
       <% if order_detail.status == 0 %>
         <td><%= "着手不可" %></td>
@@ -45,7 +45,7 @@
         <td><%= "製作待ち" %></td>
       <% elsif order_detail.status == 2 %>
         <td><%= "製作中" %></td>
-      <% else order_detail.status == 3 %>
+      <% elsif order_detail.status == 3 %>
         <td><%= "製作完了" %>
       <% end %>
 

@@ -20,10 +20,10 @@
     <tr>
       <th>会員ステータス</th>
       <td>
-        <%= member.radio_button :is_delete, :true,checked: true %>
-        <%= member.label :is_delete, "有効", {value: :true} %>
-        <%= member.radio_button :is_delete, :false,checked: false %>
-        <%= member.label :is_delete, "退会済み", {value: :false} %>
+        <%= member.radio_button :is_delete, :false,checked: true %>
+        <%= member.label :is_delete, "有効", {value: :false} %>
+        <%= member.radio_button :is_delete, :true,checked: false %>
+        <%= member.label :is_delete, "退会済み", {value: :true} %>
       </td>
     </tr>
   </table>
