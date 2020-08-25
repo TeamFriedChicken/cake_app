@@ -33,8 +33,7 @@
       <table class="table">
         <tr>
           <th>商品合計</th>
-<%# ---------------------------------------------------- %>
-<%# -------------------------------------------------- %>
+          <td><%= (@order.total_price - @order.postage).to_s(:delimited) %></td>
         </tr>
         <tr>
           <th>配送料</th>
@@ -42,7 +41,7 @@
         </tr>
         <tr>
           <th>ご請求額</th>
-          <td><%= (@order.total_price).to_s(:delimited) %></td>
+          <td><%= @order.total_price.to_s(:delimited) %></td>
         </tr>
       </table>
     </div>
@@ -56,16 +55,16 @@
           <th>個数</th>
           <th>小計</th>
         </tr>
-        <tr>
-        <% @sum = 0 %>
-          <% @order.order_details.each do |order_details| %>
-            <td><%= order_details.item.name %></td>
-            <td><%= tax_price(order_details.purchase) %></td>
-            <td><%= order_details.quantity %></td>
-            <td><%= (tax_price(order_details.purchase) * order_details.quantity).to_s(:delimited) %></td>
-        </tr>
-        <% (tax_price(order_details.purchase) * order_details.quantity) %>
+      
+        <% @order.order_details.each do |order_detail| %>
+          <tr>
+            <td><%= order_detail.item.name %></td>
+            <td><%= tax_price(order_detail.item.price).to_s(:delimited) %></td>
+            <td><%= order_detail.quantity %></td>
+            <td><%= (tax_price(order_detail.item.price) * order_detail.quantity).to_s(:delimited) %></td>
+          </tr>
         <% end %>
+        
       </table>
     </div>
 
