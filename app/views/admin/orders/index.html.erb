@@ -1,30 +1,40 @@
-<h1>注文履歴一覧</h1>
-<table class="table">
-  <tr>
-    <th>購入日時</th>
-    <th>購入者</th>
-    <th>注文個数</th>
-    <th>注文ステータス</th>
-  </tr>
 
-  <% @orders.each do |order| %>
-    <tr>
-      <td><%= link_to order.created_at.strftime("%Y-%m-%d"), admin_order_path(order) %></td>
-      <td><%= order.name %></td>
-      <td><%= order.order_details.sum(:quantity) %></td>
-      <% if order.status == 0 %>
-        <td><%= "入金待ち" %></td>
-      <% elsif order.status == 1 %>
-        <td><%= "入金確認" %></td>
-      <% elsif order.status == 2 %>
-        <td><%= "製作中" %></td>
-      <% elsif order.status == 3 %>
-        <td><%= "発送準備中" %></td>
-      <% else order.status == 4 %>
-        <td><%= "発送済み" %></td>
-      <% end %>
-    </tr>
-      
-  <% end %>
-  </tr>
-</table>
+<div class="row">
+  <div class="col-xs-2"></div>
+    <div class="col-xs-6">
+
+      <h3 class="sub-title">注文履歴一覧</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <td>購入日時</td>
+            <td>購入者</td>
+            <td>注文個数</td>
+            <td>注文ステータス</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td><%= link_to order.created_at.strftime("%Y-%m-%d"), admin_order_path(order) %></td>
+              <td><%= order.name %></td>
+              <td><%= order.order_details.sum(:quantity) %></td>
+              <% if order.status == 0 %>
+                <td><%= "入金待ち" %></td>
+              <% elsif order.status == 1 %>
+                <td><%= "入金確認" %></td>
+              <% elsif order.status == 2 %>
+                <td><%= "製作中" %></td>
+              <% elsif order.status == 3 %>
+                <td><%= "発送準備中" %></td>
+              <% else order.status == 4 %>
+                <td><%= "発送済み" %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+  </div>
+</div>

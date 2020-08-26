@@ -17,10 +17,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .navbar {
-   padding-top: 20px;
- }
 
- a {
-   margin: 20px;
- } 
+  .navbar {
+    padding-top: 20px;
+  }
+
+  a {
+    margin: 20px;
+  }
+
+  .space {
+  padding: 20px 0;
+  } 
