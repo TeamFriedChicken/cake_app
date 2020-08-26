@@ -15,7 +15,11 @@
         <div class="container">
           <span class="navbar-toggler-icon">
             <div class="col-xs-3">
-              <%= link_to "ながのCake", root_path %>
+              <% if member_signed_in? %>
+                <%= link_to "ながのCake", root_path %>
+              <% elsif admin_signed_in? %>
+                <%= link_to "ながのCake", admin_top_path %>
+              <% end%>
             </div>
           </span>
             <div class="col-xs-9">
@@ -32,7 +36,6 @@
                   <li><%= link_to destroy_member_session_path,  method: :delete, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>ログアウト</li><% end %>
                 <% elsif admin_signed_in? %>
-                  <%= link_to "ながのCake", admin_top_path %>
                   <%= link_to admin_items_path, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>商品一覧</li><% end %>
                   <%= link_to admin_members_path, class:"btn btn-default" do %>

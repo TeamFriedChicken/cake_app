@@ -1,4 +1,4 @@
-<h1>商品編集</h1>
+<h1 class="admin_main_visual">商品編集</h1>
 
 <%= form_with model: @item, url: admin_item_path, local: true do |item| %>
   <%= item.attachment_field :image %>
@@ -9,6 +9,6 @@
   <%= item.collection_select :genre_id, Genre.where(is_active: "true"), :id, :name %>
   <%= item.label :税抜価格 %>
   <%= item.text_field :price %><p>円</p>
-  <%= item.select :is_active, [["販売中", "0"], ["売り切れ中", "1"]], include_blank: "選択して下さい" %>
+  <%= item.select :is_active, [["販売中", "true"], ["売り切れ中", "false"]], include_blank: "選択して下さい" %>
   <%= item.submit %>
 <% end %>

@@ -1,7 +1,7 @@
 <div class="container">
   <h2>注文履歴詳細</h2>
   <div class="row">
-  
+
     <div class="col-xs-7">
       <h4><strong>注文情報</strong></h4>
       <table class="table">
@@ -65,7 +65,7 @@
           <th>個数</th>
           <th>小計</th>
         </tr>
-      
+
         <% @order.order_details.each do |order_detail| %>
           <tr>
             <td><%= order_detail.item.name %></td>
@@ -74,7 +74,7 @@
             <td><%= (tax_price(order_detail.item.price) * order_detail.quantity).to_s(:delimited) %></td>
           </tr>
         <% end %>
-        
+
       </table>
     </div>
 

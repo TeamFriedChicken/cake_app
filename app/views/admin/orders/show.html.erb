@@ -1,6 +1,7 @@
-<h1>注文履歴詳細</h1>
+<h1 class="admin_main_visual">注文履歴詳細</h1>
 
-<table>
+<table class="table">
+  <thead class="thead-dark">
   <tr><th>購入者</th><td><%= @order.name %></td></tr>
   <tr><th>配送先</th><td><%= @order.postcode %><%= @order.address %></td></tr>
   <tr><th>支払方法</th><td><%= @order.payment_method %></td></tr>
@@ -17,6 +18,7 @@
       <td><%= "発送済み" %></td>
     <% end %>
   </tr>
+  </thead>
 </table>
 
 <%= form_with model: @order, url: admin_order_path, local: true do |f| %>
