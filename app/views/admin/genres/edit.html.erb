@@ -1,4 +1,8 @@
-<h1>ジャンル編集</h1>
+<h1 class="admin_main_visual">ジャンル編集</h1>
+
+<% if @genre.errors.any? %>
+   <p>エラーでーす。</p>
+<% end %>
 
 <%= form_with model: @genre, url: admin_genre_path, local: true do |genre| %>
   <%= genre.label :ジャンル名 %>

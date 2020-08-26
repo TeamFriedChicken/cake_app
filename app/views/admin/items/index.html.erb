@@ -1,4 +1,4 @@
-<h1>商品一覧</h1>
+<h1 class="admin_main_visual">商品一覧</h1>
 <%= link_to new_admin_item_path, class:"btn btn-default" do %>
   <i class="nav-link active"></i>+</li>
 <% end %>
@@ -15,7 +15,7 @@
     <tr>
       <td><%= item.id %></td>
       <td><%= link_to item.name, admin_item_path(item) %></td>
-      <td><%= item.price %></td>
+      <td><%= item.price %>円</td>
       <td><%= item.genre.name %></td>
       <td><%= item.is_active == true ? "売り切れ" : "販売中"  %></td>
     </tr>

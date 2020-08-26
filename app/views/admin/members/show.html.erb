@@ -1,8 +1,4 @@
-<table>
-  <tr>
-    <td><%= @member.first_name %><%= @member.last_name %>さんの会員詳細</td>
-  </tr>
-</table>
+<h1 class="admin_main_visual"><%= @member.last_name %><%= @member.first_name %>さんの会員詳細</h1>
 
 <table>
   <tr><th>顧客ID</th><td><%= @member.id %>
@@ -12,8 +8,8 @@
       <td><%= "有効会員" %></td>
     <% end %>
   </td></tr>
-  <tr><th>氏名</th><td><%= @member.first_name %></td><td><%= @member.last_name %></td></tr>
-  <tr><th>フリガナ</th><td><%= @member.kana_first_name %></td><td><%= @member.kana_last_name %></td></tr>
+  <tr><th>氏名</th><td><%= @member.last_name %></td><td><%= @member.first_name %></td></tr>
+  <tr><th>フリガナ</th><td><%= @member.kana_last_name %></td><td><%= @member.kana_first_name %></td></tr>
   <tr><th>郵便番号</th><td><%= @member.postcode %></td></tr>
   <tr><th>住所</th><td><%= @member.address %></td></tr>
   <tr><th>電話番号</th><td><%= @member.phone_number %></td></tr>

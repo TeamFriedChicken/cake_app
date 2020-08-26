@@ -1,5 +1,4 @@
-<table>
-  <tr><th></th><td><%= @member.first_name %><%= @member.last_name %>さんの会員情報編集</td></tr>
+<h1 class="admin_main_visual"><%= @member.last_name %><%= @member.first_name %>さんの会員情報編集</h1>
   <tr><th>会員ID</th><td><%= @member.id %></td></tr>
 </table>
 
@@ -7,11 +6,11 @@
   <table>
     <tr>
       <th><%= member.label :氏名 %></th>
-      <td><%= member.text_field :first_name %><%= member.text_field :last_name %></td>
+      <td><%= member.text_field :last_name %><%= member.text_field :first_name %></td>
     </tr>
     <tr>
       <th><%= member.label :フリガナ %></th>
-      <td><%= member.text_field :kana_first_name %><%= member.text_field :kana_last_name %></td>
+      <td><%= member.text_field :kana_last_name %><%= member.text_field :kana_first_name %></td>
     </tr>
     <tr><th><%= member.label :郵便番号 %></th><td><%= member.text_field :postcode %></td></tr>
     <tr><th><%= member.label :住所 %></th><td><%= member.text_field :address %></td></tr>

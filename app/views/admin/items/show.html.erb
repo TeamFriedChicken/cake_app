@@ -1,11 +1,11 @@
-<h1>商品詳細</h1>
+<h1 class="admin_main_visual">商品詳細</h1>
 
 <%= attachment_image_tag @item, :image, format: 'jpeg', size: "100x100", fallback: "no-image.jpg" %>
 <table>
   <tr><th>商品名</th><td><%= @item.name %></td></tr>
   <tr><th>商品説明</th><td><%= @item.explanation %></td></tr>
   <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
-  <tr><th>税込価格(税抜価格)</th><td><%= @item.price  %><%= (@item.price * 1.1).round %></td></tr>
+  <tr><th>税込価格(税抜価格)</th><td><%= @item.price  %>(<%= (@item.price * 1.1).round %>)円</td></tr>
 </table>
 <%= @item.is_active == true ? "売り切れ" : "販売中"  %>
 
