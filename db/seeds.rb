@@ -13,10 +13,10 @@ Member.create!(
       first_name: '聡太',
       kana_last_name: 'ハシモト',
       kana_first_name: 'ソウタ',
-      email: 'test1@test.com',
+      email: 'test@1.com',
       phone_number: '09012345678',
-      password: 'test12',
-      password_confirmation: 'test12',
+      password: '123456',
+      password_confirmation: '123456',
       address: '東京都渋谷区神南1丁目19番11号 パークウェースクエア24階',
       postcode: '1500041',
     },
@@ -25,22 +25,22 @@ Member.create!(
       first_name: '隆',
       kana_last_name: 'ヤマト',
       kana_first_name: 'タカシ',
-      email: 'test2@test.com',
+      email: 'test@2.com',
       phone_number: '0823253017',
-      password: 'test12',
-      password_confirmation: 'test12',
+      password: '123456',
+      password_confirmation: '123456',
       address: '広島県呉市宝町5-20',
       postcode: '7370029',
     },
     {
       last_name: '田中',
-      first_name: '呉',
+      first_name: '花子',
       kana_last_name: 'タナカ',
-      kana_first_name: 'クレ',
-      email: 'test3@test.com',
+      kana_first_name: 'ハナコ',
+      email: 'test@3.com',
       phone_number: '0823312432',
-      password: 'test12',
-      password_confirmation: 'test12',
+      password: '123456',
+      password_confirmation: '123456',
       address: '広島県呉市西中央２-３-28',
       postcode: '7378505',
     }
@@ -50,14 +50,14 @@ Member.create!(
 Admin.create!(
     [
       {
-        email: 'admin1@admin.com',
-        password: 'admin12',
-        password_confirmation: 'admin12',
+        email: 'admin@1.com',
+        password: '123456',
+        password_confirmation: '123456',
       },
       {
-        email: 'admin2@admin.com',
-        password: 'admin12',
-        password_confirmation: 'admin12',
+        email: 'admin@2.com',
+        password: '123456',
+        password_confirmation: '123456',
       }
     ]
   )
@@ -78,7 +78,7 @@ Genre.create!(
     },
     {
       name: '飴',
-      is_active: true,
+      is_active: false,
     }
   ]
 )
@@ -97,7 +97,7 @@ Item.create!(
         price: '280',
         explanation: 'チョコレートまたはココアパウダーを主要材料に含むケーキである',
         genre_id: 1,
-        is_active: true,
+        is_active: false,
       },
       {
         name: 'カスタードプリン',

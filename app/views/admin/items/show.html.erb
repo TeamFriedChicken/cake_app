@@ -7,6 +7,6 @@
   <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
   <tr><th>税込価格(税抜価格)</th><td><%= @item.price  %>(<%= (@item.price * 1.1).round %>)円</td></tr>
 </table>
-<%= @item.is_active == true ? "売り切れ" : "販売中"  %>
+<%= @item.is_active == true ? "販売中" : "売り切れ"  %>
 
 <%= link_to "編集する", edit_admin_item_path(@item) %>
