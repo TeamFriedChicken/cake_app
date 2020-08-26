@@ -1,5 +1,10 @@
 <div class="col-xs-2"></div>
-<div class="col-xs-4">
+  <div class="col-xs-4">
+  <h1 class="admin_main_visual">ジャンル編集</h1>
+
+  <% if @genre.errors.any? %>
+    <p>エラーでーす。</p>
+  <% end %>
 
   <h1>ジャンル編集</h1>
 
@@ -12,5 +17,5 @@
     <%= genre.label :is_active, "無効", {value: :false} %>
     <%= genre.submit "変更を保存する"%>
   <% end %>
-  
+
 </div>

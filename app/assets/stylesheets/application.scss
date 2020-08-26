@@ -14,18 +14,32 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
+.navbar {
+  padding-top: 20px;
+}
 
-  .navbar {
-    padding-top: 20px;
-  }
+a {
+  margin: 20px;
+}
 
-  a {
-    margin: 20px;
-  }
+.admin_main_visual {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 130px;
+  border: 2px solid #000;
+}
 
-  .space {
-  padding: 20px 0;
-  } 
+.admin_main_visual:before {
+  position: absolute;
+  top: -150%;
+  left: -100px;
+  width: 200px;
+  height: 300%;
+  content: "";
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  background: #000;
+}

@@ -14,8 +14,8 @@
       <p><%= f.radio_button :add, 0, checked: true %>あなたの住所</p>
         〒<%= @member.postcode %>
         <%= @member.address %>
-        <%= @member.first_name %>
         <%= @member.last_name %>
+        <%= @member.first_name %>
 
       <p><%= f.radio_button :add, 1 %>登録住所から選択</p>
         <%= f.collection_select :address, @member.delivery_addresses, :id, :order_address %>

@@ -1,8 +1,12 @@
 <div class="row">
   <div class="col-xs-2"></div>
   <div class="col-xs-4">
+    <h1 class="admin_main_visual">ジャンル一覧・追加</h1>
 
-  <!--genre追加-->
+    <% if @genre.errors.any? %>
+      <p>エラーでーす。</p>
+    <% end %>
+
 
     <h3 class="sub-title">ジャンル一覧・追加</h3>
 

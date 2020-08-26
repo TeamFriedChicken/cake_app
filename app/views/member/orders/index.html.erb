@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
 
@@ -27,7 +26,7 @@
               <%= order_detail.item.name %><br>
             <% end %>
           </td>
-        
+
           <td><%= order.total_price %></td>
         <% if order.status == 0 %>
           <td><%= "入金待ち" %></td>
@@ -43,6 +42,5 @@
         <td><%= link_to "表示する", order_path(order) %>
         </tr>
       <% end %>
-
   </div>
 </div>
