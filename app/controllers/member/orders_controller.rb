@@ -16,7 +16,7 @@ class Member::OrdersController < ApplicationController
       when 0 # あなたの住所
         @order.postcode = @member.postcode
         @order.address = @member.address
-        @order.name = @member.first_name + @member.last_name
+        @order.name = @member.last_name + @member.first_name
       when 1 # 登録住所
         @sta = params[:order][:address].to_i
         @address = DeliveryAddress.find(@sta)
