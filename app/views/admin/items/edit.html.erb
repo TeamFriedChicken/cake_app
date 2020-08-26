@@ -1,14 +1,19 @@
-<h1 class="admin_main_visual">商品編集</h1>
+<div class="row">
+  <div class="col-xs-2"></div>
+    <div class="col-xs-6">
+    <h1 class="admin_main_visual">商品編集</h1>
 
-<%= form_with model: @item, url: admin_item_path, local: true do |item| %>
-  <%= item.attachment_field :image %>
-  <%= item.label :商品名 %>
-  <%= item.text_field :name %><br>
-  <%= item.label :商品説明 %>
-  <%= item.text_area :explanation %><br>
-  <%= item.collection_select :genre_id, Genre.where(is_active: "true"), :id, :name %>
-  <%= item.label :税抜価格 %>
-  <%= item.text_field :price %><p>円</p>
-  <%= item.select :is_active, [["販売中", "true"], ["売り切れ中", "false"]], include_blank: "選択して下さい" %>
-  <%= item.submit %>
-<% end %>
+    <%= form_with model: @item, url: admin_item_path, local: true do |item| %>
+      <%= item.attachment_field :image %>
+      <%= item.label :商品名 %>
+      <%= item.text_field :name %><br>
+      <%= item.label :商品説明 %>
+      <%= item.text_area :explanation %><br>
+      <%= item.collection_select :genre_id, Genre.where(is_active: "true"), :id, :name %>
+      <%= item.label :税抜価格 %>
+      <%= item.text_field :price %><p>円</p>
+      <%= item.select :is_active, [["販売中", "true"], ["売り切れ中", "false"]], include_blank: "選択して下さい" %>
+      <%= item.submit %>
+    <% end %>
+  </div>
+</div> 

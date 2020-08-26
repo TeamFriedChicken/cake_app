@@ -1,3 +1,11 @@
-<h1 class="admin_main_visual">管理者画面</h1>
+<div class= "col-xs-4"></div>
+  <div class="col-xs-6">
+  <h1 class="admin_main_visual">管理者画面</h1>
 
-<p>本日の注文件数</p><%= link_to @today_order.count, admin_orders_path %><p>件</p>
+	<h4 class="sub-title">管理者画面</h4>
+
+
+	<h2 class="order-count">
+		本日の注文件数　　　　　<%= link_to @today_order.count, admin_orders_path %>件
+	</h2>
+</div> 
