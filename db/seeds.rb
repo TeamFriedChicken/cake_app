@@ -43,6 +43,18 @@ Member.create!(
       password_confirmation: '123456',
       address: '広島県呉市西中央２-３-28',
       postcode: '7378505',
+    },
+    {
+      last_name: '四方',
+      first_name: '秀',
+      kana_last_name: 'シカタ',
+      kana_first_name: 'シュウ',
+      email: 'shu.42111227@gmail.com',
+      phone_number: '09053601693',
+      password: '111111',
+      password_confirmation: '111111',
+      address: '大阪府大阪市淀川区西中島3-14-28',
+      postcode: '5320011',
     }
   ]
 )

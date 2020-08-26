@@ -14,11 +14,12 @@ class Member < ApplicationRecord
   validates :phone_number, format: {with: /\A\d{10}\z|\A\d{11}\z/}
   validates :address, presence: true
   validates :postcode, length: { is: 7 } , numericality: true
-
+  
   def active_for_authentication?
     super && (self.is_delete == false)
   end
   def inactive_message
     self.is_delete? ? super : :special_condition_is_not_valid
-  end
+  end 
+  
 end

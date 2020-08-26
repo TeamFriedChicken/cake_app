@@ -2,10 +2,9 @@
   <div class="row">
     <div class="col-xs-2">
       <table class="table">
-        <h4>ジャンル検索</h4>
-        <% @genres.each do |genre| %>
-          <%= genre.name %><br>
-        <% end %>
+        
+        <%= render 'member/items/genre_search', genres: @genres %>
+        
       </table>
     </div>
     <div class="col-xs-10">
