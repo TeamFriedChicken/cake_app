@@ -1,8 +1,9 @@
 
 <div class="container">
   <div class="row">
-    <h3>ショッピングカート</h3>
-
+    <div class="col-xs-2"></div>
+    <div class="col-xs-6">
+<h3 class="sub_title">ショッピングカート</h3>
     <% if @cart_items.present? %>
       <p class="text-right">
         <%= link_to " カートを空にする", cart_items_members_path, method: :delete, data: {confirm: 'カートを空にして本当によろしいですか？'}, class: "glyphicon glyphicon-trash btn btn-danger" %>
@@ -11,7 +12,7 @@
       <h3>カートは空です！！！</h3>
     <% end %>
 
-        <table class="table">
+        <table class="table table-hover">
           <tr>
             <th>商品名</th>
             <th>単価（税込）</th>
@@ -48,10 +49,11 @@
           <% end %>
         </table>
       </div>
-    </div>  
+    </div>
+  </div>
 <div class="container">
     <tr>
-      <p class="text-center">合計金額 
+      <p class="text-center">合計金額
         <%= tax_price(@sum).to_s(:delimited) %>
       </p>
     </tr>
@@ -68,6 +70,6 @@
       </td>
   </tr>
 </div>
-    
+
 
 

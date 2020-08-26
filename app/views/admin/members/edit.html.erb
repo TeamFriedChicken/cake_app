@@ -1,10 +1,9 @@
-<table>
-  <tr><th></th><td><%= @member.first_name %><%= @member.last_name %>さんの会員情報編集</td></tr>
-  <tr><th>会員ID</th><td><%= @member.id %></td></tr>
-</table>
+<h3 class="admin_main_visual"><%= @member.last_name %><%= @member.first_name %>さんの会員詳細</h3>
+
 
 <%= form_with model: @member, url: admin_member_path, local: true do |member| %>
-  <table>
+  <table class="table table-borderless">
+    <th>会員ID</th><td><%= @member.id %></td>
     <tr>
       <th><%= member.label :氏名 %></th>
       <td><%= member.text_field :first_name %><%= member.text_field :last_name %></td>
@@ -27,5 +26,7 @@
       </td>
     </tr>
   </table>
-  <%= member.submit "変更を保存する"%>
+
+    <%= member.submit "変更を保存する", class:"btn btn-primary" %>
+
 <% end %>

@@ -3,11 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
- * {
- 	padding: 0;
- 	margin: 0;
- 	box-sizing: border-box;
- }
 
 a {
 	text-decoration: none;
@@ -21,10 +16,10 @@ a {
 
 .main-visual {
 	margin: 20px;
-    background-image: url(../cake.jpg);
-    width: 100%;
-    height: 800px;
-    background-size: cover;
+  background-image: url(../about.jpg);
+  width: 100%;
+  height: 800px;
+  background-size: cover;
 }
 .main-visual-content{
   width: 45%;
@@ -33,12 +28,7 @@ a {
   taxt-align: center;
 }
 
-.about{
-	font-family: Meiryo,Georgia;
-	color: #F9E09E;
-
-}
-p {
+.about {
 	font-family: Meiryo,Georgia;
 	color: #F9E09E;
 }
