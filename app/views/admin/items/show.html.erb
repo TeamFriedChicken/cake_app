@@ -1,12 +1,20 @@
-<h1 class="admin_main_visual">商品詳細</h1>
-
-<%= attachment_image_tag @item, :image, format: 'jpeg', size: "100x100", fallback: "no-image.jpg" %>
-<table>
-  <tr><th>商品名</th><td><%= @item.name %></td></tr>
-  <tr><th>商品説明</th><td><%= @item.explanation %></td></tr>
-  <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
-  <tr><th>税込価格(税抜価格)</th><td><%= @item.price  %>(<%= (@item.price * 1.1).round %>)円</td></tr>
-</table>
-<%= @item.is_active == true ? "販売中" : "売り切れ"  %>
-
-<%= link_to "編集する", edit_admin_item_path(@item) %>
+<div class="container">
+	<div class="row">
+		<h3>商品詳細</h3>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<%= attachment_image_tag @item, :image, format: 'jpeg', size: "100x100", fallback: "no-image.jpg" %>
+		</div>
+		<div class="col9">
+			<table class="table">
+			  <tr><th>商品名</th><td><%= @item.name %></td></tr>
+			  <tr><th>商品説明</th><td><%= @item.explanation %></td></tr>
+			  <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
+			  <tr><th>税込価格(税抜価格)</th><td><%= @item.price  %>(<%= (@item.price * 1.1).round %>)円</td></tr>
+			  <tr><th>販売ステータス</th><td><%= @item.is_active == true ? "売り切れ" : "販売中"  %></td></tr>
+			</table>
+			<%= link_to "編集する", edit_admin_item_path(@item), class:"btn btn-primary" %>
+		</div>
+	</div>
+</div>
