@@ -71,5 +71,4 @@ class Member::CartItemsController < ApplicationController
   def cart_item_params
     params.require(:cart_item).permit(:item_id, :member_id, :quantity, :image)
   end
-
 end
