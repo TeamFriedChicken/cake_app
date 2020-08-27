@@ -1,7 +1,14 @@
 <h1 class="admin_main_visual">商品新規登録</h1>
 
 <%= form_with model: @item, url: admin_items_path, local: true do |item| %>
-  <%= item.attachment_field :image %>
+  
+  <div class="item-image">
+    <%= attachment_image_tag @item, :image, class: "img-square", fallback: "no_image.jpg", size:"250x160" %>
+  </div>
+  <%= item.attachment_field :image, placeholder: "画像" %>
+
+
+
   <%= item.label :商品名 %>
   <%= item.text_field :name %><br>
   <%= item.label :商品説明 %>
@@ -11,4 +18,18 @@
   <%= item.text_field :price %><p>円</p>
   <%= item.select :is_active, [["販売中", "true"], ["売り切れ中", "false"]], include_blank: "選択して下さい" %>
   <%= item.submit '新規登録' %>
+
+
+  <script>
+    $(function(){
+        $('#item_image').on('change', function (e) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(".image").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(e.target.files[0]); 
+    });
+    });
+  </script>
+  
 <% end %>
