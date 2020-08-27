@@ -1,43 +1,31 @@
 <div class="container">
+  <h1 class="admin_main_visual">注文履歴詳細</h3>
   <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-6">
-        <h3 class="sub_title">注文履歴詳細</h3>
-
-          <table class="table">
-            <tr>
-              <th>購入者</th>
-              <td><%= @order.name %></td>
-            </tr>
-            <tr>
-              <th>配送先</th>
-              <td><%= @order.postcode %><%= @order.address %></td>
-            </tr>
-            <tr>
-              <th>支払方法</th>
-              <td><%= @order.payment_method %></td>
-            </tr>
-            <tr>
-              <th>ステータス</th>
-                <% if @order.status == 0 %>
-                  <td><%= "入金待ち" %></td>
-                <% elsif @order.status == 1 %>
-                  <td><%= "入金確認" %></td>
-                <% elsif @order.status == 2 %>
-                  <td><%= "製作中" %></td>
-                <% elsif @order.status == 3 %>
-                  <td><%= "発送準備中" %></td>
-                <% else @order.status == 4 %>
-                  <td><%= "発送済み" %></td>
-                <% end %>
-            </tr>
-          </table>
-
-          <%= form_with model: @order, url: admin_order_path, local: true do |f| %>
+    <div class="col-xs-8">
+      <table class="table">
+        <tr>
+          <th>購入者</th><td><%= @order.name %></td>
+        </tr>
+        <tr>
+          <th>配送先</th><td><%= @order.postcode %><%= @order.address %></td>
+        </tr>
+        <tr>
+          <th>支払方法</th><td><%= @order.payment_method %></td>
+        </tr>
+        <tr>
+          <th>ステータス</th>
+          <td>
+            <%= form_with model: @order, url: admin_order_path, local: true do |f| %>
             <%= f.select :status, [["入金待ち", 0], ["入金確認", 1], ["製作中", 2], ["発送準備中", 3], ["発送済み", 4]] %>
-            <%= f.submit '更新' %>
+            <%= f.submit '更新', class:"btn btn-primary" %>
+          </td>
           <% end %>
-
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
         <table class="table">
           <tr>
             <th>商品名</th>
@@ -55,25 +43,26 @@
               <td><%= tax_price(order_detail.item.price) * order_detail.quantity %></td>
 
               <% if order_detail.status == 0 %>
-                <td><%= "着手不可" %></td>
+                <td>着手不可</td>
               <% elsif order_detail.status == 1 %>
-                <td><%= "製作待ち" %></td>
+                <td>製作待ち</td>
               <% elsif order_detail.status == 2 %>
-                <td><%= "製作中" %></td>
+                <td>製作中</td>
               <% elsif order_detail.status == 3 %>
-                <td><%= "製作完了" %>
+                <td>製作完了</td>
               <% end %>
 
               <td><%= form_with model: order_detail, url: admin_order_detail_path(order_detail), local: true do |f| %>
                 <%= f.select :status, [["着手不可", 0], ["製作待ち", 1], ["製作中", 2], ["製作完了", 3]] %>
-                <%= f.submit '更新' %>
+                <%= f.submit '更新', class:"btn btn-primary" %>
                 <% end %>
               </td>
             </tr>
           <% end %>
         </table>
-
-        <table class="table">
+      </div>
+    <div class="col-xs-4">
+        <table class="table table-striped table-bordered table-condensed">
           <tr><th><p>商品合計</p></th><td><%= @order.total_price - @order.postage %>円</td></tr>
           <tr><th><p>送料</p></th><td><%= @order.postage %>円</td></tr>
           <tr><th>請求金額合計</th><td><%= @order.total_price %>円</td></tr>
@@ -81,6 +70,5 @@
 
       </div>
 
-    
-  </div> 
+  </div>
 </div>
