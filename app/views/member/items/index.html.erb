@@ -1,12 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-2">
-      <table class="table">
-
         <%= render 'member/items/genre_search', genres: @genres %>
-
-      </table>
-    </div>
     <div class="container">
       <div class="row">
         <div class="col-sm-10">
@@ -15,7 +9,7 @@
               <div class="col-lg-4 col-md-6 mb-4">
                 <%= link_to item_path(item) do %>
                   <div class="card h-100">
-                    <%= attachment_image_tag item, :image, :fill, 180, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+                    <%= attachment_image_tag item, :image, :fill, 180, 100, format: 'jpeg', fallback: "no-image.jpg" %>
                     <div class="card-body">
                       <h4 class="card-title"><%= item.name %></h4>
                       <p>¥<%= item.price.to_s(:delimited) %></p>

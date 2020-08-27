@@ -1,6 +1,6 @@
 class Member::HomeController < ApplicationController
   def top
-    #@item = Item.all
+    @items = Item.all
   end
 
   def about

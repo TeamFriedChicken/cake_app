@@ -43,3 +43,10 @@ a {
   transform: rotate(25deg);
   background: #000;
 }
+
+.bg-image {
+  background-image: url('page.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+}
