@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <p class="main-visual-text">
@@ -8,7 +7,14 @@
       購入には会員登録が必要になります。<br>
     </p>
 
+    <% @items.each do |item| %>
+      <%= link_to item_path(item) do %>
+        <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no-image.jpg", size:'200x150' %><br>
+        <%= item.name %></td>
+        <p>¥<%= item.price.to_s(:delimited) %></p>
+      <% end %>
+    <% end %>
+
     <%= link_to "もっと見る", items_path %>
   </div>
 </div>
-

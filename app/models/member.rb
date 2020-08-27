@@ -21,14 +21,14 @@ class Member < ApplicationRecord
   def active_for_authentication?
     super && (self.is_delete == false)
   end
+
   def inactive_message
     self.is_delete? ? super : :special_condition_is_not_valid
   end
 
-   #------------------退会関連-----------------------------------
+   #------------------------------------------------------------
 
    #------------------住所自動入力関連----------------------------
-
    include JpPrefecture
    jp_prefecture :prefecture_code
 

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <th>販売ステータス</th>
-            <td><%= item.select :is_active, [["販売中", "0"], ["売り切れ中", "1"]], include_blank: "選択して下さい" %></td>
+            <td><%= item.select :is_active, [["販売中", true], ["売り切れ中", false]], include_blank: "選択して下さい" %></td>
           </tr>
           <tr>
             <td><%= item.submit '新規登録', class:"btn btn-primary" %></td>

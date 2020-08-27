@@ -24,7 +24,7 @@
             <td><%= link_to item.name, admin_item_path(item) %></td>
             <td><%= item.price %></td>
             <td><%= item.genre.name %></td>
-            <td><%= item.is_active == true ? "売り切れ" : "販売中"  %></td>
+            <td><%= item.is_active == true ? "販売中" : "売り切れ"  %></td>
           </tr>
         <% end %>
       </tbody>
