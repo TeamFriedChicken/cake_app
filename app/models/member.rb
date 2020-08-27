@@ -14,6 +14,9 @@ class Member < ApplicationRecord
   validates :phone_number, format: {with: /\A\d{10}\z|\A\d{11}\z/}
   validates :address, presence: true
   validates :postcode, length: { is: 7 } , numericality: true
+
+
+  #------------------退会関連-----------------------------------
   
   def active_for_authentication?
     super && (self.is_delete == false)
@@ -22,4 +25,21 @@ class Member < ApplicationRecord
     self.is_delete? ? super : :special_condition_is_not_valid
   end 
   
+   #------------------退会関連-----------------------------------
+
+   #------------------住所自動入力関連----------------------------
+
+   include JpPrefecture
+   jp_prefecture :prefecture_code  
+   
+   def prefecture_name
+     JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
+   end
+     
+   def prefecture_name=(prefecture_name)
+     self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
+   end
+
+  #------------------住所自動入力関連----------------------------
+
 end
