@@ -1,15 +1,11 @@
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <h4>ジャンル検索</h4>
-      <ul class="nav nav-pills nav-stacked">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <table class="table">
 
-        <% @genres.each do |genre| %>
-        <li>
-          <%= link_to genre.name, items_path(genre:genre.id) %>
-        </li>
-        <% end %>
-      </ul>
+        <%= render 'member/items/genre_search', genres: @genres %>
+
+      </table>
     </div>
     <div class="container">
       <div class="row">
