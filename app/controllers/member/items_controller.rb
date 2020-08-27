@@ -5,9 +5,9 @@ class Member::ItemsController < ApplicationController
     if params[:genre].nil?
       @items = Item.page(params[:page]).per(8)
     else
-      @items = Item.where(genre_id: params[:genre]).page(params[:page]).per(8)
+      # genres有効の商品のみ表示
+      @items = Item.joins(:genre).where(genres: {is_active: "true"})
     end
-
   end
 
   def show
@@ -15,6 +15,4 @@ class Member::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
   end
-
-  
 end

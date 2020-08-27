@@ -4,7 +4,7 @@
     <%= form_with model: @item, url: admin_item_path(@item), local: true do |item| %>
       <div class="col-xs-4">
         <div class="item-image">
-          <%= attachment_image_tag @item, :image, class:"img-square", fallback: "no_image.jpg", size:"200x160" %>
+          <%= attachment_image_tag @item, :image, class:"img-square", fallback: "no-image.jpg", size:"200x160" %>
           <%= item.attachment_field :image, placeholder: "画像" %>
         </div>
         <script>
@@ -30,6 +30,5 @@
             <%= item.submit "変更を保存する", class:"btn btn-primary item" %>
         <% end %>
       </div>
-  </div>
   </div>
 </div>

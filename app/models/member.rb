@@ -17,29 +17,24 @@ class Member < ApplicationRecord
 
 
   #------------------退会関連-----------------------------------
-  
   def active_for_authentication?
     super && (self.is_delete == false)
   end
+
   def inactive_message
     self.is_delete? ? super : :special_condition_is_not_valid
-  end 
-  
-   #------------------退会関連-----------------------------------
-
+  end
+   #------------------------------------------------------------
    #------------------住所自動入力関連----------------------------
-
    include JpPrefecture
-   jp_prefecture :prefecture_code  
-   
+   jp_prefecture :prefecture_code
+
    def prefecture_name
      JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
    end
-     
+
    def prefecture_name=(prefecture_name)
      self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
    end
-
-  #------------------住所自動入力関連----------------------------
-
+  #---------------------------------------------------------------
 end
