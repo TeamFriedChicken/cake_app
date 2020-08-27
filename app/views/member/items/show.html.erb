@@ -7,7 +7,7 @@
         
       </table>
     </div>
-    <div class="col-xs-10">
+    <div class="col-xs-6">
       <%= attachment_image_tag @item, :image, :fill, 400, 230, format: 'jpeg', fallback: "no_image.jpg" %>
       <p><%= @item.name %></p>
       <p><%= @item.explanation %></p>
@@ -15,8 +15,14 @@
 
       <%= form_with model: @cart_item, url: members_cart_items_path, local: true do |f| %>
         <%= f.hidden_field :item_id, :value => @item.id %>
-        <%= f.select :quantity, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], include_blank: "個数選択" %>
-        <%= f.submit "カートに入れる", class: "btn btn-primary" %>
+
+        <% if @item.is_active == true %>
+          <%= f.select :quantity, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9]], include_blank: "個数選択" %>
+          <%= f.submit "カートに入れる", class: "btn btn-primary" %>
+        <% else %>
+          <p class="soldout">売切れ中</p>
+        <% end %>
+          
       <% end %>
     </div>
   </div>
