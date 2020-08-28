@@ -3,7 +3,7 @@
   <ul class="nav nav-pills nav-stacked">
     <% @genres.each do |genre| %>
     <li>
-      <%= link_to genre.name, items_path(genre:genre.id) %>
+      <%= link_to genre.name, items_path(genre_id:genre.id) %>
     </li>
     <% end %>
   </ul>

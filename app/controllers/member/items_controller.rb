@@ -2,11 +2,11 @@ class Member::ItemsController < ApplicationController
   def index
     @genres = Genre.where(is_active: true)
 
-    if params[:genre].nil?
-      @items = Item.page(params[:page]).per(8)
+    if params[:genre_id].present?
+      @items = Item.where(genre_id: params[:genre_id]).page(params[:page]).per(8)
     else
       # genres有効の商品のみ表示
-      @items = Item.joins(:genre).where(genres: {is_active: "true"})
+      @items = Item.joins(:genre).where(genres: {is_active: "true"}).page(params[:page]).per(8)
     end
   end
 
