@@ -17,6 +17,7 @@ class Member < ApplicationRecord
 
 
   #------------------退会関連-----------------------------------
+
   def active_for_authentication?
     super && (self.is_delete == false)
   end
@@ -24,7 +25,9 @@ class Member < ApplicationRecord
   def inactive_message
     self.is_delete? ? super : :special_condition_is_not_valid
   end
+
    #------------------------------------------------------------
+
    #------------------住所自動入力関連----------------------------
    include JpPrefecture
    jp_prefecture :prefecture_code
@@ -36,5 +39,7 @@ class Member < ApplicationRecord
    def prefecture_name=(prefecture_name)
      self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
    end
-  #---------------------------------------------------------------
+
+  #------------------住所自動入力関連----------------------------
+
 end

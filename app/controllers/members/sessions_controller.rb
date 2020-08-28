@@ -26,11 +26,11 @@ class Members::SessionsController < Devise::SessionsController
     @member = Member.find_by(email: params[:member][:email].downcase)
     if @member
       if (@member.valid_password?(params[:member][:password]) && (@member.active_for_authentication? == false))
-        flash[:danger] = "このアカウントは退会されています"
+        flash[:error] = "このアカウントは退会されています"
         redirect_to new_member_session_path
       end
     else
-      flash[:danger] = "必須項目を入力してください。"
+      flash[:error] = "必須項目を入力してください。"
     end
   end
 

@@ -1,20 +1,34 @@
 <div class="container">
-  <div class="row">
-    <p class="main-visual-text">
-      ようこそ、NaganoCakeへ！<br>
-      このサイトは、ケーキ販売のECサイトになります。<br>
-      会員でない方も商品の閲覧はできますが、<br>
-      購入には会員登録が必要になります。<br>
-    </p>
-
-    <% @items.each do |item| %>
-      <%= link_to item_path(item) do %>
-        <%= attachment_image_tag item, :image, size:'200x150', format: 'jpeg', fallback: "no-image.jpg" %><br>
-        <%= item.name %></td>
-        <p>¥<%= item.price.to_s(:delimited) %></p>
+  <div class=" top-image">
+    <div class="row">
+      <div class="col-xs-6 col-lg-6">
+        <div class="top-text">
+          ようこそ、NaganoCakeへ！<br>
+          このサイトは、ケーキ販売のECサイトになります。<br>
+          会員でない方も商品の閲覧はできますが、<br>
+          購入には会員登録が必要になります。<br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row content">
+    <%= render 'member/items/genre_search', genres: @genres %>
+    <div class="col-sm-10">
+      <% @items.each do |item| %>
+        <div class="col-lg-3 col-md-3 mb-3">
+          <%= link_to item_path(item) do %>
+            <div class="card h-100">
+              <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "160x120" %><br>
+              <div class="card-body">
+                <%= item.name %></td>
+                <p>¥<%= item.price.to_s(:delimited) %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
+    </div>
+  </div>
 
     <%= link_to "もっと見る", items_path %>
-  </div>
 </div>

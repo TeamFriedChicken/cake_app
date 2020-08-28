@@ -1,3 +1,49 @@
 // Place all the styles related to the member::home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+a {
+  text-decoration: none;
+}
+
+.logo{
+  font-family: impact;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.top-text {
+  height: 120px;
+  font-family: Meiryo,Georgia;
+  color: #F9E09E;
+  background-color: rgba( 0, 0, 0, 0.5);
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+.main-visual-content{
+  width: 45%;
+  height: 200px;
+  background-color: rgba( 0, 0, 0, 0.5);
+  taxt-align: center;
+}
+
+.about {
+  font-family: Meiryo,Georgia;
+  color: #F9E09E;
+}
+.sidebar {
+  width: 240px;
+  height: 1400px;
+  float: left;
+}
+
+.bg-image {
+  background-image: url('page.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+}
