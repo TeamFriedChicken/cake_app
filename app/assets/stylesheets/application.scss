@@ -44,6 +44,20 @@ a {
   background: #000;
 }
 
+.top-image {
+  background-image: url("home.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.bg-image {
+  background-image: url("page.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+}
+
 .soldout {
   color: red;
 }

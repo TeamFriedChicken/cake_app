@@ -18,15 +18,15 @@
         </tr>
       </thead>
       <tbody>
-        <% @items.each do |item| %>
-          <tr>
-            <td><%= item.id %></td>
-            <td><%= link_to item.name, admin_item_path(item) %></td>
-            <td><%= item.price %></td>
-            <td><%= item.genre.name %></td>
-            <td><%= item.is_active == true ? "販売中" : "売り切れ"  %></td>
-          </tr>
-        <% end %>
+          <% @search_items.each do |item| %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= link_to item.name, admin_item_path(item) %></td>
+              <td><%= item.price %></td>
+              <td><%= item.genre.name %></td>
+              <td><%= item.is_active == true ? "販売中" : "売り切れ"  %></td>
+            </tr>
+          <% end %>
       </tbody>
     </table>
   </div>
