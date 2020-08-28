@@ -3,6 +3,18 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :success, :info, :warning, :danger
 
+  before_action :set_search
+  def set_search
+    @search_i = Item.ransack(params[:q])
+    @search_items = @search_i.result
+
+    @search_m = Member.ransack(params[:q])
+    @search_members = @search_m.result
+
+    @search_g = Genre.ransack(params[:q])
+    @search_genres = @search_g.result
+  end
+
   private
 
   def configure_permitted_parameters

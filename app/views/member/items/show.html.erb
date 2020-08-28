@@ -1,12 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-2">
-      <table class="table">
-        
+  <div class="row content">
         <%= render 'member/items/genre_search', genres: @genres %>
-        
-      </table>
-    </div>
     <div class="col-xs-6">
       <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "400x300" %>
       <p><%= @item.name %></p>

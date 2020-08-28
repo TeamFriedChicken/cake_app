@@ -5,67 +5,67 @@
       <%= f.label :sign_up %>
     </h3>
     <%= render "members/shared/error_messages", resource: resource %>
+    <table class="table">
+        <tr>
+          <th><%= f.label :"名前" %></th>
+          <td><%= f.label :last_name %>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, autocomplete: "first_name" %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.label :"名前" %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, autocomplete: "last_name" %>
-    </div>
+        <tr>
+          <th><%= f.label :"フリガナ" %></th>
+          <td><%= f.label :kana_last_name %>
+          <%= f.text_field :kana_last_name, autocomplete: "kana_last_name" %>
+          <%= f.label :kana_first_name %>
+          <%= f.text_field :kana_first_name, autocomplete: "kana_first_name" %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.label :"フリガナ" %>
-      <%= f.label :kana_first_name %>
-      <%= f.text_field :kana_first_name, autocomplete: "kana_first_name" %>
-      <%= f.label :kana_last_name %>
-      <%= f.text_field :kana_last_name, autocomplete: "kana_last_name" %>
-    </div>
+        <tr>
+          <th><%= f.label :email %></th>
+          <td><%= f.email_field :email, autocomplete: "email" %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autocomplete: "email" %>
-    </div>
+        <tr>
+          <th><%= f.label :postcode %></th>
+          <td><%= f.text_field :postcode, autocomplete: "postcode" %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.label :postcode %>
-      <%= f.text_field :postcode, autocomplete: "postcode" %>
-    </div>
+        <tr>
+          <th><%= f.label :address %></th>
+          <!-- 仮　住所検索 -->
+          <td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %>
+            <%= f.text_field :address, autocomplete: "address" %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %>
-    </div>
+        <tr>
+         <th> <%= f.label :phone_number %></th>
+          <td><%= f.text_field :phone_number, autocomplete: "phone_number" %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.label :address %>
-      <%= f.text_field :address, autocomplete: "address" %>
-    </div>
+        <tr>
+          <th><%= f.label :password %></th>
+          <td><% if @minimum_password_length %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
+          <% end %></td>
+        </tr>
 
-    <div class="field">
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number, autocomplete: "phone_number" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>文字以上)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+        <tr>
+          <th><%= f.label :password_confirmation %></th>
+          <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+        </tr>
+    </table>
 
     <div class="actions">
       <%= f.submit t('.sign_up'),class: "btn btn-success" %>
     </div>
   <% end %>
 
-  <h3 class="glay-label">
-    既に登録済みの方
-  </h3>
-  <%= render "members/shared/links" %><p>からログインしてください。</p>
+
+  <h4 class="glay-label">
+    既に登録済みの方はこちら
+  <%= render "members/shared/links" %>
+  </h4>
 </div>
