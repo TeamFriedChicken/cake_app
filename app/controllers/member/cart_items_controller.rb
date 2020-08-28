@@ -4,6 +4,7 @@ class Member::CartItemsController < ApplicationController
   before_action :set_cart_item, only: [:edit, :update, :destroy]
   before_action :set_member
 
+
     # カート内商品一覧
   def index
     @member = current_member
@@ -24,7 +25,7 @@ class Member::CartItemsController < ApplicationController
         # ログイン会員のカート内の全商品
         @cart_items = @member.cart_items.all
         render 'index'
-        flash[:danger] = 'カートに商品を追加できませんでした。'
+        flash[:alert] = 'カートに商品を追加できませんでした。'
       end
       # カートが空じゃないとき
     else
@@ -41,12 +42,13 @@ class Member::CartItemsController < ApplicationController
     @current_item = CartItem.find_by(item_id: @cart_item.item_id)
     @current_item.quantity = params[:cart_item][:quantity]
     @cart_item.update(quantity: @current_item.quantity)
+    flash[:update] = '数量を変更しました。'
     redirect_to members_cart_items_path
   end
 
   def destroy
     @cart_item.destroy
-    flash.now[:alert] = "#{@cart_item.item.name}を削除しました"
+    flash[:alert] = "#{@cart_item.item.name}を削除しました"
     redirect_to members_cart_items_path
   end
 

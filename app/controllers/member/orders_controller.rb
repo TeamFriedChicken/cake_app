@@ -35,7 +35,7 @@ class Member::OrdersController < ApplicationController
       @order = Order.new(order_params)
       @order.member_id = current_member.id
       @order.save
-      flash[:notice] = "ご注文が確定しました。"
+      
 
       # addressで住所モデル検索、該当データなければ新規作成
       if DeliveryAddress.find_by(address: @order.address).nil?
@@ -45,6 +45,7 @@ class Member::OrdersController < ApplicationController
         @address.name = @order.name
         @address.member_id = current_member.id
         @address.save
+        
       end
 
       # cart_itemsの内容をorder_detailsに新規登録
@@ -57,7 +58,11 @@ class Member::OrdersController < ApplicationController
         order_detail.save
         cart_item.destroy #order_detailに情報を移したらcart_itemは消去
       end
+      flash[:success] = "ご注文が確定しました。"
       render :complete
+    else
+      flash[:alert] = "カートに商品を入れてください！"
+      redirect_back(fallback_location: root_path)
     end
   end
 

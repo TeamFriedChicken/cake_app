@@ -1,1 +1,7 @@
-<h1>ご購入ありがとうございました！</h1>
+<% if flash[:success] %>
+  <p class="alert alert-info">
+    <%= flash[:success] %>
+  </p>
+<% end %>
+
+<h1 class="thanks">ご購入ありがとうございました！</h1>

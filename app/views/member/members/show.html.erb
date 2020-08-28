@@ -1,7 +1,13 @@
+<% if flash[:notice_update] %>
+	<p class="alert alert-info">
+		<%= flash[:notice_update] %>
+	</p>
+<% end %>
+
 <div class="container">
 	<h4>マイページ</h4>
 	<label>登録情報</label>
-	<%= link_to "編集する", edit_members_path, class: "btn-sm btn-primary" %>
+	<%= link_to "編集する", edit_members_path, class: "btn-sm btn-warning", data: {"turbolinks"=>false} %>
 	<%= link_to "パスワードを変更する", class: "btn-sm btn-primary" %>
 	<table class="table">
 		<tr>
@@ -15,6 +21,10 @@
 		<tr>
 			<td>郵便番号</td>
 			<td><%= current_member.postcode %></td>
+		</tr>
+		<tr>
+			<td>都道府県</td>
+			<td><%= current_member.prefecture.name %></td>
 		</tr>
 		<tr>
 			<td>住所</td>
@@ -31,7 +41,9 @@
 	</table>
 
 	<label>配送先</label>
-	<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-primary" %>
+	<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-info" %>
+
 	<label>注文履歴</label>
 	<%= link_to "一覧を見る", orders_path, class: "btn-sm btn-primary" %>
+			
 </div>	
