@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <h3>ショッピングカート</h3>
@@ -23,7 +22,7 @@
           <% @cart_items.each do |cart_item| %>
             <tr>
               <td>
-                <%= attachment_image_tag cart_item.item, :image, :fill, 80, 50, format: 'jpeg', fallback: "no-image.jpg" %>
+                <%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no-image.jpg", size:"80x50" %>
                 <%= cart_item.item.name %>
               </td>
               <td><%= tax_price(cart_item.item.price).to_s(:delimited) %></td>
@@ -48,10 +47,10 @@
           <% end %>
         </table>
       </div>
-    </div>  
+    </div>
 <div class="container">
     <tr>
-      <p class="text-center">合計金額 
+      <p class="text-center">合計金額
         <%= tax_price(@sum).to_s(:delimited) %>
       </p>
     </tr>
@@ -68,6 +67,3 @@
       </td>
   </tr>
 </div>
-    
-
-

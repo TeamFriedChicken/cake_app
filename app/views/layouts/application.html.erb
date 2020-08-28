@@ -27,7 +27,7 @@
             <div class="col-xs-9">
               <div class="menu">
                 <ul class="nav navbar-nav navbar-right">
-                  <% if member_signed_in? %>
+                <% if member_signed_in? %>
                     <p>ようこそ、<%= current_member.last_name %> <%= current_member.first_name %>さん！</p>
                     <li><%= link_to members_path(current_member), class:"btn btn-default" do %>
                       <i class="nav-link active"></i>マイページ</li><% end %>
@@ -37,8 +37,29 @@
                       <i class="nav-link active"></i>カート</li><% end %>
                     <li><%= link_to destroy_member_session_path,  method: :delete, class:"btn btn-default" do %>
                       <i class="nav-link active"></i>ログアウト</li><% end %>
-                  <% elsif admin_signed_in? %>
-                    <%= link_to admin_items_path, class:"btn btn-default" do %>
+                <% elsif admin_signed_in? %>
+                  <%# 商品検索 %>
+                  <% if current_page?(admin_items_path) %>
+                    <%= search_form_for @search_i, url: admin_items_path do |f| %>
+                      <%= f.text_field :name_cont ,placeholder: "商品名を入力" %>
+                      <%= f.submit ("検索") , class: "search-btn"%>
+                    <% end %>
+                  <%# 会員検索 %>
+                  <% elsif current_page?(admin_members_path) %>
+                    <%= search_form_for @search_m, url: admin_members_path do |f| %>
+                      <%= f.text_field :first_name_cont ,placeholder: "会員名を入力" %>
+                      <%= f.submit ("検索") , class: "search-btn"%>
+                    <% end %>
+                  <%# ジャンル検索 %>
+                  <% elsif current_page?(admin_genres_path) %>
+                    <%= search_form_for @search_g, url: admin_genres_path do |f| %>
+                      <%= f.text_field :name_cont ,placeholder: "ジャンル名を入力" %>
+                      <%= f.submit ("検索") , class: "search-btn"%>
+                    <% end %>
+                  <% else %>
+                  <%# 上記path以外では検索フォームを表示しない %>
+                  <% end %>
+                  <%= link_to admin_items_path, class:"btn btn-default" do %>
                       <i class="nav-link active"></i>商品一覧</li><% end %>
                     <%= link_to admin_members_path, class:"btn btn-default" do %>
                       <i class="nav-link active"></i>会員一覧</li><% end %>
@@ -58,6 +79,7 @@
                     <li><%= link_to new_member_session_path, class:"btn btn-default" do %>
                       <i class="nav-link active"></i>ログイン</li><% end %>
                   <% end %>
+              </ul>
                 </ul>
               </div>
             </div>

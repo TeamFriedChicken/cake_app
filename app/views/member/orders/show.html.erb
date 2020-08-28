@@ -61,7 +61,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th></th>
+          <th></th>
             <th>商品</th>
             <th>単価（税込）</th>
             <th>個数</th>
@@ -71,7 +71,7 @@
 
         <% @order.order_details.each do |order_detail| %>
           <tr>
-            <td><%= attachment_image_tag order_detail.item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "120x80" %></td>
+            <td><%= attachment_image_tag order_detail.item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "160x120" %></td>
             <td><%= order_detail.item.name %></td>
             <td><%= tax_price(order_detail.item.price).to_s(:delimited) %></td>
             <td><%= order_detail.quantity %></td>
