@@ -12,9 +12,10 @@ class Member::MembersController < ApplicationController
     @member = Member.find(current_member.id)
     if @member.update(member_params)
       redirect_to members_path
-      flash[:notice_update] = "会員情報が更新されました"
+      flash[:notice_update] = "会員情報が更新されました。"
     else
-      render "edit"
+      flash[:alert_update] = "正しい値を入力してください。"
+      redirect_back(fallback_location: root_path)
     end
   end
 

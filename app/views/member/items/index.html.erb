@@ -1,17 +1,11 @@
 <div class="container">
-  <div class="row">
-    <h2 class="col-lg-4 col-md-6 mb-4">商品一覧 (全<%= @items.count %>件)</h2>
-  </div>
   <div class="row content">
-        <%= render 'member/items/genre_search', genres: @genres %>
+
+      <%= render 'member/items/genre_search', genres: @genres %>
+
     <div class="container">
       <div class="row">
         <div class="col-sm-10">
-          <% if params[:genre_id].present? %>
-            <%= @genre.name %>一覧(全<%= @items.count %>件)
-          <% else %>
-            商品一覧(全<%= @items.count %>件)
-          <% end %>
 
         <% if params[:genre_id].present? %>
           <h2><%= @genre.name %>一覧 (全<%= @items.count %>件)</h2>

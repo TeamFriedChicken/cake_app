@@ -1,4 +1,3 @@
-
 <div class="container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <h3 class="glay-label">
@@ -8,23 +7,18 @@
     <table class="table">
         <tr>
           <th><%= f.label :"名前" %></th>
-          <td><%= f.label :last_name %>
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, autocomplete: "first_name" %></td>
+          <td><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"姓" %>
+              <%= f.text_field :first_name, autocomplete: "first_name", placeholder:"名" %></td>
         </tr>
-
         <tr>
           <th><%= f.label :"フリガナ" %></th>
-          <td><%= f.label :kana_last_name %>
-          <%= f.text_field :kana_last_name, autocomplete: "kana_last_name" %>
-          <%= f.label :kana_first_name %>
-          <%= f.text_field :kana_first_name, autocomplete: "kana_first_name" %></td>
+          <td><%= f.text_field :kana_last_name, autocomplete: "kana_last_name", placeholder:"セイ" %>
+            <%= f.text_field :kana_first_name, autocomplete: "kana_first_name", placeholder:"メイ" %></td>
         </tr>
 
         <tr>
           <th><%= f.label :email %></th>
-          <td><%= f.email_field :email, autocomplete: "email" %></td>
+          <td><%= f.email_field :email, autocomplete: "email", size: 43 %></td>
         </tr>
 
         <tr>
@@ -33,10 +27,13 @@
         </tr>
 
         <tr>
-          <th><%= f.label :address %></th>
-          <!-- 仮　住所検索 -->
-          <td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %>
-            <%= f.text_field :address, autocomplete: "address" %></td>
+          <th><%= f.label :prefecture_code %></th>
+          <td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %></td>
+        </tr>
+
+        <tr>
+          <th> <%= f.label :address %></th>
+          <td><%= f.text_field :address, autocomplete: "address", size: 43 %></td>
         </tr>
 
         <tr>

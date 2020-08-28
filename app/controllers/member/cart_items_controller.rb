@@ -4,7 +4,6 @@ class Member::CartItemsController < ApplicationController
   before_action :set_cart_item, only: [:edit, :update, :destroy]
   before_action :set_member
 
-
     # カート内商品一覧
   def index
     @member = current_member
