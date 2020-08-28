@@ -1,5 +1,6 @@
 class Member::HomeController < ApplicationController
   def top
+     @genres = Genre.where(is_active: true)
     if params[:genre_id].present?
       @items = Item.where(genre_id: params[:genre_id],is_active: true)
     else
