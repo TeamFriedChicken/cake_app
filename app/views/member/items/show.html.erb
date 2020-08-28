@@ -8,7 +8,7 @@
       </table>
     </div>
     <div class="col-xs-6">
-      <%= attachment_image_tag @item, :image, :fill, 400, 230, format: 'jpeg', fallback: "no_image.jpg" %>
+      <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "400x300" %>
       <p><%= @item.name %></p>
       <p><%= @item.explanation %></p>
       <p>¥<%= tax_price(@item.price).to_s(:delimited) %>（税込）</p>
