@@ -23,7 +23,7 @@
           <table class="table">
             <tr><th>商品名</th><td><%= item.text_field :name %></td></tr>
             <tr><th>商品説明</th><td><%= item.text_area :explanation %></td></tr>
-            <tr><th>ジャンル</th><td><%= item.collection_select :genre_id, Genre.where(is_active: "true"), :id, :name %></td></tr>
+            <tr><th>ジャンル</th><td><%= item.collection_select :genre_id, Genre.all, :id, :name %></td></tr>
             <tr><th>税抜価格</th><td><%= item.text_field :price %>円</td></tr>
             <tr><th>販売ステータス</th><td><%= item.select :is_active, [["販売中", true], ["売り切れ中", false]] %></td></tr>
           </table>

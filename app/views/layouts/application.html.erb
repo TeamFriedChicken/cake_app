@@ -51,7 +51,7 @@
                     <i class="nav-link active"></i>About</li><% end %>
                   <li><%= link_to items_path, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>商品一覧</li><% end %>
-                  <li><%= link_to new_member_registration_path, class:"btn btn-default" do %>
+                  <li><%= link_to new_member_registration_path, data: {"turbolinks"=>false}, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>新規登録</li><% end %>
                   <li><%= link_to new_member_session_path, class:"btn btn-default" do %>
                     <i class="nav-link active"></i>ログイン</li><% end %>
