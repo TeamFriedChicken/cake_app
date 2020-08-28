@@ -1,8 +1,7 @@
 class Admin::ItemsController < ApplicationController
 
   def index
-    @search = Item.ransack(params[:q])
-  @results = @search.result
+    @items = Item.all
   end
 
   def new

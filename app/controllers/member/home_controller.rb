@@ -1,11 +1,7 @@
 class Member::HomeController < ApplicationController
   def top
-    if params[:genre_id].present?
-      @items = Item.where(genre_id: params[:genre_id],is_active: true)
-    else
-      # genres有効の商品のみ表示
-      @items = Item.joins(:genre).where(genres: {is_active: "true"})
-    end
+    # genreのis_activeが有効の商品から4件表示
+    @items = Item.joins(:genre).where(genres: {is_active: "true"}).limit(4)
   end
 
   def about
