@@ -2,9 +2,6 @@ class Member::ItemsController < ApplicationController
 
   def index
     @genres = Genre.where(is_active: true)
-    p "--------"
-    p @genres
-    p "-------------"
     if params[:genre_id].present?
       @items = Item.where(genre_id: params[:genre_id]).page(params[:page]).per(8)
       @genre = Genre.find(params[:genre_id])
