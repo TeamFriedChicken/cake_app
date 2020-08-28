@@ -1,37 +1,40 @@
 <div class="container">
 	<h4>マイページ</h4>
 	<label>登録情報</label>
-	<%= link_to "編集する", edit_members_path, class: "btn-sm btn-primary" %>
-	<%= link_to "パスワードを変更する", class: "btn-sm btn-primary" %>
-	<table class="table">
-		<tr>
-			<td>氏名</td>
-			<td><%= current_member.last_name %> <%= current_member.first_name %></td>
-		</tr>
-		<tr>
-			<td>カナ</td>
-			<td><%= current_member.kana_last_name %> <%= current_member.kana_first_name %></td>
-		</tr>
-		<tr>
-			<td>郵便番号</td>
-			<td><%= current_member.postcode %></td>
-		</tr>
-		<tr>
-			<td>住所</td>
-			<td><%= current_member.address %></td>
-		</tr>
-		<tr>
-			<td>電話番号</td>
-			<td><%= current_member.phone_number %></td>
-		</tr>
-		<tr>
-			<td>メールアドレス</td>
-			<td><%= current_member.email %></td>
-		</tr>
-	</table>
-
-	<label>配送先</label>
-	<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-primary" %>
-	<label>注文履歴</label>
-	<%= link_to "一覧を見る", orders_path, class: "btn-sm btn-primary" %>
-</div>	
+	<div class="row">
+		<div class="col-lg-8">
+			<%= link_to "編集する", edit_members_path, class: "btn-sm btn-primary" %>
+			<%= link_to "パスワードを変更する", class: "btn-sm btn-primary" %>
+			<table class="table">
+				<tr>
+					<th>氏名</th>
+					<td><%= current_member.last_name %> <%= current_member.first_name %></td>
+				</tr>
+				<tr>
+					<th>カナ</th>
+					<td><%= current_member.kana_last_name %> <%= current_member.kana_first_name %></td>
+				</tr>
+				<tr>
+					<th>郵便番号</th>
+					<td><%= current_member.postcode %></td>
+				</tr>
+				<tr>
+					<th>住所</th>
+					<td><%= current_member.address %></td>
+				</tr>
+				<tr>
+					<th>電話番号</th>
+					<td><%= current_member.phone_number %></td>
+				</tr>
+				<tr>
+					<th>メールアドレス</th>
+					<td><%= current_member.email %></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+			<label>配送先</label>
+			<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-primary" %>
+			<label>注文履歴</label>
+			<%= link_to "一覧を見る", orders_path, class: "btn-sm btn-primary" %>
+</div>

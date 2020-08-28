@@ -51,10 +51,20 @@ a {
   height: 200px;
   margin-bottom: 20px;
 }
-.bg-image {
-  background-image: url("page.jpg");
+
+.login-image {
+  background-image: url('login.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat:no-repeat;
+  height: 700px;
+}
+
+.bg-image{
+  background-image: url('about.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
   height: 700px;
 }
 
