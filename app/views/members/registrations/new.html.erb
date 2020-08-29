@@ -7,18 +7,14 @@
     <table class="table">
         <tr>
           <th><%= f.label :"名前" %></th>
-          <td><%= f.label :last_name %>
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, autocomplete: "first_name" %></td>
+          <td><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"姓" %>
+              <%= f.text_field :first_name, autocomplete: "first_name", placeholder:"名" %></td>
         </tr>
 
         <tr>
           <th><%= f.label :"フリガナ" %></th>
-          <td><%= f.label :kana_last_name %>
-          <%= f.text_field :kana_last_name, autocomplete: "kana_last_name" %>
-          <%= f.label :kana_first_name %>
-          <%= f.text_field :kana_first_name, autocomplete: "kana_first_name" %></td>
+          <td><%= f.text_field :kana_last_name, autocomplete: "kana_last_name", placeholder:"セイ" %>
+            <%= f.text_field :kana_first_name, autocomplete: "kana_first_name", placeholder:"メイ" %></td>
         </tr>
 
         <tr>

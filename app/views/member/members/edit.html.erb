@@ -5,17 +5,13 @@
 		<table class="table">
 			<tr>
 				<th>名前</th>
-				<td>(姓)
-					<%= f.text_field :last_name %>
-					(名)
-					<%= f.text_field :first_name %></td>
+				<td><%= f.text_field :last_name, placeholder:"姓" %>
+					<%= f.text_field :first_name, placeholder:"名" %></td>
 			</tr>
 			<tr>
 				<th>フリガナ</th>
-				<td>(セイ)
-					<%= f.text_field :kana_last_name %>
-					(メイ)
-					<%= f.text_field :kana_first_name %></td>
+				<td><%= f.text_field :kana_last_name, placeholder:"セイ" %>
+					<%= f.text_field :kana_first_name, placeholder:"メイ" %></td>
 			</tr>
 			<tr>
 				<th>メールアドレス</th>

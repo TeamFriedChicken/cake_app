@@ -1,8 +1,9 @@
 <div class="container">
-	<h4>マイページ</h4>
-	<label>登録情報</label>
 	<div class="row">
+		<div class="col-lg-2"></div>
 		<div class="col-lg-8">
+			<h4>マイページ</h4>
+			<label>登録情報</label>
 			<%= link_to "編集する", edit_members_path, class: "btn-sm btn-primary" %>
 			<%= link_to "パスワードを変更する", class: "btn-sm btn-primary" %>
 			<table class="table">
@@ -31,10 +32,9 @@
 					<td><%= current_member.email %></td>
 				</tr>
 			</table>
-		</div>
-	</div>
 			<label>配送先</label>
 			<%= link_to "一覧を見る", members_delivery_addresses_path, class: "btn-sm btn-primary" %>
 			<label>注文履歴</label>
 			<%= link_to "一覧を見る", orders_path, class: "btn-sm btn-primary" %>
+		</div>
 </div>

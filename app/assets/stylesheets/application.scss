@@ -17,12 +17,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.bodycolor{
+  background-color: #faf5ea;
+  height: 900px;
+}
+.sidenav{
+  background-color: #fff;
+}
+
+.card{
+  background-color: #C68642;
+  color: #fff;
+  text-align: center;
+}
 .navbar {
   padding-top: 20px;
 }
 
 a {
   margin: 20px;
+  font-family: Meiryo,Georgia;
 }
 
 .admin_main_visual {
