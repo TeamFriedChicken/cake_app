@@ -13,28 +13,29 @@
 
 <div class="container">
   <div class="row">
-	<h4>配送先編集</h4>
-	<div class="col-xs-6">
-		
-		<%= form_with model: @delivery_address, url: members_delivery_address_path, local: true do |f| %>
-			<table class="table">
-				<tr>
-					<th>郵便番号(ハイフンなし)</th>
-					<td><%= f.text_field :postcode %></td>
-				</tr>
-				<tr>
-					<th>住所</th>
-					<td><%= f.text_field :address %></td>
-				</tr>
-				<tr>
-					<th>宛名</th>
-					<td><%= f.text_field :name %></td>
-				</tr>
-				<tr>
-					<th><%= f.submit "編集する", class:"btn btn-warning" %></th>
-					<td></td>
-				</tr>
-			</table>
-		<% end %>
+		<h4>配送先編集</h4>
+		<div class="col-xs-6">
+			
+			<%= form_with model: @delivery_address, url: members_delivery_address_path, local: true do |f| %>
+				<table class="table">
+					<tr>
+						<th>郵便番号(ハイフンなし)</th>
+						<td><%= f.text_field :postcode %></td>
+					</tr>
+					<tr>
+						<th>住所</th>
+						<td><%= f.text_field :address %></td>
+					</tr>
+					<tr>
+						<th>宛名</th>
+						<td><%= f.text_field :name %></td>
+					</tr>
+					<tr>
+						<th><%= f.submit "編集する", class:"btn btn-warning" %></th>
+						<td></td>
+					</tr>
+				</table>
+			<% end %>
+		</div>
 	</div>
-
+</div>

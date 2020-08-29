@@ -83,4 +83,6 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'jp_prefecture'
 
 gem 'ransack'
+
+gem 'font_awesome5_rails'
 # --------------------------------------------------------------------------

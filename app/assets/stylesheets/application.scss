@@ -16,33 +16,32 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'font_awesome5_webfont';
+@import 'font_awesome5.css';
 
-.bodycolor{
+header {
   background-color: #faf5ea;
-  height: 900px;
+  height: 120px;
 }
+
 
 .head-name{
   margin-top: 50px;
 }
 .sidenav{
-  background-color: #a96b4269;
+  background-color: #c7b4a669;
   border-radius: 10px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   margin-top: 30px;
-}
-.genre{
-  color: #7b3a4e;
-  text-align: center;
 }
 
 .nav-pills > li > a:hover{
   background-color: #fff;
 }
 .card{
-  background-color: #a96b4269;
+  background-color: #c7b4a669;
   text-align: center;
-  color: #fff;
+  color: rgb(0, 0, 0);
   border-radius: 0 0 10px 10px;
 }
 .navbar{
@@ -143,3 +142,23 @@ a {
 .total_price {
   font-size: 25px;
 }
+
+.sub_title {
+  background-color: #ffa54c;
+  } 
+
+footer {
+  text-align: center;
+  padding: 30px 0;
+  margin:50px 0;
+  height:120px;
+  background-color:#faf5ea ;
+  width: 100%;
+}
+
+.far fa-twitter-square, .far fa-instagram-square, .far fa-line {
+  padding-top: 20px;
+  font-family: "Font Awesome 5 Free";
+  margin: 10px;
+}
+
