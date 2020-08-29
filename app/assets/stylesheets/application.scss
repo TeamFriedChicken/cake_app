@@ -17,12 +17,41 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar {
+.bodycolor{
+  background-color: #faf5ea;
+  height: 900px;
+}
+
+.head-name{
+  margin-top: 50px;
+}
+.sidenav{
+  background-color: #a96b4269;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 30px;
+}
+.genre{
+  color: #7b3a4e;
+  text-align: center;
+}
+
+.nav-pills > li > a:hover{
+  background-color: #fff;
+}
+.card{
+  background-color: #a96b4269;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+.navbar{
   padding-top: 20px;
 }
 
 a {
   margin: 20px;
+  font-family: Meiryo,Georgia;
 }
 
 .admin_main_visual {

@@ -28,7 +28,7 @@
               <div class="menu">
                 <ul class="nav navbar-nav navbar-right">
                 <% if member_signed_in? %>
-                    <p>ようこそ、<%= current_member.last_name %> <%= current_member.first_name %>さん！</p>
+                    <li  class="head-name">ようこそ、<%= current_member.last_name %> <%= current_member.first_name %>さん！</li>
                     <li><%= link_to members_path(current_member), class:"btn btn-default" do %>
                       <i class="nav-link active"></i>マイページ</li><% end %>
                     <li><%= link_to items_path, class:"btn btn-default" do %>
@@ -47,7 +47,7 @@
                   <%# 会員検索 %>
                   <% elsif current_page?(admin_members_path) %>
                     <%= search_form_for @search_m, url: admin_members_path do |f| %>
-                      <%= f.text_field :first_name_cont ,placeholder: "会員名を入力" %>
+                      <%= f.text_field :first_name_or_last_name_cont ,placeholder: "会員名を入力" %>
                       <%= f.submit ("検索") , class: "search-btn"%>
                     <% end %>
                   <%# ジャンル検索 %>
@@ -86,6 +86,8 @@
         </div>
       </nav>
     </header>
-    <%= yield %>
+    <div class="bodycolor">
+      <%= yield %>
+    </body>
   </body>
 </html>

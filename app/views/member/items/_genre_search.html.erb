@@ -1,9 +1,9 @@
 <div class="col-sm-2 sidenav">
-  <h4>ジャンル検索</h4>
+  <h4 class="genre">ジャンル検索</h4>
   <ul class="nav nav-pills nav-stacked">
     <% genres.each do |genre| %>
     <li class="nav-item">
-      <%= link_to genre.name, items_path(genre_id:genre.id) %>
+      <%= link_to genre.name, items_path(genre_id:genre.id), class:"sidenav" %>
     </li>
     <% end %>
   </ul>

@@ -27,7 +27,7 @@
         </tr>
 
         <tr>
-          <th><%= f.label :prefecture_code %></th>
+          <th><%= f.label :都道府県 %></th>
           <td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %></td>
         </tr>
 

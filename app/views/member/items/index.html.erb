@@ -12,14 +12,13 @@
         <% else %>
           <h2>商品一覧 (全<%= @item_all.count %>件)</h2>
         <% end %>
-          
+
           <%= render 'member/items/items_each', items: @items %>
 
         </div>
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="text-center">
