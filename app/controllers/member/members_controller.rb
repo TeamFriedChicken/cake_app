@@ -12,9 +12,10 @@ class Member::MembersController < ApplicationController
     @member = Member.find(current_member.id)
     if @member.update(member_params)
       redirect_to members_path
-      flash[:notice_update] = "会員情報が更新されました"
+      flash[:notice_update] = "会員情報が更新されました。"
     else
-      render "edit"
+      flash[:alert_update] = "正しい値を入力してください。"
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -34,6 +35,18 @@ class Member::MembersController < ApplicationController
 
   private
   def member_params
-    params.require(:member).permit(:first_name, :last_name, :kana_first_name, :kana_last_name, :postcode, :address, :phone_number, :email, :is_delete)
+    params.require(:member).permit(
+      :first_name, 
+      :last_name, 
+      :kana_first_name, 
+      :kana_last_name, 
+      :postcode, 
+      :address, 
+      :phone_number, 
+      :email, 
+      :is_delete,
+      :prefecture_name,
+      :prefecture_code
+    )
   end
 end

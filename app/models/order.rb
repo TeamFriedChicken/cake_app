@@ -6,4 +6,5 @@ class Order < ApplicationRecord
 
   validates :name, :address, :postcode, presence: true
   validates :postcode, length: { is: 7 } , numericality: true
+
 end

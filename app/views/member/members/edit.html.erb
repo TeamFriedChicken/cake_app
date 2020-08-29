@@ -1,47 +1,74 @@
+
+<% if flash[:alert_update] %>
+	<p class="alert alert-danger">
+		<%= flash[:alert_update] %>
+	</p>
+<% end %>
+
 <div class="container">
-	<h4>登録情報編集</h4>
-	<div class="col-lg-8">
-		<%= form_with model: @member, url: members_path, local: true do |f|  %>
-		<table class="table">
-			<tr>
-				<th>名前</th>
-				<td>(姓)
-					<%= f.text_field :last_name %>
-					(名)
-					<%= f.text_field :first_name %></td>
-			</tr>
-			<tr>
-				<th>フリガナ</th>
-				<td>(セイ)
-					<%= f.text_field :kana_last_name %>
-					(メイ)
-					<%= f.text_field :kana_first_name %></td>
-			</tr>
-			<tr>
-				<th>メールアドレス</th>
-				<td><%= f.text_field :email %></td>
-			</tr>
+	<div class="row">
 
-			<tr>
-				<th>郵便番号(ハイフンなし)</th>
-				<td><%= f.text_field :postcode %></td>
-			</tr>
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<h4>登録情報編集</h4>
 
-			<tr>
-				<th>住所</th>
-				<td><%= f.text_field :address %></td>
-			</tr>
+			<%= form_with model: @member, url: members_path, local: true do |f|  %>
+				<table class="table">
+					<tr>
+						<th>名前</th>
+						<td>
+							<%= f.text_field :last_name, placeholder: "(姓)" %>
+							<%= f.text_field :first_name, placeholder: "(名)" %>
+						</td>
+					</tr>
+					<tr>
+						<th>フリガナ</th>
+						<td>
+							<%= f.text_field :kana_last_name, placeholder: "(セイ)" %>
+							<%= f.text_field :kana_first_name, placeholder: "(メイ)" %>
+						</td>
+					</tr>
+					<tr>
+						<th>メールアドレス</th>
+						<td><%= f.text_field :email, size: 43 %></td>
+					</tr>
 
-			<tr>
-				<th>電話番号（ハイフンなし）</th>
-				<td><%= f.text_field :phone_number %></td>
-			</tr>
-		</table>
-				<%= f.submit "編集内容を保存する", class:"btn btn-primary" %><br>
-				<%= link_to "退会する", members_resignation_path, class:"btn btn-danger" %>
-		<% end %>
+					<tr>
+						<th>郵便番号(ハイフンなし)</th>
+						<td><%= f.text_field :postcode %></td>
+					</tr>
+
+					<tr>
+						<th>都道府県</th>
+						<td>
+							<%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %>
+						</td>
+					</tr>
+
+					<tr>
+						<th>住所</th>
+						<td><%= f.text_field :address, size: 43 %></td>
+					</tr>
+
+					<tr>
+						<th>電話番号（ハイフンなし）</th>
+						<td><%= f.text_field :phone_number %></td>
+					</tr>
+				</table>
+		</div>
 	</div>
 
+		<div class="col-lg-2"></div>
+		<div class="col-lg-2">
+				<%= f.submit "編集内容を保存する", class:"btn btn-primary" %>
+		</div>
+
+			<% end %>
+	
 </div>
 
+<div class="text-center">
+		<%= link_to "退会する", members_resignation_path, class:"btn btn-danger text-center" %>
+		</div>
+					
 

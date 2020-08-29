@@ -1,4 +1,8 @@
-<%= flash[:danger] %>
+<% if flash[:alert] %>
+  <p class="alert alert-danger">
+    <%= flash[:alert] %>
+  </p>
+<% end %>
 
 <div class="container">
   <h1>注文情報確認</h1>
@@ -59,7 +63,7 @@
       <%= f.hidden_field :total_price, :value => "#{@sum + @order.postage}" %>
       <%= f.hidden_field :payment_method, :value => "#{@order.payment_method}" %>
 
-      <%= f.submit "購入を確定する" %>
+      <%= f.submit "購入を確定する", class: "btn btn-primary" %>
     <% end %>
 </div>
 

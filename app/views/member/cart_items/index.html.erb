@@ -1,13 +1,31 @@
 <div class="container">
   <div class="row">
+
+    <% if flash[:success] %>
+      <p class="alert alert-success">
+        <%= flash[:success] %>
+      </p>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <p class="alert alert-danger">
+        <%= flash[:alert] %>
+      </p>
+    <% end %>
+
+    <% if flash[:update] %>
+      <p class="alert alert-warning">
+        <%= flash[:update] %>
+      </p>
+    <% end %>
+
     <h3>ショッピングカート</h3>
+  <% if @cart_items.present? %>
 
     <% if @cart_items.present? %>
       <p class="text-right">
         <%= link_to " カートを空にする", cart_items_members_path, method: :delete, data: {confirm: 'カートを空にして本当によろしいですか？'}, class: "glyphicon glyphicon-trash btn btn-danger" %>
       </p>
-    <% else %>
-      <h3>カートは空です！！！</h3>
     <% end %>
 
         <table class="table">
@@ -29,7 +47,7 @@
               <td>
                 <%= form_with model: cart_item, url: members_cart_item_path(cart_item), local: true do |f| %>
                   <%= f.number_field :quantity, min:1, size: 10 %>
-                  <%= f.submit "変更", class: "btn btn-primary" %>
+                  <%= f.submit "変更", class: "btn btn-warning" %>
                 <% end %>
               </td>
               <td>
@@ -38,8 +56,6 @@
               <td>
                 <% if @cart_items.present? %>
                   <%= link_to "削除する", members_cart_item_path(cart_item), method: :delete, data: {confirm: "#{cart_item.item.name}を削除してよろしいですか？"}, class: "glyphicon glyphicon-trash btn btn-danger" %>
-                <% else %>
-                  <h3>カートは空です！！！</h3>
                 <% end %>
               </td>
             </tr>
@@ -47,23 +63,29 @@
           <% end %>
         </table>
       </div>
+    </div>  
+    <div class="container">
+        <tr>
+          <p class="text-center">合計金額 
+            <%= tax_price(@sum).to_s(:delimited) %>
+          </p>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to "買い物を続ける", root_path, class: "btn btn-info" %><br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="text-center">
+              <%= link_to "情報入力に進む", new_order_path, class: "btn btn-primary" %>
+            </p>
+          </td>
+      </tr>
     </div>
-<div class="container">
-    <tr>
-      <p class="text-center">合計金額
-        <%= tax_price(@sum).to_s(:delimited) %>
-      </p>
-    </tr>
-    <tr>
-      <td>
-        <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %><br>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p class="text-center">
-          <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %>
-        </p>
-      </td>
-  </tr>
-</div>
+  <% else %>
+    <h3 class="empty">カートには何もありません！</h3>
+  <% end %>
+  
+
+
