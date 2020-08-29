@@ -6,7 +6,6 @@ class Member < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :delivery_addresses, dependent: :destroy
 
-
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :kana_first_name, format: {with: /\A[ァ-ヶー－]+\z/}
@@ -16,6 +15,9 @@ class Member < ApplicationRecord
   validates :postcode, length: { is: 7 } , numericality: true
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, presence: true
 
+  def full_name
+		last_name + first_name
+  end
 
   #------------------退会関連-----------------------------------
 
