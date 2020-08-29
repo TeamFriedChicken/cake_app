@@ -14,6 +14,7 @@ class Member < ApplicationRecord
   validates :phone_number, format: {with: /\A\d{10}\z|\A\d{11}\z/}
   validates :address, presence: true
   validates :postcode, length: { is: 7 } , numericality: true
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, presence: true
 
 
   #------------------退会関連-----------------------------------

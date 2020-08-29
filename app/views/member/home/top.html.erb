@@ -14,11 +14,12 @@
   <div class="row content">
     <%= render 'member/items/genre_search', genres: @genres %>
     <div class="col-sm-10">
+      <h2>おすすめ商品</h2>
       <% @items.each do |item| %>
         <div class="col-lg-3 col-md-3 mb-3">
           <%= link_to item_path(item) do %>
             <div class="card h-100">
-              <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "160x120" %><br>
+              <%= attachment_image_tag item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "200x120" %><br>
               <div class="card-body">
                 <%= item.name %></td>
                 <p>¥<%= item.price.to_s(:delimited) %></p>

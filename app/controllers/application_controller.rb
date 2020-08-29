@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  add_flash_types :success, :info, :warning, :danger
+
   before_action :set_search
   def set_search
     @search_i = Item.ransack(params[:q])
@@ -25,7 +27,8 @@ class ApplicationController < ActionController::Base
       :phone_number,
       :address,
       :postcode,
-      :prefecture_name
+      :prefecture_name,
+      :prefecture_code
     ])
   end
 

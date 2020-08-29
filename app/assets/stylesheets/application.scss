@@ -22,15 +22,26 @@
   height: 900px;
 }
 .sidenav{
-  background-color: #fff;
-}
-
-.card{
-  background-color: #C68642;
+  background-color: #f7b564;
+  border-radius: 10px;
   color: #fff;
+  margin-top: 30px;
+}
+.genre{
+  color: #7b3a4e;
   text-align: center;
 }
-.navbar {
+
+.nav-pills > li > a:hover{
+  background-color: #fff;
+}
+.card{
+  background-color: #f7b564;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+.navbar{
   padding-top: 20px;
 }
 
@@ -85,3 +96,12 @@ a {
 .soldout {
   color: red;
 }
+
+.empty {
+  // color: rgb(167, 36, 36);
+  // background-color: rgb(209, 145, 145);
+  text-align: center;
+  padding-top: 15px;
+  height: 60px;
+}
+
