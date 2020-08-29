@@ -29,10 +29,11 @@ header {
   margin-top: 50px;
 }
 .sidenav{
-  background-color: #c7b4a669;
+  background-color: #e7d5c969;
   border-radius: 10px;
   color: rgb(0, 0, 0);
   margin-top: 30px;
+  font-size: large;
 }
 
 .nav-pills > li > a:hover{
@@ -160,5 +161,9 @@ footer {
   padding-top: 20px;
   font-family: "Font Awesome 5 Free";
   margin: 10px;
+}
+
+.main_body {
+  height: 600px;
 }
 
