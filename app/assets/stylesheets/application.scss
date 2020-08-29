@@ -14,6 +14,8 @@
  *= require_self
  */
 
+  @import 'font_awesome5_webfont';
+  @import 'font_awesome5.css';
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
@@ -35,4 +37,17 @@
 
   .sub_title {
   background-color: #ffa54c;
+  }
+
+  footer {
+  text-align: center;
+  padding: 60px 0;
+  margin:50px 0;
+  height:100px;
+  background-color:#ffa54c ;
+  }
+
+  .far fa-twitter-square, .far fa-instagram-square, .far fa-line {
+  padding-top: 20px;
+  font-family: "Font Awesome 5 Free";
   }
