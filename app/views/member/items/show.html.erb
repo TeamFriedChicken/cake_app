@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row content">
         <%= render 'member/items/genre_search', genres: @genres %>
-    <div class="col-xs-6">
+    <div class="col-xs-6 item-photo">
       <%= attachment_image_tag @item, :image, format: 'jpeg', fallback: "no-image.jpg", size: "400x300" %>
-      <p><%= @item.name %></p>
+      <h4><%= @item.name %></h4>
       <p><%= @item.explanation %></p>
       <p>¥<%= tax_price(@item.price).to_s(:delimited) %>（税込）</p>
 
