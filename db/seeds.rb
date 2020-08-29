@@ -107,13 +107,15 @@ Item.create!(
       explanation: '日本および西欧にそれぞれあるケーキの種類である、スポンジとクリームが層になって、イチゴなどがのせられたケーキである',
       genre_id: 1,
       is_active: true,
+      image: File.open("./app/assets/images/cake1_seed.jpg"),
     },
     {
-      name: 'クラシックチョコレートケーキ',
+      name: 'チョコレートケーキ',
       price: '280',
       explanation: 'チョコレートまたはココアパウダーを主要材料に含むケーキである',
       genre_id: 1,
       is_active: false,
+      image: File.open("./app/assets/images/cake2_seed.jpg"),
     },
     {
       name: 'モンブラン',
@@ -121,6 +123,7 @@ Item.create!(
       explanation: 'クリなどを原料とするクリームを生地の上面に絞りかけたケーキである',
       genre_id: 1,
       is_active: true,
+      image: File.open("./app/assets/images/cake3_seed.jpg"),
     },
     {
       name: 'ミルフィーユ',
@@ -128,6 +131,7 @@ Item.create!(
       explanation: 'フランス発祥の菓子の一種。 歴史のある菓子であり、形状や製法も様々なものがある',
       genre_id: 1,
       is_active: true,
+      image: File.open("./app/assets/images/cake4_seed.jpg"),
     },
     {
       name: 'プレーンクッキー',
@@ -135,6 +139,7 @@ Item.create!(
       explanation: '主に小麦を主原料とした小型の焼き菓子の総称である',
       genre_id: 2,
       is_active: false,
+      image: File.open("./app/assets/images/cake5_seed.jpg"),
     },
     {
       name: 'ラングドシャ',
@@ -142,6 +147,7 @@ Item.create!(
       explanation: 'フランス語で「猫の舌」という意味をもち、ザラザラとした舌触りとホロホロと溶けていくような軽い食感が特徴です',
       genre_id: 2,
       is_active: false,
+      image: File.open("./app/assets/images/cake6_seed.jpg"),
     },
     {
       name: 'カスタードプリン',
@@ -149,13 +155,15 @@ Item.create!(
       explanation: 'プリン型に牛乳と砂糖を混ぜた卵液を流し込み、加熱してカスタードを凝固させたものである',
       genre_id: 3,
       is_active: true,
+      image: File.open("./app/assets/images/cake7_seed.jpg"),
     },
     {
-      name: 'ヨークシャー・プディング',
+      name: 'プディング',
       price: '140',
       explanation: 'イングランドのヨークシャーで生まれたイギリスの家庭料理のひとつ',
       genre_id: 3,
       is_active: true,
+      image: File.open("./app/assets/images/cake8_seed.jpg"),
     },
     {
       name: 'サマープディング',
@@ -163,6 +171,7 @@ Item.create!(
       explanation: 'イギリスの菓子。サマーフルーツプディングの名前で呼ばれることもある',
       genre_id: 3,
       is_active: false,
+      image: File.open("./app/assets/images/cake9_seed.jpg"),
     },
     {
       name: 'いちご飴',
@@ -170,6 +179,7 @@ Item.create!(
       explanation: 'いちご味の飴',
       genre_id: 4,
       is_active: true,
+      image: File.open("./app/assets/images/cake10_seed.jpg"),
     },
   ]
 )
