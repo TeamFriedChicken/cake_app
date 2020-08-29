@@ -6,7 +6,6 @@ class CartItem < ApplicationRecord
   #バリデーション---------------------------------------------------
 
   validates :member_id, :item_id, :quantity, presence: true
-  
 
   # バリデーション---------------------------------------------------
 

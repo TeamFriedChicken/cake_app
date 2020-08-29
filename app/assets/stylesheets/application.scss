@@ -73,8 +73,6 @@ a {
 }
 
 .empty {
-  // color: rgb(167, 36, 36);
-  // background-color: rgb(209, 145, 145);
   text-align: center;
   padding-top: 15px;
   height: 60px;
@@ -94,4 +92,25 @@ a {
   background-position: center;
   background-repeat:no-repeat;
   height: 700px;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+}
+
+.total_price {
+  font-size: 25px;
 }
