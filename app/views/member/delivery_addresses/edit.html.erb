@@ -1,25 +1,41 @@
+
+<% if flash[:success] %>
+	<p class="alert alert-info">
+		<%= flash[:success] %>
+	</p>
+<% end %>
+
+<% if flash[:alert] %>
+	<p class="alert alert-danger">
+		<%= flash[:alert] %>
+	</p>
+<% end %>
+
 <div class="container">
   <div class="row">
-	<h4>配送先編集</h4>
-	<div class="col-xs-6">
-		<table class="table">
-			<%= form_with model: @delivery_address, url: members_delivery_addresses_path, local: true do |f| %>
-				<tr>
-					<th>郵便番号(ハイフンなし)</th>
-					<td><%= f.text_field :postcode %></td>
-				</tr>
-				<tr>
-					<th>住所</th>
-					<td><%= f.text_field :address %></td>
-				</tr>
-				<tr>
-					<th>宛名</th>
-					<td><%= f.text_field :name %></td>
-				</tr>
-				<tr>
-					<th><%= f.submit "登録する", class:"btn btn-success" %></th><td></td>
-				</tr>
+		<h4>配送先編集</h4>
+		<div class="col-xs-6">
+			
+			<%= form_with model: @delivery_address, url: members_delivery_address_path, local: true do |f| %>
+				<table class="table">
+					<tr>
+						<th>郵便番号(ハイフンなし)</th>
+						<td><%= f.text_field :postcode %></td>
+					</tr>
+					<tr>
+						<th>住所</th>
+						<td><%= f.text_field :address %></td>
+					</tr>
+					<tr>
+						<th>宛名</th>
+						<td><%= f.text_field :name %></td>
+					</tr>
+					<tr>
+						<th><%= f.submit "編集する", class:"btn btn-warning" %></th>
+						<td></td>
+					</tr>
+				</table>
 			<% end %>
-		</table>
+		</div>
 	</div>
-
+</div>

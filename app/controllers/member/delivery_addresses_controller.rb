@@ -9,10 +9,11 @@ class Member::DeliveryAddressesController < ApplicationController
     @delivery_address = DeliveryAddress.new(delivery_address_params)
     @delivery_address.member_id = current_member.id
     if @delivery_address.save
-      flash[:success] = "登録に成功しました"
+      flash[:success] = "配送先を登録しました。"
       redirect_to members_delivery_addresses_path
     else
-      render :index
+      flash[:alert] = "正しい値を入力してください。"
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -23,9 +24,11 @@ class Member::DeliveryAddressesController < ApplicationController
   def update
     @delivery_address = DeliveryAddress.find(params[:id])
     if @delivery_address.update(delivery_address_params)
+      flash[:success] = "配送先を更新しました。"
       redirect_to members_delivery_addresses_path, notice: "You have updated book successfully."
     else
-      render "edit"
+      redirect_back(fallback_location: root_path)
+      flash[:alert] = "正しい値を入力してください。"
     end
   end
 
