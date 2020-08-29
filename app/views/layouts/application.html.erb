@@ -47,7 +47,7 @@
                   <%# 会員検索 %>
                   <% elsif current_page?(admin_members_path) %>
                     <%= search_form_for @search_m, url: admin_members_path do |f| %>
-                      <%= f.text_field :first_name_cont ,placeholder: "会員名を入力" %>
+                      <%= f.text_field :first_name_or_last_name_cont ,placeholder: "会員名を入力" %>
                       <%= f.submit ("検索") , class: "search-btn"%>
                     <% end %>
                   <%# ジャンル検索 %>

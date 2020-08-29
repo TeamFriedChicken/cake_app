@@ -1,6 +1,7 @@
 class Member::ItemsController < ApplicationController
 
   def index
+    # @item_all = ページネーション使用時の全商品count用
     @genres = Genre.where(is_active: true)
     if params[:genre_id].present?
       @items = Item.where(genre_id: params[:genre_id]).page(params[:page]).per(8)
