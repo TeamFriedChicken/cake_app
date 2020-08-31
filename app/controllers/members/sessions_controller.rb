@@ -26,7 +26,7 @@ class Members::SessionsController < Devise::SessionsController
     @member = Member.find_by(email: params[:member][:email].downcase)
     if @member
       if (@member.valid_password?(params[:member][:password]) && (@member.active_for_authentication? == false))
-        flash[:error] = "このアカウントは退会されています"
+        flash[:error] = "このアカウントは退会済みです。"
         redirect_to new_member_session_path
       end
     else

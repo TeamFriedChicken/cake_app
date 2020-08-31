@@ -1,4 +1,10 @@
 
+<% if flash[:resignation] %>
+	<p class="alert alert-danger">
+		<%= flash[:resignation] %>
+	</p>
+<% end %>
+
 <div class="container">
   <div class=" top-image">
     <div class="row">

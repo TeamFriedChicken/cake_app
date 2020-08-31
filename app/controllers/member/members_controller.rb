@@ -29,7 +29,7 @@ class Member::MembersController < ApplicationController
     @member.update(is_delete: true)
     #ログアウトさせる
     reset_session
-    flash[:notice] = "◆退会処理が完了しました。またのご利用を心よりお待ちしております。"
+    flash[:resignation] = "◆退会処理が完了しました。またのご利用を心よりお待ちしております。"
     redirect_to root_path
   end
 
